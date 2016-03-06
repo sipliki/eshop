@@ -17,6 +17,9 @@ if(isset($_SESSION["user"])){
 if(isset($_SESSION["kosik"])){
       $smarty->assign("kosik",$_SESSION["kosik"]);}
 
+      if(isset($_SESSION["fail_kategorie"])){
+      $smarty->assign("fail_kategorie",$_SESSION["fail_kategorie"]);unset($_SESSION["fail_kategorie"]);}
+
    if(isset($_GET["logout"])){
    unset($_SESSION["user"]);
    header('Location: vypis_zbozi.php');

@@ -119,24 +119,13 @@
                 <div class="col-xs-12 col-md-12">
                   <div class="form-group">
                     <h4>Výrobce</h4>
-                    <label class="checkbox-inline">
-                      <input type="checkbox" name="vyrobce[]" value="1"> Goldmex
-                    </label>
-                    <label class="checkbox-inline">
-                      <input type="checkbox" name="vyrobce[]" value="2"> Aycer
-                    </label>
-                    <label class="checkbox-inline">
-                      <input type="checkbox" name="vyrobce[]" value="3"> Esus
-                    </label>
-                    <label class="checkbox-inline">
-                      <input type="checkbox" name="vyrobce[]" value="4"> Lennyvo
-                    </label>
-                    <label class="checkbox-inline">
-                      <input type="checkbox" name="vyrobce[]" value="5"> Alien
-                    </label>
-                    <label class="checkbox-inline">
-                      <input type="checkbox" name="vyrobce[]" value="6"> Grenade Apple
-                    </label>
+
+                    {foreach $vyrobce as $vyrobce_row}
+                      <label class="checkbox-inline">
+                        <input type="checkbox" name="vyrobce[]" value="{$vyrobce_row.id}"> {$vyrobce_row.nazev}
+                      </label>
+                    {/foreach}
+
                   </div>
               </div>
             </div>
@@ -144,24 +133,13 @@
                 <div class="col-xs-12 col-md-12">
             <div class="form-group">
               <h4>Procesor</h4>
+
+            {foreach $procesor as $procesor_row}
             <label class="checkbox-inline">
-              <input type="checkbox" name="procesor[]" value="1"> Itel A3 (počet jader:2)
+              <input type="checkbox" name="procesor[]" value="{$procesor_row.id}"> {$procesor_row.nazev} (počet jader: {$procesor_row.pocet_jader})
             </label>
-            <label class="checkbox-inline">
-              <input type="checkbox" name="procesor[]" value="2"> Itel A3 (počet jader:4)
-            </label>
-            <label class="checkbox-inline">
-              <input type="checkbox" name="procesor[]" value="3"> Itel A5 (počet jader:2)
-            </label>
-            <label class="checkbox-inline">
-              <input type="checkbox" name="procesor[]" value="4"> Itel A5 (počet jader:4)
-            </label>
-            <label class="checkbox-inline">
-              <input type="checkbox" name="procesor[]" value="5"> Itel A7 (počet jader:4)
-            </label>
-            <label class="checkbox-inline">
-              <input type="checkbox" name="procesor[]" value="6"> AND E-series (počet jader:4)
-            </label>
+            {/foreach}
+
           </div>
         </div>
             </div>
@@ -169,18 +147,13 @@
               <div class="col-xs-12 col-md-12">
             <div class="form-group">
               <h4>Operační systém</h4>
+
+              {foreach $os as $os_row}
             <label class="checkbox-inline">
-              <input type="checkbox" name="os[]" value="1"> Windows 
+              <input type="checkbox" name="os[]" value="{$os_row.id}"> {$os_row.nazev} 
             </label>
-            <label class="checkbox-inline">
-              <input type="checkbox" name="os[]" value="2"> Linux
-            </label>
-            <label class="checkbox-inline">
-              <input type="checkbox" name="os[]" value="4"> GEOS
-            </label>
-            <label class="checkbox-inline">
-              <input type="checkbox" name="os[]" value="3"> Bez OS
-            </label>
+            {/foreach}
+          
           </div>
             </div>
           </div>
@@ -188,29 +161,25 @@
             <div class="col-xs-12 col-md-6">
               <div class="form_group">
                 <h4>Stav zboží</h4>
-                <label class="checkbox-inline">
-                  <input type="checkbox" name="sz[]" value="1"> Nové zboží 
+
+                {foreach $sz as $sz_row}
+            <label class="checkbox-inline">
+                  <input type="checkbox" name="sz[]" value="{$sz_row.id}"> {$sz_row.nazev} 
                 </label>
-                <label class="checkbox-inline">
-                  <input type="checkbox" name="sz[]" value="2"> Použité zboží 
-                </label>
-                <label class="checkbox-inline">
-                  <input type="checkbox" name="sz[]" value="3"> Zánovní skladem 
-                </label>
+            {/foreach}
+
               </div>
             </div>
               <div class="col-xs-12 col-md-6">
               <div class="form_group">
                 <h4>Dostupnost zboží</h4>
-                <label class="checkbox-inline">
-                  <input type="checkbox" name="dostupnost[]" value="1"> Skladem na Eshopu 
+
+                {foreach $dostupnost as $dostupnost_row}
+            <label class="checkbox-inline">
+                  <input type="checkbox" name="dostupnost[]" value="{$dostupnost_row.id}"> {$dostupnost_row.nazev}
                 </label>
-                <label class="checkbox-inline">
-                  <input type="checkbox" name="dostupnost[]" value="2"> Na objednání u dodavatele
-                </label>
-                <label class="checkbox-inline">
-                  <input type="checkbox" name="dostupnost[]" value="3"> Na prodejně 
-                </label>
+            {/foreach}
+
               </div>
             </div>
           </div>
@@ -218,15 +187,13 @@
               <div class="col-xs-12 col-md-12">
             <div class="form-group">
               <h4>Rozlišení displeje</h4>
+
+               {foreach $rozliseni as $rozliseni_row}
             <label class="checkbox-inline">
-              <input type="checkbox" name="rozliseni[]" value="1"> Full HD
+              <input type="checkbox" name="rozliseni[]" value="{$rozliseni_row.id}"> {$rozliseni_row.nazev}
             </label>
-            <label class="checkbox-inline">
-              <input type="checkbox" name="rozliseni[]" value="2"> HD Ready
-            </label>
-            <label class="checkbox-inline">
-              <input type="checkbox" name="rozliseni[]" value="3"> 4K
-            </label>
+            {/foreach}
+
           </div>
             </div>
             {*<div class="col-xs-12 col-md-6">
@@ -240,24 +207,13 @@
               <div class="col-xs-12 col-md-12">
             <div class="form-group">
               <h4>Grafika</h4>
+
+              {foreach $gpu as $gpu_row}
             <label class="checkbox-inline">
-              <input type="checkbox" name="gpu[]" value="1"> Mvidia FeGorce 890E
+              <input type="checkbox" name="gpu[]" value="{$gpu_row.id}"> {$gpu_row.nazev}
             </label>
-            <label class="checkbox-inline">
-              <input type="checkbox" name="gpu[]" value="2"> Mvidia FeGorce 980E
-            </label>
-            <label class="checkbox-inline">
-              <input type="checkbox" name="gpu[]" value="3"> Mvidia FeGorce TGX 9000
-            </label>
-            <label class="checkbox-inline">
-              <input type="checkbox" name="gpu[]" value="4"> AND FireFro N6000
-            </label>
-            <label class="checkbox-inline">
-              <input type="checkbox" name="gpu[]" value="5"> AND Fareon HD 5000M
-            </label>
-            <label class="checkbox-inline">
-              <input type="checkbox" name="gpu[]" value="6"> AND Fareon T3 series
-            </label>
+            {/foreach}
+
           </div>
             </div>
           </div> 
@@ -318,30 +274,12 @@
           <div class="col-xs-12 col-md-12">
             <div class="form-group">
               <h4>Výrobce</h4>
-            <label class="checkbox-inline">
-              <input type="checkbox" name="vyrobce[]" value="1"> Goldmex
-            </label>
-            <label class="checkbox-inline">
-              <input type="checkbox" name="vyrobce[]" value="2"> Aycer
-            </label>
-            <label class="checkbox-inline">
-              <input type="checkbox" name="vyrobce[]" value="3"> Esus
-            </label>
-            <label class="checkbox-inline">
-              <input type="checkbox" name="vyrobce[]" value="4"> Lennyvo
-            </label>
-            <label class="checkbox-inline">
-              <input type="checkbox" name="vyrobce[]" value="5"> Alien
-            </label>
-            <label class="checkbox-inline">
-              <input type="checkbox" name="vyrobce[]" value="6"> Grenade Apple
-            </label>
-            <label class="checkbox-inline">
-              <input type="checkbox" name="vyrobce[]" value="7"> HB
-            </label>
-            <label class="checkbox-inline">
-              <input type="checkbox" name="vyrobce[]" value="8"> LOL2000
-            </label>
+
+            {foreach $vyrobce as $vyrobce_row}
+                      <label class="checkbox-inline">
+                        <input type="checkbox" name="vyrobce[]" value="{$vyrobce_row.id}"> {$vyrobce_row.nazev}
+                      </label>
+                    {/foreach}
           </div>
         </div>
       </div>
@@ -349,24 +287,7 @@
         <div class="col-xs-12 col-md-12">
             <div class="form-group">
               <h4>Procesor</h4>
-            <label class="checkbox-inline">
-              <input type="checkbox" name="procesor[]" value="1"> Itel A3 (počet jader:2)
-            </label>
-            <label class="checkbox-inline">
-              <input type="checkbox" name="procesor[]" value="2"> Itel A3 (počet jader:4)
-            </label>
-            <label class="checkbox-inline">
-              <input type="checkbox" name="procesor[]" value="3"> Itel A5 (počet jader:2)
-            </label>
-            <label class="checkbox-inline">
-              <input type="checkbox" name="procesor[]" value="4"> Itel A5 (počet jader:4)
-            </label>
-            <label class="checkbox-inline">
-              <input type="checkbox" name="procesor[]" value="5"> Itel A7 (počet jader:4)
-            </label>
-            <label class="checkbox-inline">
-              <input type="checkbox" name="procesor[]" value="6"> AND E-series (počet jader:4)
-            </label>
+            
           </div>
         </div>
       </div>
@@ -374,18 +295,7 @@
         <div class="col-xs-12 col-md-12">
             <div class="form-group">
               <h4>Operační systém</h4>
-            <label class="checkbox-inline">
-              <input type="checkbox" name="os[]" value="1"> Windows 
-            </label>
-            <label class="checkbox-inline">
-              <input type="checkbox" name="os[]" value="2"> Linux
-            </label>
-            <label class="checkbox-inline">
-              <input type="checkbox" name="os[]" value="4"> GEOS
-            </label>
-            <label class="checkbox-inline">
-              <input type="checkbox" name="os[]" value="3"> Bez OS
-            </label>
+            
           </div>
         </div>
       </div>
@@ -393,29 +303,13 @@
           <div class="col-xs-12 col-md-6">
               <div class="form_group">
                 <h4>Stav zboží</h4>
-                <label class="checkbox-inline">
-                  <input type="checkbox" name="sz[]" value="1"> Nové zboží 
-                </label>
-                <label class="checkbox-inline">
-                  <input type="checkbox" name="sz[]" value="2"> Použité zboží 
-                </label>
-                <label class="checkbox-inline">
-                  <input type="checkbox" name="sz[]" value="3"> Zánovní skladem 
-                </label>
+                
               </div>
             </div>
               <div class="col-xs-12 col-md-6">
               <div class="form_group">
                 <h4>Dostupnost zboží</h4>
-                <label class="checkbox-inline">
-                  <input type="checkbox" name="dostupnost[]" value="1"> Skladem na Eshopu 
-                </label>
-                <label class="checkbox-inline">
-                  <input type="checkbox" name="dostupnost[]" value="2"> Na objednání u dodavatele
-                </label>
-                <label class="checkbox-inline">
-                  <input type="checkbox" name="dostupnost[]" value="3"> Na prodejně 
-                </label>
+                
               </div>
             </div>
           </div>
@@ -423,15 +317,7 @@
               <div class="col-xs-12 col-md-12">
             <div class="form-group">
               <h4>Rozlišení displeje</h4>
-            <label class="checkbox-inline">
-              <input type="checkbox" name="rozliseni[]" value="1"> Full HD
-            </label>
-            <label class="checkbox-inline">
-              <input type="checkbox" name="rozliseni[]" value="2"> HD Ready
-            </label>
-            <label class="checkbox-inline">
-              <input type="checkbox" name="rozliseni[]" value="3"> 4K
-            </label>
+            
           </div>
             </div>
             {*<div class="col-xs-12 col-md-6">
@@ -445,21 +331,7 @@
               <div class="col-xs-12 col-md-12">
             <div class="form-group">
               <h4>Grafika</h4>
-            <label class="checkbox-inline">
-              <input type="checkbox" name="gpu[]" value="2"> Mvidia FeGorce 980E
-            </label>
-            <label class="checkbox-inline">
-              <input type="checkbox" name="gpu[]" value="3"> Mvidia FeGorce TGX 9000
-            </label>
-            <label class="checkbox-inline">
-              <input type="checkbox" name="gpu[]" value="4"> AND FireFro N6000
-            </label>
-            <label class="checkbox-inline">
-              <input type="checkbox" name="gpu[]" value="5"> AND Fareon HD 5000M
-            </label>
-            <label class="checkbox-inline">
-              <input type="checkbox" name="gpu[]" value="6"> AND Fareon T3 series
-            </label>
+            
           </div>
             </div>
           </div>
@@ -520,27 +392,7 @@
           <div class="col-xs-12 col-md-12">
             <div class="form-group">
               <h4>Výrobce</h4>
-            <label class="checkbox-inline">
-              <input type="checkbox" name="vyrobce[]" value="3"> Esus
-            </label>
-            <label class="checkbox-inline">
-              <input type="checkbox" name="vyrobce[]" value="4"> Lennyvo
-            </label>
-            <label class="checkbox-inline">
-              <input type="checkbox" name="vyrobce[]" value="6"> Grenade Apple
-            </label>
-            <label class="checkbox-inline">
-              <input type="checkbox" name="vyrobce[]" value="7"> HB
-            </label>
-            <label class="checkbox-inline">
-              <input type="checkbox" name="vyrobce[]" value="8"> LOL2000
-            </label>
-            <label class="checkbox-inline">
-              <input type="checkbox" name="vyrobce[]" value="9"> Sunsang
-            </label>
-            <label class="checkbox-inline">
-              <input type="checkbox" name="vyrobce[]" value="10"> Nosy
-            </label>
+            
           </div>
         </div>
       </div>
@@ -548,12 +400,7 @@
         <div class="col-xs-12 col-md-12">
             <div class="form-group">
               <h4>Operační systém</h4>
-            <label class="checkbox-inline">
-              <input type="checkbox" name="os[]" value="5"> Aproid 
-            </label>
-            <label class="checkbox-inline">
-              <input type="checkbox" name="os[]" value="4"> GEOS
-            </label>
+            
           </div>
         </div>
       </div>
@@ -561,15 +408,7 @@
           <div class="col-xs-12 col-md-12">
               <div class="form-group">
                   <h4>Procesor</h4>
-                  <label class="checkbox-inline">
-              <input type="checkbox" name="procesor[]" value="10"> Exynos (počet jader:1)
-            </label>
-            <label class="checkbox-inline">
-              <input type="checkbox" name="procesor[]" value="11"> DragonSnap S4 (počet jader:2)
-            </label>
-            <label class="checkbox-inline">
-              <input type="checkbox" name="procesor[]" value="12"> Cortex I5 (počet jader:2)
-            </label>
+                  
               </div>
           </div>
       </div>
@@ -577,29 +416,13 @@
           <div class="col-xs-12 col-md-6">
               <div class="form_group">
                 <h4>Stav zboží</h4>
-                <label class="checkbox-inline">
-                  <input type="checkbox" name="sz[]" value="1"> Nové zboží 
-                </label>
-                <label class="checkbox-inline">
-                  <input type="checkbox" name="sz[]" value="2"> Použité zboží 
-                </label>
-                <label class="checkbox-inline">
-                  <input type="checkbox" name="sz[]" value="3"> Zánovní skladem 
-                </label>
+                
               </div>
             </div>
               <div class="col-xs-12 col-md-6">
               <div class="form_group">
                 <h4>Dostupnost zboží</h4>
-                <label class="checkbox-inline">
-                  <input type="checkbox" name="dostupnost[]" value="1"> Skladem na Eshopu 
-                </label>
-                <label class="checkbox-inline">
-                  <input type="checkbox" name="dostupnost[]" value="2"> Na objednání u dodavatele
-                </label>
-                <label class="checkbox-inline">
-                  <input type="checkbox" name="dostupnost[]" value="3"> Na prodejně 
-                </label>
+               
               </div>
             </div>
           </div>
@@ -607,18 +430,7 @@
               <div class="col-xs-12 col-md-12">
             <div class="form-group">
               <h4>Rozlišení displeje</h4>
-            <label class="checkbox-inline">
-              <input type="checkbox" name="rozliseni[]" value="1"> Full HD
-            </label>
-            <label class="checkbox-inline">
-              <input type="checkbox" name="rozliseni[]" value="2"> HD Ready
-            </label>
-            <label class="checkbox-inline">
-              <input type="checkbox" name="rozliseni[]" value="3"> 4K
-            </label>
-            <label class="checkbox-inline">
-              <input type="checkbox" name="rozliseni[]" value="4"> FWVVGA
-            </label>
+            
           </div>
             </div>
             {*<div class="col-xs-12 col-md-6">
@@ -632,12 +444,7 @@
               <div class="col-xs-12 col-md-12">
             <div class="form-group">
               <h4>Grafika</h4>
-            <label class="checkbox-inline">
-              <input type="checkbox" name="gpu[]" value="7"> Mvidia Quatro E2000A
-            </label>
-            <label class="checkbox-inline">
-              <input type="checkbox" name="gpu[]" value="8"> Mvidia Tekra 2k
-            </label>
+           
           </div>
             </div>
           </div>
@@ -700,24 +507,7 @@
           <div class="col-xs-12 col-md-12">
             <div class="form-group">
               <h4>Výrobce</h4>
-            <label class="checkbox-inline">
-              <input type="checkbox" name="vyrobce[]" value="3"> Esus
-            </label>
-            <label class="checkbox-inline">
-              <input type="checkbox" name="vyrobce[]" value="4"> Lennyvo
-            </label>
-            <label class="checkbox-inline">
-              <input type="checkbox" name="vyrobce[]" value="6"> Grenade Apple
-            </label>
-            <label class="checkbox-inline">
-              <input type="checkbox" name="vyrobce[]" value="7"> HB
-            </label>
-            <label class="checkbox-inline">
-              <input type="checkbox" name="vyrobce[]" value="9"> Sunsang
-            </label>
-            <label class="checkbox-inline">
-              <input type="checkbox" name="vyrobce[]" value="10"> Nosy
-            </label>
+            
           </div>
         </div>
       </div>
@@ -726,18 +516,7 @@
         <div class="col-xs-12 col-md-12">
             <div class="form-group">
               <h4>Procesor</h4>
-            <label class="checkbox-inline">
-              <input type="checkbox" name="procesor[]" value="1"> Itel A3 (počet jader:2)
-            </label>
-            <label class="checkbox-inline">
-              <input type="checkbox" name="procesor[]" value="2"> Itel A3 (počet jader:4)
-            </label>
-            <label class="checkbox-inline">
-              <input type="checkbox" name="procesor[]" value="8"> Itel Keleron (počet jader:2)
-            </label>
-            <label class="checkbox-inline">
-              <input type="checkbox" name="procesor[]" value="9"> Itel Aton (počet jader:4)
-            </label>
+            
           </div>
         </div>
       </div>
@@ -746,15 +525,7 @@
         <div class="col-xs-12 col-md-12">
             <div class="form-group">
               <h4>Operační systém</h4>
-              <label class="checkbox-inline">
-              <input type="checkbox" name="os[]" value="1"> Windows 
-            </label>
-            <label class="checkbox-inline">
-              <input type="checkbox" name="os[]" value="5"> Aproid 
-            </label>
-            <label class="checkbox-inline">
-              <input type="checkbox" name="os[]" value="4"> GEOS
-            </label>
+              
           </div>
         </div>
       </div>
@@ -762,29 +533,13 @@
           <div class="col-xs-12 col-md-6">
               <div class="form_group">
                 <h4>Stav zboží</h4>
-                <label class="checkbox-inline">
-                  <input type="checkbox" name="sz[]" value="1"> Nové zboží 
-                </label>
-                <label class="checkbox-inline">
-                  <input type="checkbox" name="sz[]" value="2"> Použité zboží 
-                </label>
-                <label class="checkbox-inline">
-                  <input type="checkbox" name="sz[]" value="3"> Zánovní skladem 
-                </label>
+                
               </div>
             </div>
               <div class="col-xs-12 col-md-6">
               <div class="form_group">
                 <h4>Dostupnost zboží</h4>
-                <label class="checkbox-inline">
-                  <input type="checkbox" name="dostupnost[]" value="1"> Skladem na Eshopu 
-                </label>
-                <label class="checkbox-inline">
-                  <input type="checkbox" name="dostupnost[]" value="2"> Na objednání u dodavatele
-                </label>
-                <label class="checkbox-inline">
-                  <input type="checkbox" name="dostupnost[]" value="3"> Na prodejně 
-                </label>
+                
               </div>
             </div>
           </div>
@@ -792,18 +547,7 @@
               <div class="col-xs-12 col-md-12">
             <div class="form-group">
               <h4>Rozlišení displeje</h4>
-            <label class="checkbox-inline">
-              <input type="checkbox" name="rozliseni[]" value="1"> Full HD
-            </label>
-            <label class="checkbox-inline">
-              <input type="checkbox" name="rozliseni[]" value="2"> HD Ready
-            </label>
-            <label class="checkbox-inline">
-              <input type="checkbox" name="rozliseni[]" value="3"> 4K
-            </label>
-            <label class="checkbox-inline">
-              <input type="checkbox" name="rozliseni[]" value="5"> WUXGA
-            </label>
+            
           </div>
             </div>
             {*<div class="col-xs-12 col-md-6">
@@ -817,12 +561,7 @@
               <div class="col-xs-12 col-md-12">
             <div class="form-group">
               <h4>Grafika</h4>
-            <label class="checkbox-inline">
-              <input type="checkbox" name="gpu[]" value="7"> Mvidia Quatro E2000A
-            </label>
-            <label class="checkbox-inline">
-              <input type="checkbox" name="gpu[]" value="8"> Mvidia Tekra 2K
-            </label>
+            
           </div>
             </div>
           </div>

@@ -1,7 +1,7 @@
-<?php /* Smarty version 3.1.27, created on 2016-03-05 14:08:48
+<?php /* Smarty version 3.1.27, created on 2016-03-06 15:32:40
          compiled from "C:\Program Files (x86)\EasyPHP-DevServer-14.1VC11\data\localweb\my portable files\e-shop\templates\zboziTpl.tpl" */ ?>
 <?php
-/*%%SmartyHeaderCode:2481256dada60387e81_01289353%%*/
+/*%%SmartyHeaderCode:1346356dc3f889a6d31_22198667%%*/
 if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
   'file_dependency' => 
@@ -9,32 +9,33 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     'd46e646a40aaeff044eef36a0a19a4ad8bad30cc' => 
     array (
       0 => 'C:\\Program Files (x86)\\EasyPHP-DevServer-14.1VC11\\data\\localweb\\my portable files\\e-shop\\templates\\zboziTpl.tpl',
-      1 => 1457183319,
+      1 => 1457274757,
       2 => 'file',
     ),
   ),
-  'nocache_hash' => '2481256dada60387e81_01289353',
+  'nocache_hash' => '1346356dc3f889a6d31_22198667',
   'variables' => 
   array (
     'kosik' => 0,
     'session_user' => 0,
     'prazdny_kosik' => 0,
+    'fail_kategorie' => 0,
     'zbozi' => 0,
     'radek' => 0,
   ),
   'has_nocache_code' => false,
   'version' => '3.1.27',
-  'unifunc' => 'content_56dada604c55c3_13087733',
+  'unifunc' => 'content_56dc3f88af5406_49218531',
 ),false);
 /*/%%SmartyHeaderCode%%*/
-if ($_valid && !is_callable('content_56dada604c55c3_13087733')) {
-function content_56dada604c55c3_13087733 ($_smarty_tpl) {
+if ($_valid && !is_callable('content_56dc3f88af5406_49218531')) {
+function content_56dc3f88af5406_49218531 ($_smarty_tpl) {
 if (!is_callable('smarty_modifier_truncate')) require_once 'C:\\Program Files (x86)\\EasyPHP-DevServer-14.1VC11\\data\\localweb\\my portable files\\e-shop\\libs\\plugins\\modifier.truncate.php';
 if (!is_callable('smarty_function_paginate_prev')) require_once 'C:\\Program Files (x86)\\EasyPHP-DevServer-14.1VC11\\data\\localweb\\my portable files\\e-shop\\libs\\plugins\\function.paginate_prev.php';
 if (!is_callable('smarty_function_paginate_middle')) require_once 'C:\\Program Files (x86)\\EasyPHP-DevServer-14.1VC11\\data\\localweb\\my portable files\\e-shop\\libs\\plugins\\function.paginate_middle.php';
 if (!is_callable('smarty_function_paginate_next')) require_once 'C:\\Program Files (x86)\\EasyPHP-DevServer-14.1VC11\\data\\localweb\\my portable files\\e-shop\\libs\\plugins\\function.paginate_next.php';
 
-$_smarty_tpl->properties['nocache_hash'] = '2481256dada60387e81_01289353';
+$_smarty_tpl->properties['nocache_hash'] = '1346356dc3f889a6d31_22198667';
 ?>
 <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
 <html>
@@ -113,6 +114,9 @@ $_smarty_tpl->properties['nocache_hash'] = '2481256dada60387e81_01289353';
 
   <?php if (isset($_smarty_tpl->tpl_vars['prazdny_kosik']->value)) {?>
   <div class="alert alert-danger" role="alert"><span class="glyphicon glyphicon-shopping-cart"></span> Váš košík je prázdný.</div>
+  <?php }?>
+  <?php if (isset($_smarty_tpl->tpl_vars['fail_kategorie']->value)) {?>
+  <div class="alert alert-danger text-center" role="alert"></span> Nebyla vybrána kategorie produktů</div>
   <?php }?>
           
 

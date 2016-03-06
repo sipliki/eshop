@@ -1,7 +1,7 @@
-<?php /* Smarty version 3.1.27, created on 2016-03-05 14:03:43
+<?php /* Smarty version 3.1.27, created on 2016-03-06 15:29:33
          compiled from "C:\Program Files (x86)\EasyPHP-DevServer-14.1VC11\data\localweb\my portable files\e-shop\templates\filtrTpl.tpl" */ ?>
 <?php
-/*%%SmartyHeaderCode:1422056dad92f3212b5_25626082%%*/
+/*%%SmartyHeaderCode:970356dc3ecd189a79_75912680%%*/
 if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
   'file_dependency' => 
@@ -9,17 +9,31 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     '98c6b06f806ea29f819e71b9cfafb8d0426589ea' => 
     array (
       0 => 'C:\\Program Files (x86)\\EasyPHP-DevServer-14.1VC11\\data\\localweb\\my portable files\\e-shop\\templates\\filtrTpl.tpl',
-      1 => 1457183020,
+      1 => 1457274570,
       2 => 'file',
     ),
   ),
-  'nocache_hash' => '1422056dad92f3212b5_25626082',
+  'nocache_hash' => '970356dc3ecd189a79_75912680',
   'variables' => 
   array (
     'kosik' => 0,
     'session_user' => 0,
     'search' => 0,
     'notebook' => 0,
+    'vyrobce' => 0,
+    'vyrobce_row' => 0,
+    'procesor' => 0,
+    'procesor_row' => 0,
+    'os' => 0,
+    'os_row' => 0,
+    'sz' => 0,
+    'sz_row' => 0,
+    'dostupnost' => 0,
+    'dostupnost_row' => 0,
+    'rozliseni' => 0,
+    'rozliseni_row' => 0,
+    'gpu' => 0,
+    'gpu_row' => 0,
     'pc' => 0,
     'mobil' => 0,
     'tablet' => 0,
@@ -28,17 +42,17 @@ $_valid = $_smarty_tpl->decodeProperties(array (
   ),
   'has_nocache_code' => false,
   'version' => '3.1.27',
-  'unifunc' => 'content_56dad92f4bb171_81666536',
+  'unifunc' => 'content_56dc3ecd49c784_44356841',
 ),false);
 /*/%%SmartyHeaderCode%%*/
-if ($_valid && !is_callable('content_56dad92f4bb171_81666536')) {
-function content_56dad92f4bb171_81666536 ($_smarty_tpl) {
+if ($_valid && !is_callable('content_56dc3ecd49c784_44356841')) {
+function content_56dc3ecd49c784_44356841 ($_smarty_tpl) {
 if (!is_callable('smarty_modifier_truncate')) require_once 'C:\\Program Files (x86)\\EasyPHP-DevServer-14.1VC11\\data\\localweb\\my portable files\\e-shop\\libs\\plugins\\modifier.truncate.php';
 if (!is_callable('smarty_function_paginate_prev')) require_once 'C:\\Program Files (x86)\\EasyPHP-DevServer-14.1VC11\\data\\localweb\\my portable files\\e-shop\\libs\\plugins\\function.paginate_prev.php';
 if (!is_callable('smarty_function_paginate_middle')) require_once 'C:\\Program Files (x86)\\EasyPHP-DevServer-14.1VC11\\data\\localweb\\my portable files\\e-shop\\libs\\plugins\\function.paginate_middle.php';
 if (!is_callable('smarty_function_paginate_next')) require_once 'C:\\Program Files (x86)\\EasyPHP-DevServer-14.1VC11\\data\\localweb\\my portable files\\e-shop\\libs\\plugins\\function.paginate_next.php';
 
-$_smarty_tpl->properties['nocache_hash'] = '1422056dad92f3212b5_25626082';
+$_smarty_tpl->properties['nocache_hash'] = '970356dc3ecd189a79_75912680';
 ?>
 <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
 <html>
@@ -163,24 +177,28 @@ $_smarty_tpl->properties['nocache_hash'] = '1422056dad92f3212b5_25626082';
                 <div class="col-xs-12 col-md-12">
                   <div class="form-group">
                     <h4>Výrobce</h4>
-                    <label class="checkbox-inline">
-                      <input type="checkbox" name="vyrobce[]" value="1"> Goldmex
-                    </label>
-                    <label class="checkbox-inline">
-                      <input type="checkbox" name="vyrobce[]" value="2"> Aycer
-                    </label>
-                    <label class="checkbox-inline">
-                      <input type="checkbox" name="vyrobce[]" value="3"> Esus
-                    </label>
-                    <label class="checkbox-inline">
-                      <input type="checkbox" name="vyrobce[]" value="4"> Lennyvo
-                    </label>
-                    <label class="checkbox-inline">
-                      <input type="checkbox" name="vyrobce[]" value="5"> Alien
-                    </label>
-                    <label class="checkbox-inline">
-                      <input type="checkbox" name="vyrobce[]" value="6"> Grenade Apple
-                    </label>
+
+                    <?php
+$_from = $_smarty_tpl->tpl_vars['vyrobce']->value;
+if (!is_array($_from) && !is_object($_from)) {
+settype($_from, 'array');
+}
+$_smarty_tpl->tpl_vars['vyrobce_row'] = new Smarty_Variable;
+$_smarty_tpl->tpl_vars['vyrobce_row']->_loop = false;
+foreach ($_from as $_smarty_tpl->tpl_vars['vyrobce_row']->value) {
+$_smarty_tpl->tpl_vars['vyrobce_row']->_loop = true;
+$foreach_vyrobce_row_Sav = $_smarty_tpl->tpl_vars['vyrobce_row'];
+?>
+                      <label class="checkbox-inline">
+                        <input type="checkbox" name="vyrobce[]" value="<?php echo $_smarty_tpl->tpl_vars['vyrobce_row']->value['id'];?>
+"> <?php echo $_smarty_tpl->tpl_vars['vyrobce_row']->value['nazev'];?>
+
+                      </label>
+                    <?php
+$_smarty_tpl->tpl_vars['vyrobce_row'] = $foreach_vyrobce_row_Sav;
+}
+?>
+
                   </div>
               </div>
             </div>
@@ -188,24 +206,29 @@ $_smarty_tpl->properties['nocache_hash'] = '1422056dad92f3212b5_25626082';
                 <div class="col-xs-12 col-md-12">
             <div class="form-group">
               <h4>Procesor</h4>
+
+            <?php
+$_from = $_smarty_tpl->tpl_vars['procesor']->value;
+if (!is_array($_from) && !is_object($_from)) {
+settype($_from, 'array');
+}
+$_smarty_tpl->tpl_vars['procesor_row'] = new Smarty_Variable;
+$_smarty_tpl->tpl_vars['procesor_row']->_loop = false;
+foreach ($_from as $_smarty_tpl->tpl_vars['procesor_row']->value) {
+$_smarty_tpl->tpl_vars['procesor_row']->_loop = true;
+$foreach_procesor_row_Sav = $_smarty_tpl->tpl_vars['procesor_row'];
+?>
             <label class="checkbox-inline">
-              <input type="checkbox" name="procesor[]" value="1"> Itel A3 (počet jader:2)
+              <input type="checkbox" name="procesor[]" value="<?php echo $_smarty_tpl->tpl_vars['procesor_row']->value['id'];?>
+"> <?php echo $_smarty_tpl->tpl_vars['procesor_row']->value['nazev'];?>
+ (počet jader: <?php echo $_smarty_tpl->tpl_vars['procesor_row']->value['pocet_jader'];?>
+)
             </label>
-            <label class="checkbox-inline">
-              <input type="checkbox" name="procesor[]" value="2"> Itel A3 (počet jader:4)
-            </label>
-            <label class="checkbox-inline">
-              <input type="checkbox" name="procesor[]" value="3"> Itel A5 (počet jader:2)
-            </label>
-            <label class="checkbox-inline">
-              <input type="checkbox" name="procesor[]" value="4"> Itel A5 (počet jader:4)
-            </label>
-            <label class="checkbox-inline">
-              <input type="checkbox" name="procesor[]" value="5"> Itel A7 (počet jader:4)
-            </label>
-            <label class="checkbox-inline">
-              <input type="checkbox" name="procesor[]" value="6"> AND E-series (počet jader:4)
-            </label>
+            <?php
+$_smarty_tpl->tpl_vars['procesor_row'] = $foreach_procesor_row_Sav;
+}
+?>
+
           </div>
         </div>
             </div>
@@ -213,18 +236,28 @@ $_smarty_tpl->properties['nocache_hash'] = '1422056dad92f3212b5_25626082';
               <div class="col-xs-12 col-md-12">
             <div class="form-group">
               <h4>Operační systém</h4>
+
+              <?php
+$_from = $_smarty_tpl->tpl_vars['os']->value;
+if (!is_array($_from) && !is_object($_from)) {
+settype($_from, 'array');
+}
+$_smarty_tpl->tpl_vars['os_row'] = new Smarty_Variable;
+$_smarty_tpl->tpl_vars['os_row']->_loop = false;
+foreach ($_from as $_smarty_tpl->tpl_vars['os_row']->value) {
+$_smarty_tpl->tpl_vars['os_row']->_loop = true;
+$foreach_os_row_Sav = $_smarty_tpl->tpl_vars['os_row'];
+?>
             <label class="checkbox-inline">
-              <input type="checkbox" name="os[]" value="1"> Windows 
+              <input type="checkbox" name="os[]" value="<?php echo $_smarty_tpl->tpl_vars['os_row']->value['id'];?>
+"> <?php echo $_smarty_tpl->tpl_vars['os_row']->value['nazev'];?>
+ 
             </label>
-            <label class="checkbox-inline">
-              <input type="checkbox" name="os[]" value="2"> Linux
-            </label>
-            <label class="checkbox-inline">
-              <input type="checkbox" name="os[]" value="4"> GEOS
-            </label>
-            <label class="checkbox-inline">
-              <input type="checkbox" name="os[]" value="3"> Bez OS
-            </label>
+            <?php
+$_smarty_tpl->tpl_vars['os_row'] = $foreach_os_row_Sav;
+}
+?>
+          
           </div>
             </div>
           </div>
@@ -232,29 +265,55 @@ $_smarty_tpl->properties['nocache_hash'] = '1422056dad92f3212b5_25626082';
             <div class="col-xs-12 col-md-6">
               <div class="form_group">
                 <h4>Stav zboží</h4>
-                <label class="checkbox-inline">
-                  <input type="checkbox" name="sz[]" value="1"> Nové zboží 
+
+                <?php
+$_from = $_smarty_tpl->tpl_vars['sz']->value;
+if (!is_array($_from) && !is_object($_from)) {
+settype($_from, 'array');
+}
+$_smarty_tpl->tpl_vars['sz_row'] = new Smarty_Variable;
+$_smarty_tpl->tpl_vars['sz_row']->_loop = false;
+foreach ($_from as $_smarty_tpl->tpl_vars['sz_row']->value) {
+$_smarty_tpl->tpl_vars['sz_row']->_loop = true;
+$foreach_sz_row_Sav = $_smarty_tpl->tpl_vars['sz_row'];
+?>
+            <label class="checkbox-inline">
+                  <input type="checkbox" name="sz[]" value="<?php echo $_smarty_tpl->tpl_vars['sz_row']->value['id'];?>
+"> <?php echo $_smarty_tpl->tpl_vars['sz_row']->value['nazev'];?>
+ 
                 </label>
-                <label class="checkbox-inline">
-                  <input type="checkbox" name="sz[]" value="2"> Použité zboží 
-                </label>
-                <label class="checkbox-inline">
-                  <input type="checkbox" name="sz[]" value="3"> Zánovní skladem 
-                </label>
+            <?php
+$_smarty_tpl->tpl_vars['sz_row'] = $foreach_sz_row_Sav;
+}
+?>
+
               </div>
             </div>
               <div class="col-xs-12 col-md-6">
               <div class="form_group">
                 <h4>Dostupnost zboží</h4>
-                <label class="checkbox-inline">
-                  <input type="checkbox" name="dostupnost[]" value="1"> Skladem na Eshopu 
+
+                <?php
+$_from = $_smarty_tpl->tpl_vars['dostupnost']->value;
+if (!is_array($_from) && !is_object($_from)) {
+settype($_from, 'array');
+}
+$_smarty_tpl->tpl_vars['dostupnost_row'] = new Smarty_Variable;
+$_smarty_tpl->tpl_vars['dostupnost_row']->_loop = false;
+foreach ($_from as $_smarty_tpl->tpl_vars['dostupnost_row']->value) {
+$_smarty_tpl->tpl_vars['dostupnost_row']->_loop = true;
+$foreach_dostupnost_row_Sav = $_smarty_tpl->tpl_vars['dostupnost_row'];
+?>
+            <label class="checkbox-inline">
+                  <input type="checkbox" name="dostupnost[]" value="<?php echo $_smarty_tpl->tpl_vars['dostupnost_row']->value['id'];?>
+"> <?php echo $_smarty_tpl->tpl_vars['dostupnost_row']->value['nazev'];?>
+
                 </label>
-                <label class="checkbox-inline">
-                  <input type="checkbox" name="dostupnost[]" value="2"> Na objednání u dodavatele
-                </label>
-                <label class="checkbox-inline">
-                  <input type="checkbox" name="dostupnost[]" value="3"> Na prodejně 
-                </label>
+            <?php
+$_smarty_tpl->tpl_vars['dostupnost_row'] = $foreach_dostupnost_row_Sav;
+}
+?>
+
               </div>
             </div>
           </div>
@@ -262,15 +321,28 @@ $_smarty_tpl->properties['nocache_hash'] = '1422056dad92f3212b5_25626082';
               <div class="col-xs-12 col-md-12">
             <div class="form-group">
               <h4>Rozlišení displeje</h4>
+
+               <?php
+$_from = $_smarty_tpl->tpl_vars['rozliseni']->value;
+if (!is_array($_from) && !is_object($_from)) {
+settype($_from, 'array');
+}
+$_smarty_tpl->tpl_vars['rozliseni_row'] = new Smarty_Variable;
+$_smarty_tpl->tpl_vars['rozliseni_row']->_loop = false;
+foreach ($_from as $_smarty_tpl->tpl_vars['rozliseni_row']->value) {
+$_smarty_tpl->tpl_vars['rozliseni_row']->_loop = true;
+$foreach_rozliseni_row_Sav = $_smarty_tpl->tpl_vars['rozliseni_row'];
+?>
             <label class="checkbox-inline">
-              <input type="checkbox" name="rozliseni[]" value="1"> Full HD
+              <input type="checkbox" name="rozliseni[]" value="<?php echo $_smarty_tpl->tpl_vars['rozliseni_row']->value['id'];?>
+"> <?php echo $_smarty_tpl->tpl_vars['rozliseni_row']->value['nazev'];?>
+
             </label>
-            <label class="checkbox-inline">
-              <input type="checkbox" name="rozliseni[]" value="2"> HD Ready
-            </label>
-            <label class="checkbox-inline">
-              <input type="checkbox" name="rozliseni[]" value="3"> 4K
-            </label>
+            <?php
+$_smarty_tpl->tpl_vars['rozliseni_row'] = $foreach_rozliseni_row_Sav;
+}
+?>
+
           </div>
             </div>
             
@@ -279,24 +351,28 @@ $_smarty_tpl->properties['nocache_hash'] = '1422056dad92f3212b5_25626082';
               <div class="col-xs-12 col-md-12">
             <div class="form-group">
               <h4>Grafika</h4>
+
+              <?php
+$_from = $_smarty_tpl->tpl_vars['gpu']->value;
+if (!is_array($_from) && !is_object($_from)) {
+settype($_from, 'array');
+}
+$_smarty_tpl->tpl_vars['gpu_row'] = new Smarty_Variable;
+$_smarty_tpl->tpl_vars['gpu_row']->_loop = false;
+foreach ($_from as $_smarty_tpl->tpl_vars['gpu_row']->value) {
+$_smarty_tpl->tpl_vars['gpu_row']->_loop = true;
+$foreach_gpu_row_Sav = $_smarty_tpl->tpl_vars['gpu_row'];
+?>
             <label class="checkbox-inline">
-              <input type="checkbox" name="gpu[]" value="1"> Mvidia FeGorce 890E
+              <input type="checkbox" name="gpu[]" value="<?php echo $_smarty_tpl->tpl_vars['gpu_row']->value['id'];?>
+"> <?php echo $_smarty_tpl->tpl_vars['gpu_row']->value['nazev'];?>
+
             </label>
-            <label class="checkbox-inline">
-              <input type="checkbox" name="gpu[]" value="2"> Mvidia FeGorce 980E
-            </label>
-            <label class="checkbox-inline">
-              <input type="checkbox" name="gpu[]" value="3"> Mvidia FeGorce TGX 9000
-            </label>
-            <label class="checkbox-inline">
-              <input type="checkbox" name="gpu[]" value="4"> AND FireFro N6000
-            </label>
-            <label class="checkbox-inline">
-              <input type="checkbox" name="gpu[]" value="5"> AND Fareon HD 5000M
-            </label>
-            <label class="checkbox-inline">
-              <input type="checkbox" name="gpu[]" value="6"> AND Fareon T3 series
-            </label>
+            <?php
+$_smarty_tpl->tpl_vars['gpu_row'] = $foreach_gpu_row_Sav;
+}
+?>
+
           </div>
             </div>
           </div> 
@@ -354,30 +430,27 @@ $_smarty_tpl->properties['nocache_hash'] = '1422056dad92f3212b5_25626082';
           <div class="col-xs-12 col-md-12">
             <div class="form-group">
               <h4>Výrobce</h4>
-            <label class="checkbox-inline">
-              <input type="checkbox" name="vyrobce[]" value="1"> Goldmex
-            </label>
-            <label class="checkbox-inline">
-              <input type="checkbox" name="vyrobce[]" value="2"> Aycer
-            </label>
-            <label class="checkbox-inline">
-              <input type="checkbox" name="vyrobce[]" value="3"> Esus
-            </label>
-            <label class="checkbox-inline">
-              <input type="checkbox" name="vyrobce[]" value="4"> Lennyvo
-            </label>
-            <label class="checkbox-inline">
-              <input type="checkbox" name="vyrobce[]" value="5"> Alien
-            </label>
-            <label class="checkbox-inline">
-              <input type="checkbox" name="vyrobce[]" value="6"> Grenade Apple
-            </label>
-            <label class="checkbox-inline">
-              <input type="checkbox" name="vyrobce[]" value="7"> HB
-            </label>
-            <label class="checkbox-inline">
-              <input type="checkbox" name="vyrobce[]" value="8"> LOL2000
-            </label>
+
+            <?php
+$_from = $_smarty_tpl->tpl_vars['vyrobce']->value;
+if (!is_array($_from) && !is_object($_from)) {
+settype($_from, 'array');
+}
+$_smarty_tpl->tpl_vars['vyrobce_row'] = new Smarty_Variable;
+$_smarty_tpl->tpl_vars['vyrobce_row']->_loop = false;
+foreach ($_from as $_smarty_tpl->tpl_vars['vyrobce_row']->value) {
+$_smarty_tpl->tpl_vars['vyrobce_row']->_loop = true;
+$foreach_vyrobce_row_Sav = $_smarty_tpl->tpl_vars['vyrobce_row'];
+?>
+                      <label class="checkbox-inline">
+                        <input type="checkbox" name="vyrobce[]" value="<?php echo $_smarty_tpl->tpl_vars['vyrobce_row']->value['id'];?>
+"> <?php echo $_smarty_tpl->tpl_vars['vyrobce_row']->value['nazev'];?>
+
+                      </label>
+                    <?php
+$_smarty_tpl->tpl_vars['vyrobce_row'] = $foreach_vyrobce_row_Sav;
+}
+?>
           </div>
         </div>
       </div>
@@ -385,24 +458,7 @@ $_smarty_tpl->properties['nocache_hash'] = '1422056dad92f3212b5_25626082';
         <div class="col-xs-12 col-md-12">
             <div class="form-group">
               <h4>Procesor</h4>
-            <label class="checkbox-inline">
-              <input type="checkbox" name="procesor[]" value="1"> Itel A3 (počet jader:2)
-            </label>
-            <label class="checkbox-inline">
-              <input type="checkbox" name="procesor[]" value="2"> Itel A3 (počet jader:4)
-            </label>
-            <label class="checkbox-inline">
-              <input type="checkbox" name="procesor[]" value="3"> Itel A5 (počet jader:2)
-            </label>
-            <label class="checkbox-inline">
-              <input type="checkbox" name="procesor[]" value="4"> Itel A5 (počet jader:4)
-            </label>
-            <label class="checkbox-inline">
-              <input type="checkbox" name="procesor[]" value="5"> Itel A7 (počet jader:4)
-            </label>
-            <label class="checkbox-inline">
-              <input type="checkbox" name="procesor[]" value="6"> AND E-series (počet jader:4)
-            </label>
+            
           </div>
         </div>
       </div>
@@ -410,18 +466,7 @@ $_smarty_tpl->properties['nocache_hash'] = '1422056dad92f3212b5_25626082';
         <div class="col-xs-12 col-md-12">
             <div class="form-group">
               <h4>Operační systém</h4>
-            <label class="checkbox-inline">
-              <input type="checkbox" name="os[]" value="1"> Windows 
-            </label>
-            <label class="checkbox-inline">
-              <input type="checkbox" name="os[]" value="2"> Linux
-            </label>
-            <label class="checkbox-inline">
-              <input type="checkbox" name="os[]" value="4"> GEOS
-            </label>
-            <label class="checkbox-inline">
-              <input type="checkbox" name="os[]" value="3"> Bez OS
-            </label>
+            
           </div>
         </div>
       </div>
@@ -429,29 +474,13 @@ $_smarty_tpl->properties['nocache_hash'] = '1422056dad92f3212b5_25626082';
           <div class="col-xs-12 col-md-6">
               <div class="form_group">
                 <h4>Stav zboží</h4>
-                <label class="checkbox-inline">
-                  <input type="checkbox" name="sz[]" value="1"> Nové zboží 
-                </label>
-                <label class="checkbox-inline">
-                  <input type="checkbox" name="sz[]" value="2"> Použité zboží 
-                </label>
-                <label class="checkbox-inline">
-                  <input type="checkbox" name="sz[]" value="3"> Zánovní skladem 
-                </label>
+                
               </div>
             </div>
               <div class="col-xs-12 col-md-6">
               <div class="form_group">
                 <h4>Dostupnost zboží</h4>
-                <label class="checkbox-inline">
-                  <input type="checkbox" name="dostupnost[]" value="1"> Skladem na Eshopu 
-                </label>
-                <label class="checkbox-inline">
-                  <input type="checkbox" name="dostupnost[]" value="2"> Na objednání u dodavatele
-                </label>
-                <label class="checkbox-inline">
-                  <input type="checkbox" name="dostupnost[]" value="3"> Na prodejně 
-                </label>
+                
               </div>
             </div>
           </div>
@@ -459,15 +488,7 @@ $_smarty_tpl->properties['nocache_hash'] = '1422056dad92f3212b5_25626082';
               <div class="col-xs-12 col-md-12">
             <div class="form-group">
               <h4>Rozlišení displeje</h4>
-            <label class="checkbox-inline">
-              <input type="checkbox" name="rozliseni[]" value="1"> Full HD
-            </label>
-            <label class="checkbox-inline">
-              <input type="checkbox" name="rozliseni[]" value="2"> HD Ready
-            </label>
-            <label class="checkbox-inline">
-              <input type="checkbox" name="rozliseni[]" value="3"> 4K
-            </label>
+            
           </div>
             </div>
             
@@ -476,21 +497,7 @@ $_smarty_tpl->properties['nocache_hash'] = '1422056dad92f3212b5_25626082';
               <div class="col-xs-12 col-md-12">
             <div class="form-group">
               <h4>Grafika</h4>
-            <label class="checkbox-inline">
-              <input type="checkbox" name="gpu[]" value="2"> Mvidia FeGorce 980E
-            </label>
-            <label class="checkbox-inline">
-              <input type="checkbox" name="gpu[]" value="3"> Mvidia FeGorce TGX 9000
-            </label>
-            <label class="checkbox-inline">
-              <input type="checkbox" name="gpu[]" value="4"> AND FireFro N6000
-            </label>
-            <label class="checkbox-inline">
-              <input type="checkbox" name="gpu[]" value="5"> AND Fareon HD 5000M
-            </label>
-            <label class="checkbox-inline">
-              <input type="checkbox" name="gpu[]" value="6"> AND Fareon T3 series
-            </label>
+            
           </div>
             </div>
           </div>
@@ -548,27 +555,7 @@ $_smarty_tpl->properties['nocache_hash'] = '1422056dad92f3212b5_25626082';
           <div class="col-xs-12 col-md-12">
             <div class="form-group">
               <h4>Výrobce</h4>
-            <label class="checkbox-inline">
-              <input type="checkbox" name="vyrobce[]" value="3"> Esus
-            </label>
-            <label class="checkbox-inline">
-              <input type="checkbox" name="vyrobce[]" value="4"> Lennyvo
-            </label>
-            <label class="checkbox-inline">
-              <input type="checkbox" name="vyrobce[]" value="6"> Grenade Apple
-            </label>
-            <label class="checkbox-inline">
-              <input type="checkbox" name="vyrobce[]" value="7"> HB
-            </label>
-            <label class="checkbox-inline">
-              <input type="checkbox" name="vyrobce[]" value="8"> LOL2000
-            </label>
-            <label class="checkbox-inline">
-              <input type="checkbox" name="vyrobce[]" value="9"> Sunsang
-            </label>
-            <label class="checkbox-inline">
-              <input type="checkbox" name="vyrobce[]" value="10"> Nosy
-            </label>
+            
           </div>
         </div>
       </div>
@@ -576,12 +563,7 @@ $_smarty_tpl->properties['nocache_hash'] = '1422056dad92f3212b5_25626082';
         <div class="col-xs-12 col-md-12">
             <div class="form-group">
               <h4>Operační systém</h4>
-            <label class="checkbox-inline">
-              <input type="checkbox" name="os[]" value="5"> Aproid 
-            </label>
-            <label class="checkbox-inline">
-              <input type="checkbox" name="os[]" value="4"> GEOS
-            </label>
+            
           </div>
         </div>
       </div>
@@ -589,15 +571,7 @@ $_smarty_tpl->properties['nocache_hash'] = '1422056dad92f3212b5_25626082';
           <div class="col-xs-12 col-md-12">
               <div class="form-group">
                   <h4>Procesor</h4>
-                  <label class="checkbox-inline">
-              <input type="checkbox" name="procesor[]" value="10"> Exynos (počet jader:1)
-            </label>
-            <label class="checkbox-inline">
-              <input type="checkbox" name="procesor[]" value="11"> DragonSnap S4 (počet jader:2)
-            </label>
-            <label class="checkbox-inline">
-              <input type="checkbox" name="procesor[]" value="12"> Cortex I5 (počet jader:2)
-            </label>
+                  
               </div>
           </div>
       </div>
@@ -605,29 +579,13 @@ $_smarty_tpl->properties['nocache_hash'] = '1422056dad92f3212b5_25626082';
           <div class="col-xs-12 col-md-6">
               <div class="form_group">
                 <h4>Stav zboží</h4>
-                <label class="checkbox-inline">
-                  <input type="checkbox" name="sz[]" value="1"> Nové zboží 
-                </label>
-                <label class="checkbox-inline">
-                  <input type="checkbox" name="sz[]" value="2"> Použité zboží 
-                </label>
-                <label class="checkbox-inline">
-                  <input type="checkbox" name="sz[]" value="3"> Zánovní skladem 
-                </label>
+                
               </div>
             </div>
               <div class="col-xs-12 col-md-6">
               <div class="form_group">
                 <h4>Dostupnost zboží</h4>
-                <label class="checkbox-inline">
-                  <input type="checkbox" name="dostupnost[]" value="1"> Skladem na Eshopu 
-                </label>
-                <label class="checkbox-inline">
-                  <input type="checkbox" name="dostupnost[]" value="2"> Na objednání u dodavatele
-                </label>
-                <label class="checkbox-inline">
-                  <input type="checkbox" name="dostupnost[]" value="3"> Na prodejně 
-                </label>
+               
               </div>
             </div>
           </div>
@@ -635,18 +593,7 @@ $_smarty_tpl->properties['nocache_hash'] = '1422056dad92f3212b5_25626082';
               <div class="col-xs-12 col-md-12">
             <div class="form-group">
               <h4>Rozlišení displeje</h4>
-            <label class="checkbox-inline">
-              <input type="checkbox" name="rozliseni[]" value="1"> Full HD
-            </label>
-            <label class="checkbox-inline">
-              <input type="checkbox" name="rozliseni[]" value="2"> HD Ready
-            </label>
-            <label class="checkbox-inline">
-              <input type="checkbox" name="rozliseni[]" value="3"> 4K
-            </label>
-            <label class="checkbox-inline">
-              <input type="checkbox" name="rozliseni[]" value="4"> FWVVGA
-            </label>
+            
           </div>
             </div>
             
@@ -655,12 +602,7 @@ $_smarty_tpl->properties['nocache_hash'] = '1422056dad92f3212b5_25626082';
               <div class="col-xs-12 col-md-12">
             <div class="form-group">
               <h4>Grafika</h4>
-            <label class="checkbox-inline">
-              <input type="checkbox" name="gpu[]" value="7"> Mvidia Quatro E2000A
-            </label>
-            <label class="checkbox-inline">
-              <input type="checkbox" name="gpu[]" value="8"> Mvidia Tekra 2k
-            </label>
+           
           </div>
             </div>
           </div>
@@ -720,24 +662,7 @@ $_smarty_tpl->properties['nocache_hash'] = '1422056dad92f3212b5_25626082';
           <div class="col-xs-12 col-md-12">
             <div class="form-group">
               <h4>Výrobce</h4>
-            <label class="checkbox-inline">
-              <input type="checkbox" name="vyrobce[]" value="3"> Esus
-            </label>
-            <label class="checkbox-inline">
-              <input type="checkbox" name="vyrobce[]" value="4"> Lennyvo
-            </label>
-            <label class="checkbox-inline">
-              <input type="checkbox" name="vyrobce[]" value="6"> Grenade Apple
-            </label>
-            <label class="checkbox-inline">
-              <input type="checkbox" name="vyrobce[]" value="7"> HB
-            </label>
-            <label class="checkbox-inline">
-              <input type="checkbox" name="vyrobce[]" value="9"> Sunsang
-            </label>
-            <label class="checkbox-inline">
-              <input type="checkbox" name="vyrobce[]" value="10"> Nosy
-            </label>
+            
           </div>
         </div>
       </div>
@@ -746,18 +671,7 @@ $_smarty_tpl->properties['nocache_hash'] = '1422056dad92f3212b5_25626082';
         <div class="col-xs-12 col-md-12">
             <div class="form-group">
               <h4>Procesor</h4>
-            <label class="checkbox-inline">
-              <input type="checkbox" name="procesor[]" value="1"> Itel A3 (počet jader:2)
-            </label>
-            <label class="checkbox-inline">
-              <input type="checkbox" name="procesor[]" value="2"> Itel A3 (počet jader:4)
-            </label>
-            <label class="checkbox-inline">
-              <input type="checkbox" name="procesor[]" value="8"> Itel Keleron (počet jader:2)
-            </label>
-            <label class="checkbox-inline">
-              <input type="checkbox" name="procesor[]" value="9"> Itel Aton (počet jader:4)
-            </label>
+            
           </div>
         </div>
       </div>
@@ -766,15 +680,7 @@ $_smarty_tpl->properties['nocache_hash'] = '1422056dad92f3212b5_25626082';
         <div class="col-xs-12 col-md-12">
             <div class="form-group">
               <h4>Operační systém</h4>
-              <label class="checkbox-inline">
-              <input type="checkbox" name="os[]" value="1"> Windows 
-            </label>
-            <label class="checkbox-inline">
-              <input type="checkbox" name="os[]" value="5"> Aproid 
-            </label>
-            <label class="checkbox-inline">
-              <input type="checkbox" name="os[]" value="4"> GEOS
-            </label>
+              
           </div>
         </div>
       </div>
@@ -782,29 +688,13 @@ $_smarty_tpl->properties['nocache_hash'] = '1422056dad92f3212b5_25626082';
           <div class="col-xs-12 col-md-6">
               <div class="form_group">
                 <h4>Stav zboží</h4>
-                <label class="checkbox-inline">
-                  <input type="checkbox" name="sz[]" value="1"> Nové zboží 
-                </label>
-                <label class="checkbox-inline">
-                  <input type="checkbox" name="sz[]" value="2"> Použité zboží 
-                </label>
-                <label class="checkbox-inline">
-                  <input type="checkbox" name="sz[]" value="3"> Zánovní skladem 
-                </label>
+                
               </div>
             </div>
               <div class="col-xs-12 col-md-6">
               <div class="form_group">
                 <h4>Dostupnost zboží</h4>
-                <label class="checkbox-inline">
-                  <input type="checkbox" name="dostupnost[]" value="1"> Skladem na Eshopu 
-                </label>
-                <label class="checkbox-inline">
-                  <input type="checkbox" name="dostupnost[]" value="2"> Na objednání u dodavatele
-                </label>
-                <label class="checkbox-inline">
-                  <input type="checkbox" name="dostupnost[]" value="3"> Na prodejně 
-                </label>
+                
               </div>
             </div>
           </div>
@@ -812,18 +702,7 @@ $_smarty_tpl->properties['nocache_hash'] = '1422056dad92f3212b5_25626082';
               <div class="col-xs-12 col-md-12">
             <div class="form-group">
               <h4>Rozlišení displeje</h4>
-            <label class="checkbox-inline">
-              <input type="checkbox" name="rozliseni[]" value="1"> Full HD
-            </label>
-            <label class="checkbox-inline">
-              <input type="checkbox" name="rozliseni[]" value="2"> HD Ready
-            </label>
-            <label class="checkbox-inline">
-              <input type="checkbox" name="rozliseni[]" value="3"> 4K
-            </label>
-            <label class="checkbox-inline">
-              <input type="checkbox" name="rozliseni[]" value="5"> WUXGA
-            </label>
+            
           </div>
             </div>
             
@@ -832,12 +711,7 @@ $_smarty_tpl->properties['nocache_hash'] = '1422056dad92f3212b5_25626082';
               <div class="col-xs-12 col-md-12">
             <div class="form-group">
               <h4>Grafika</h4>
-            <label class="checkbox-inline">
-              <input type="checkbox" name="gpu[]" value="7"> Mvidia Quatro E2000A
-            </label>
-            <label class="checkbox-inline">
-              <input type="checkbox" name="gpu[]" value="8"> Mvidia Tekra 2K
-            </label>
+            
           </div>
             </div>
           </div>
@@ -876,9 +750,9 @@ $foreach_radek_Sav = $_smarty_tpl->tpl_vars['radek'];
                 Cena: <?php echo $_smarty_tpl->tpl_vars['radek']->value['cena'];?>
  Kč
                 <form class="form-inline">
-            <input type="hidden" name="id" value="<?php echo $_smarty_tpl->tpl_vars['zbozi']->value['id'];?>
+            <input type="hidden" name="id" value="<?php echo $_smarty_tpl->tpl_vars['radek']->value['id'];?>
 " >
-            <input type="hidden" name="id_kosik" value="<?php echo $_smarty_tpl->tpl_vars['zbozi']->value['id'];?>
+            <input type="hidden" name="id_kosik" value="<?php echo $_smarty_tpl->tpl_vars['radek']->value['id'];?>
 " >
             Počet kusů: <input type="number" class="form-control" name="pocet_kusu" value="1" max="5" min="1" />
             <button type='submit' name='pridat_zbozi' class="btn btn-primary"><span class="glyphicon glyphicon-shopping-cart" aria-hidden="true"></span> Vložit do košíku </button>
@@ -892,14 +766,12 @@ $_smarty_tpl->tpl_vars['radek'] = $foreach_radek_Sav;
 }
 ?>          
       </div>
-      <div class="btn-group" role="group">
-        <button type="button" class="btn btn-info"><?php echo smarty_function_paginate_prev(array(),$_smarty_tpl);?>
-</button>
-       <button type="button" class="btn btn-info"><?php echo smarty_function_paginate_middle(array(),$_smarty_tpl);?>
-</button>
-      <button type="button" class="btn btn-info"><?php echo smarty_function_paginate_next(array(),$_smarty_tpl);?>
-</button>
-      </div> 
+      <div class="col-md-12">
+        <?php echo smarty_function_paginate_prev(array(),$_smarty_tpl);
+echo smarty_function_paginate_middle(array(),$_smarty_tpl);
+echo smarty_function_paginate_next(array(),$_smarty_tpl);?>
+
+      </div>
   </body>
 </html>
 <?php }

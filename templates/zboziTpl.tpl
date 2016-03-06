@@ -69,7 +69,10 @@
 </nav>
 
   {if isset($prazdny_kosik)}
-  <div class="alert alert-danger" role="alert"><span class="glyphicon glyphicon-shopping-cart"></span> Váš košík je prázdný.</div>
+  <div class="alert alert-danger text-center" role="alert"><span class="glyphicon glyphicon-shopping-cart"></span> Váš košík je prázdný.</div>
+  {/if}
+  {if isset($fail_kategorie)}
+  <div class="alert alert-danger text-center" role="alert"></span> Nebyla vybrána kategorie produktů</div>
   {/if}
           {*<div>
             Zobrazení výpisu <a href="vypis_zbozi.php?vypis=table"/><button type="button" class="btn btn-info">
