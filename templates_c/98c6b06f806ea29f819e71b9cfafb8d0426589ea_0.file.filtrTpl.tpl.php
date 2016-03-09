@@ -1,7 +1,7 @@
-<?php /* Smarty version 3.1.27, created on 2016-03-06 15:29:33
+<?php /* Smarty version 3.1.27, created on 2016-03-06 19:54:02
          compiled from "C:\Program Files (x86)\EasyPHP-DevServer-14.1VC11\data\localweb\my portable files\e-shop\templates\filtrTpl.tpl" */ ?>
 <?php
-/*%%SmartyHeaderCode:970356dc3ecd189a79_75912680%%*/
+/*%%SmartyHeaderCode:1344456dc7cca25acc7_15544322%%*/
 if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
   'file_dependency' => 
@@ -9,16 +9,17 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     '98c6b06f806ea29f819e71b9cfafb8d0426589ea' => 
     array (
       0 => 'C:\\Program Files (x86)\\EasyPHP-DevServer-14.1VC11\\data\\localweb\\my portable files\\e-shop\\templates\\filtrTpl.tpl',
-      1 => 1457274570,
+      1 => 1457290262,
       2 => 'file',
     ),
   ),
-  'nocache_hash' => '970356dc3ecd189a79_75912680',
+  'nocache_hash' => '1344456dc7cca25acc7_15544322',
   'variables' => 
   array (
     'kosik' => 0,
     'session_user' => 0,
     'search' => 0,
+    'fail_database' => 0,
     'notebook' => 0,
     'vyrobce' => 0,
     'vyrobce_row' => 0,
@@ -36,23 +37,24 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     'gpu_row' => 0,
     'pc' => 0,
     'mobil' => 0,
+    'sozliseni_row' => 0,
     'tablet' => 0,
     'zbozi' => 0,
     'radek' => 0,
   ),
   'has_nocache_code' => false,
   'version' => '3.1.27',
-  'unifunc' => 'content_56dc3ecd49c784_44356841',
+  'unifunc' => 'content_56dc7cca851300_86487662',
 ),false);
 /*/%%SmartyHeaderCode%%*/
-if ($_valid && !is_callable('content_56dc3ecd49c784_44356841')) {
-function content_56dc3ecd49c784_44356841 ($_smarty_tpl) {
+if ($_valid && !is_callable('content_56dc7cca851300_86487662')) {
+function content_56dc7cca851300_86487662 ($_smarty_tpl) {
 if (!is_callable('smarty_modifier_truncate')) require_once 'C:\\Program Files (x86)\\EasyPHP-DevServer-14.1VC11\\data\\localweb\\my portable files\\e-shop\\libs\\plugins\\modifier.truncate.php';
 if (!is_callable('smarty_function_paginate_prev')) require_once 'C:\\Program Files (x86)\\EasyPHP-DevServer-14.1VC11\\data\\localweb\\my portable files\\e-shop\\libs\\plugins\\function.paginate_prev.php';
 if (!is_callable('smarty_function_paginate_middle')) require_once 'C:\\Program Files (x86)\\EasyPHP-DevServer-14.1VC11\\data\\localweb\\my portable files\\e-shop\\libs\\plugins\\function.paginate_middle.php';
 if (!is_callable('smarty_function_paginate_next')) require_once 'C:\\Program Files (x86)\\EasyPHP-DevServer-14.1VC11\\data\\localweb\\my portable files\\e-shop\\libs\\plugins\\function.paginate_next.php';
 
-$_smarty_tpl->properties['nocache_hash'] = '970356dc3ecd189a79_75912680';
+$_smarty_tpl->properties['nocache_hash'] = '1344456dc7cca25acc7_15544322';
 ?>
 <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
 <html>
@@ -127,6 +129,9 @@ $_smarty_tpl->properties['nocache_hash'] = '970356dc3ecd189a79_75912680';
   </form>
   </div>
 </nav>
+  <?php }?>
+  <?php if (isset($_smarty_tpl->tpl_vars['fail_database']->value)) {?>
+  <div class="alert alert-danger" role="alert">Pro zadané parametry neexistují žádné výrobky</div>
   <?php }?>
   <?php if (isset($_smarty_tpl->tpl_vars['notebook']->value)) {?>
     <nav class="navbar navbar-light bg-faded">
@@ -458,7 +463,27 @@ $_smarty_tpl->tpl_vars['vyrobce_row'] = $foreach_vyrobce_row_Sav;
         <div class="col-xs-12 col-md-12">
             <div class="form-group">
               <h4>Procesor</h4>
-            
+              <?php
+$_from = $_smarty_tpl->tpl_vars['procesor']->value;
+if (!is_array($_from) && !is_object($_from)) {
+settype($_from, 'array');
+}
+$_smarty_tpl->tpl_vars['procesor_row'] = new Smarty_Variable;
+$_smarty_tpl->tpl_vars['procesor_row']->_loop = false;
+foreach ($_from as $_smarty_tpl->tpl_vars['procesor_row']->value) {
+$_smarty_tpl->tpl_vars['procesor_row']->_loop = true;
+$foreach_procesor_row_Sav = $_smarty_tpl->tpl_vars['procesor_row'];
+?>
+                      <label class="checkbox-inline">
+                        <input type="checkbox" name="procesor[]" value="<?php echo $_smarty_tpl->tpl_vars['procesor_row']->value['id'];?>
+"> <?php echo $_smarty_tpl->tpl_vars['procesor_row']->value['nazev'];?>
+ (počet jader: <?php echo $_smarty_tpl->tpl_vars['procesor_row']->value['pocet_jader'];?>
+)
+                      </label>
+                    <?php
+$_smarty_tpl->tpl_vars['procesor_row'] = $foreach_procesor_row_Sav;
+}
+?>
           </div>
         </div>
       </div>
@@ -466,7 +491,26 @@ $_smarty_tpl->tpl_vars['vyrobce_row'] = $foreach_vyrobce_row_Sav;
         <div class="col-xs-12 col-md-12">
             <div class="form-group">
               <h4>Operační systém</h4>
-            
+              <?php
+$_from = $_smarty_tpl->tpl_vars['os']->value;
+if (!is_array($_from) && !is_object($_from)) {
+settype($_from, 'array');
+}
+$_smarty_tpl->tpl_vars['os_row'] = new Smarty_Variable;
+$_smarty_tpl->tpl_vars['os_row']->_loop = false;
+foreach ($_from as $_smarty_tpl->tpl_vars['os_row']->value) {
+$_smarty_tpl->tpl_vars['os_row']->_loop = true;
+$foreach_os_row_Sav = $_smarty_tpl->tpl_vars['os_row'];
+?>
+                      <label class="checkbox-inline">
+                        <input type="checkbox" name="os[]" value="<?php echo $_smarty_tpl->tpl_vars['os_row']->value['id'];?>
+"> <?php echo $_smarty_tpl->tpl_vars['os_row']->value['nazev'];?>
+
+                      </label>
+                    <?php
+$_smarty_tpl->tpl_vars['os_row'] = $foreach_os_row_Sav;
+}
+?>
           </div>
         </div>
       </div>
@@ -474,13 +518,51 @@ $_smarty_tpl->tpl_vars['vyrobce_row'] = $foreach_vyrobce_row_Sav;
           <div class="col-xs-12 col-md-6">
               <div class="form_group">
                 <h4>Stav zboží</h4>
-                
+                <?php
+$_from = $_smarty_tpl->tpl_vars['sz']->value;
+if (!is_array($_from) && !is_object($_from)) {
+settype($_from, 'array');
+}
+$_smarty_tpl->tpl_vars['sz_row'] = new Smarty_Variable;
+$_smarty_tpl->tpl_vars['sz_row']->_loop = false;
+foreach ($_from as $_smarty_tpl->tpl_vars['sz_row']->value) {
+$_smarty_tpl->tpl_vars['sz_row']->_loop = true;
+$foreach_sz_row_Sav = $_smarty_tpl->tpl_vars['sz_row'];
+?>
+                      <label class="checkbox-inline">
+                        <input type="checkbox" name="sz[]" value="<?php echo $_smarty_tpl->tpl_vars['sz_row']->value['id'];?>
+"> <?php echo $_smarty_tpl->tpl_vars['sz_row']->value['nazev'];?>
+
+                      </label>
+                    <?php
+$_smarty_tpl->tpl_vars['sz_row'] = $foreach_sz_row_Sav;
+}
+?>
               </div>
             </div>
               <div class="col-xs-12 col-md-6">
               <div class="form_group">
                 <h4>Dostupnost zboží</h4>
-                
+                <?php
+$_from = $_smarty_tpl->tpl_vars['dostupnost']->value;
+if (!is_array($_from) && !is_object($_from)) {
+settype($_from, 'array');
+}
+$_smarty_tpl->tpl_vars['dostupnost_row'] = new Smarty_Variable;
+$_smarty_tpl->tpl_vars['dostupnost_row']->_loop = false;
+foreach ($_from as $_smarty_tpl->tpl_vars['dostupnost_row']->value) {
+$_smarty_tpl->tpl_vars['dostupnost_row']->_loop = true;
+$foreach_dostupnost_row_Sav = $_smarty_tpl->tpl_vars['dostupnost_row'];
+?>
+                      <label class="checkbox-inline">
+                        <input type="checkbox" name="dostupnost[]" value="<?php echo $_smarty_tpl->tpl_vars['dostupnost_row']->value['id'];?>
+"> <?php echo $_smarty_tpl->tpl_vars['dostupnost_row']->value['nazev'];?>
+
+                      </label>
+                    <?php
+$_smarty_tpl->tpl_vars['dostupnost_row'] = $foreach_dostupnost_row_Sav;
+}
+?>
               </div>
             </div>
           </div>
@@ -488,7 +570,26 @@ $_smarty_tpl->tpl_vars['vyrobce_row'] = $foreach_vyrobce_row_Sav;
               <div class="col-xs-12 col-md-12">
             <div class="form-group">
               <h4>Rozlišení displeje</h4>
-            
+              <?php
+$_from = $_smarty_tpl->tpl_vars['rozliseni']->value;
+if (!is_array($_from) && !is_object($_from)) {
+settype($_from, 'array');
+}
+$_smarty_tpl->tpl_vars['rozliseni_row'] = new Smarty_Variable;
+$_smarty_tpl->tpl_vars['rozliseni_row']->_loop = false;
+foreach ($_from as $_smarty_tpl->tpl_vars['rozliseni_row']->value) {
+$_smarty_tpl->tpl_vars['rozliseni_row']->_loop = true;
+$foreach_rozliseni_row_Sav = $_smarty_tpl->tpl_vars['rozliseni_row'];
+?>
+                      <label class="checkbox-inline">
+                        <input type="checkbox" name="rozliseni[]" value="<?php echo $_smarty_tpl->tpl_vars['rozliseni_row']->value['id'];?>
+"> <?php echo $_smarty_tpl->tpl_vars['rozliseni_row']->value['nazev'];?>
+
+                      </label>
+                    <?php
+$_smarty_tpl->tpl_vars['rozliseni_row'] = $foreach_rozliseni_row_Sav;
+}
+?>
           </div>
             </div>
             
@@ -497,7 +598,26 @@ $_smarty_tpl->tpl_vars['vyrobce_row'] = $foreach_vyrobce_row_Sav;
               <div class="col-xs-12 col-md-12">
             <div class="form-group">
               <h4>Grafika</h4>
-            
+              <?php
+$_from = $_smarty_tpl->tpl_vars['gpu']->value;
+if (!is_array($_from) && !is_object($_from)) {
+settype($_from, 'array');
+}
+$_smarty_tpl->tpl_vars['gpu_row'] = new Smarty_Variable;
+$_smarty_tpl->tpl_vars['gpu_row']->_loop = false;
+foreach ($_from as $_smarty_tpl->tpl_vars['gpu_row']->value) {
+$_smarty_tpl->tpl_vars['gpu_row']->_loop = true;
+$foreach_gpu_row_Sav = $_smarty_tpl->tpl_vars['gpu_row'];
+?>
+                      <label class="checkbox-inline">
+                        <input type="checkbox" name="gpu[]" value="<?php echo $_smarty_tpl->tpl_vars['gpu_row']->value['id'];?>
+"> <?php echo $_smarty_tpl->tpl_vars['gpu_row']->value['nazev'];?>
+
+                      </label>
+                    <?php
+$_smarty_tpl->tpl_vars['gpu_row'] = $foreach_gpu_row_Sav;
+}
+?>
           </div>
             </div>
           </div>
@@ -555,7 +675,26 @@ $_smarty_tpl->tpl_vars['vyrobce_row'] = $foreach_vyrobce_row_Sav;
           <div class="col-xs-12 col-md-12">
             <div class="form-group">
               <h4>Výrobce</h4>
-            
+               <?php
+$_from = $_smarty_tpl->tpl_vars['vyrobce']->value;
+if (!is_array($_from) && !is_object($_from)) {
+settype($_from, 'array');
+}
+$_smarty_tpl->tpl_vars['vyrobce_row'] = new Smarty_Variable;
+$_smarty_tpl->tpl_vars['vyrobce_row']->_loop = false;
+foreach ($_from as $_smarty_tpl->tpl_vars['vyrobce_row']->value) {
+$_smarty_tpl->tpl_vars['vyrobce_row']->_loop = true;
+$foreach_vyrobce_row_Sav = $_smarty_tpl->tpl_vars['vyrobce_row'];
+?>
+                      <label class="checkbox-inline">
+                        <input type="checkbox" name="vyrobce[]" value="<?php echo $_smarty_tpl->tpl_vars['vyrobce_row']->value['id'];?>
+"> <?php echo $_smarty_tpl->tpl_vars['vyrobce_row']->value['nazev'];?>
+
+                      </label>
+                    <?php
+$_smarty_tpl->tpl_vars['vyrobce_row'] = $foreach_vyrobce_row_Sav;
+}
+?>
           </div>
         </div>
       </div>
@@ -563,7 +702,26 @@ $_smarty_tpl->tpl_vars['vyrobce_row'] = $foreach_vyrobce_row_Sav;
         <div class="col-xs-12 col-md-12">
             <div class="form-group">
               <h4>Operační systém</h4>
-            
+             <?php
+$_from = $_smarty_tpl->tpl_vars['os']->value;
+if (!is_array($_from) && !is_object($_from)) {
+settype($_from, 'array');
+}
+$_smarty_tpl->tpl_vars['os_row'] = new Smarty_Variable;
+$_smarty_tpl->tpl_vars['os_row']->_loop = false;
+foreach ($_from as $_smarty_tpl->tpl_vars['os_row']->value) {
+$_smarty_tpl->tpl_vars['os_row']->_loop = true;
+$foreach_os_row_Sav = $_smarty_tpl->tpl_vars['os_row'];
+?>
+                      <label class="checkbox-inline">
+                        <input type="checkbox" name="os[]" value="<?php echo $_smarty_tpl->tpl_vars['os_row']->value['id'];?>
+"> <?php echo $_smarty_tpl->tpl_vars['os_row']->value['nazev'];?>
+
+                      </label>
+                    <?php
+$_smarty_tpl->tpl_vars['os_row'] = $foreach_os_row_Sav;
+}
+?>
           </div>
         </div>
       </div>
@@ -571,6 +729,27 @@ $_smarty_tpl->tpl_vars['vyrobce_row'] = $foreach_vyrobce_row_Sav;
           <div class="col-xs-12 col-md-12">
               <div class="form-group">
                   <h4>Procesor</h4>
+                   <?php
+$_from = $_smarty_tpl->tpl_vars['procesor']->value;
+if (!is_array($_from) && !is_object($_from)) {
+settype($_from, 'array');
+}
+$_smarty_tpl->tpl_vars['procesor_row'] = new Smarty_Variable;
+$_smarty_tpl->tpl_vars['procesor_row']->_loop = false;
+foreach ($_from as $_smarty_tpl->tpl_vars['procesor_row']->value) {
+$_smarty_tpl->tpl_vars['procesor_row']->_loop = true;
+$foreach_procesor_row_Sav = $_smarty_tpl->tpl_vars['procesor_row'];
+?>
+                      <label class="checkbox-inline">
+                        <input type="checkbox" name="procesor[]" value="<?php echo $_smarty_tpl->tpl_vars['procesor_row']->value['id'];?>
+"> <?php echo $_smarty_tpl->tpl_vars['procesor_row']->value['nazev'];?>
+ (počet jader: <?php echo $_smarty_tpl->tpl_vars['procesor_row']->value['pocet_jader'];?>
+)
+                      </label>
+                    <?php
+$_smarty_tpl->tpl_vars['procesor_row'] = $foreach_procesor_row_Sav;
+}
+?>
                   
               </div>
           </div>
@@ -579,13 +758,51 @@ $_smarty_tpl->tpl_vars['vyrobce_row'] = $foreach_vyrobce_row_Sav;
           <div class="col-xs-12 col-md-6">
               <div class="form_group">
                 <h4>Stav zboží</h4>
-                
+                <?php
+$_from = $_smarty_tpl->tpl_vars['sz']->value;
+if (!is_array($_from) && !is_object($_from)) {
+settype($_from, 'array');
+}
+$_smarty_tpl->tpl_vars['sz_row'] = new Smarty_Variable;
+$_smarty_tpl->tpl_vars['sz_row']->_loop = false;
+foreach ($_from as $_smarty_tpl->tpl_vars['sz_row']->value) {
+$_smarty_tpl->tpl_vars['sz_row']->_loop = true;
+$foreach_sz_row_Sav = $_smarty_tpl->tpl_vars['sz_row'];
+?>
+                      <label class="checkbox-inline">
+                        <input type="checkbox" name="sz[]" value="<?php echo $_smarty_tpl->tpl_vars['sz_row']->value['id'];?>
+"> <?php echo $_smarty_tpl->tpl_vars['sz_row']->value['nazev'];?>
+
+                      </label>
+                    <?php
+$_smarty_tpl->tpl_vars['sz_row'] = $foreach_sz_row_Sav;
+}
+?>
               </div>
             </div>
               <div class="col-xs-12 col-md-6">
               <div class="form_group">
                 <h4>Dostupnost zboží</h4>
-               
+                <?php
+$_from = $_smarty_tpl->tpl_vars['dostupnost']->value;
+if (!is_array($_from) && !is_object($_from)) {
+settype($_from, 'array');
+}
+$_smarty_tpl->tpl_vars['dostupnost_row'] = new Smarty_Variable;
+$_smarty_tpl->tpl_vars['dostupnost_row']->_loop = false;
+foreach ($_from as $_smarty_tpl->tpl_vars['dostupnost_row']->value) {
+$_smarty_tpl->tpl_vars['dostupnost_row']->_loop = true;
+$foreach_dostupnost_row_Sav = $_smarty_tpl->tpl_vars['dostupnost_row'];
+?>
+                      <label class="checkbox-inline">
+                        <input type="checkbox" name="dostupnost[]" value="<?php echo $_smarty_tpl->tpl_vars['dostupnost_row']->value['id'];?>
+"> <?php echo $_smarty_tpl->tpl_vars['dostupnost_row']->value['nazev'];?>
+
+                      </label>
+                    <?php
+$_smarty_tpl->tpl_vars['dostupnost_row'] = $foreach_dostupnost_row_Sav;
+}
+?>
               </div>
             </div>
           </div>
@@ -593,7 +810,26 @@ $_smarty_tpl->tpl_vars['vyrobce_row'] = $foreach_vyrobce_row_Sav;
               <div class="col-xs-12 col-md-12">
             <div class="form-group">
               <h4>Rozlišení displeje</h4>
-            
+            <?php
+$_from = $_smarty_tpl->tpl_vars['rozliseni']->value;
+if (!is_array($_from) && !is_object($_from)) {
+settype($_from, 'array');
+}
+$_smarty_tpl->tpl_vars['rozliseni_row'] = new Smarty_Variable;
+$_smarty_tpl->tpl_vars['rozliseni_row']->_loop = false;
+foreach ($_from as $_smarty_tpl->tpl_vars['rozliseni_row']->value) {
+$_smarty_tpl->tpl_vars['rozliseni_row']->_loop = true;
+$foreach_rozliseni_row_Sav = $_smarty_tpl->tpl_vars['rozliseni_row'];
+?>
+                      <label class="checkbox-inline">
+                        <input type="checkbox" name="rozliseni[]" value="<?php echo $_smarty_tpl->tpl_vars['sozliseni_row']->value['id'];?>
+"> <?php echo $_smarty_tpl->tpl_vars['rozliseni_row']->value['nazev'];?>
+
+                      </label>
+                    <?php
+$_smarty_tpl->tpl_vars['rozliseni_row'] = $foreach_rozliseni_row_Sav;
+}
+?>
           </div>
             </div>
             
@@ -602,7 +838,26 @@ $_smarty_tpl->tpl_vars['vyrobce_row'] = $foreach_vyrobce_row_Sav;
               <div class="col-xs-12 col-md-12">
             <div class="form-group">
               <h4>Grafika</h4>
-           
+            <?php
+$_from = $_smarty_tpl->tpl_vars['gpu']->value;
+if (!is_array($_from) && !is_object($_from)) {
+settype($_from, 'array');
+}
+$_smarty_tpl->tpl_vars['gpu_row'] = new Smarty_Variable;
+$_smarty_tpl->tpl_vars['gpu_row']->_loop = false;
+foreach ($_from as $_smarty_tpl->tpl_vars['gpu_row']->value) {
+$_smarty_tpl->tpl_vars['gpu_row']->_loop = true;
+$foreach_gpu_row_Sav = $_smarty_tpl->tpl_vars['gpu_row'];
+?>
+                      <label class="checkbox-inline">
+                        <input type="checkbox" name="gpu[]" value="<?php echo $_smarty_tpl->tpl_vars['gpu_row']->value['id'];?>
+"> <?php echo $_smarty_tpl->tpl_vars['gpu_row']->value['nazev'];?>
+
+                      </label>
+                    <?php
+$_smarty_tpl->tpl_vars['gpu_row'] = $foreach_gpu_row_Sav;
+}
+?>
           </div>
             </div>
           </div>
@@ -662,7 +917,26 @@ $_smarty_tpl->tpl_vars['vyrobce_row'] = $foreach_vyrobce_row_Sav;
           <div class="col-xs-12 col-md-12">
             <div class="form-group">
               <h4>Výrobce</h4>
-            
+              <?php
+$_from = $_smarty_tpl->tpl_vars['vyrobce']->value;
+if (!is_array($_from) && !is_object($_from)) {
+settype($_from, 'array');
+}
+$_smarty_tpl->tpl_vars['vyrobce_row'] = new Smarty_Variable;
+$_smarty_tpl->tpl_vars['vyrobce_row']->_loop = false;
+foreach ($_from as $_smarty_tpl->tpl_vars['vyrobce_row']->value) {
+$_smarty_tpl->tpl_vars['vyrobce_row']->_loop = true;
+$foreach_vyrobce_row_Sav = $_smarty_tpl->tpl_vars['vyrobce_row'];
+?>
+                      <label class="checkbox-inline">
+                        <input type="checkbox" name="vyrobce[]" value="<?php echo $_smarty_tpl->tpl_vars['vyrobce_row']->value['id'];?>
+"> <?php echo $_smarty_tpl->tpl_vars['vyrobce_row']->value['nazev'];?>
+
+                      </label>
+                    <?php
+$_smarty_tpl->tpl_vars['vyrobce_row'] = $foreach_vyrobce_row_Sav;
+}
+?>
           </div>
         </div>
       </div>
@@ -671,7 +945,27 @@ $_smarty_tpl->tpl_vars['vyrobce_row'] = $foreach_vyrobce_row_Sav;
         <div class="col-xs-12 col-md-12">
             <div class="form-group">
               <h4>Procesor</h4>
-            
+              <?php
+$_from = $_smarty_tpl->tpl_vars['procesor']->value;
+if (!is_array($_from) && !is_object($_from)) {
+settype($_from, 'array');
+}
+$_smarty_tpl->tpl_vars['procesor_row'] = new Smarty_Variable;
+$_smarty_tpl->tpl_vars['procesor_row']->_loop = false;
+foreach ($_from as $_smarty_tpl->tpl_vars['procesor_row']->value) {
+$_smarty_tpl->tpl_vars['procesor_row']->_loop = true;
+$foreach_procesor_row_Sav = $_smarty_tpl->tpl_vars['procesor_row'];
+?>
+                      <label class="checkbox-inline">
+                        <input type="checkbox" name="procesor[]" value="<?php echo $_smarty_tpl->tpl_vars['procesor_row']->value['id'];?>
+"> <?php echo $_smarty_tpl->tpl_vars['procesor_row']->value['nazev'];?>
+ (počet jader: <?php echo $_smarty_tpl->tpl_vars['procesor_row']->value['pocet_jader'];?>
+)
+                      </label>
+                    <?php
+$_smarty_tpl->tpl_vars['procesor_row'] = $foreach_procesor_row_Sav;
+}
+?>
           </div>
         </div>
       </div>
@@ -680,7 +974,26 @@ $_smarty_tpl->tpl_vars['vyrobce_row'] = $foreach_vyrobce_row_Sav;
         <div class="col-xs-12 col-md-12">
             <div class="form-group">
               <h4>Operační systém</h4>
-              
+              <?php
+$_from = $_smarty_tpl->tpl_vars['os']->value;
+if (!is_array($_from) && !is_object($_from)) {
+settype($_from, 'array');
+}
+$_smarty_tpl->tpl_vars['os_row'] = new Smarty_Variable;
+$_smarty_tpl->tpl_vars['os_row']->_loop = false;
+foreach ($_from as $_smarty_tpl->tpl_vars['os_row']->value) {
+$_smarty_tpl->tpl_vars['os_row']->_loop = true;
+$foreach_os_row_Sav = $_smarty_tpl->tpl_vars['os_row'];
+?>
+                      <label class="checkbox-inline">
+                        <input type="checkbox" name="os[]" value="<?php echo $_smarty_tpl->tpl_vars['os_row']->value['id'];?>
+"> <?php echo $_smarty_tpl->tpl_vars['os_row']->value['nazev'];?>
+
+                      </label>
+                    <?php
+$_smarty_tpl->tpl_vars['os_row'] = $foreach_os_row_Sav;
+}
+?>
           </div>
         </div>
       </div>
@@ -688,13 +1001,51 @@ $_smarty_tpl->tpl_vars['vyrobce_row'] = $foreach_vyrobce_row_Sav;
           <div class="col-xs-12 col-md-6">
               <div class="form_group">
                 <h4>Stav zboží</h4>
-                
+                <?php
+$_from = $_smarty_tpl->tpl_vars['sz']->value;
+if (!is_array($_from) && !is_object($_from)) {
+settype($_from, 'array');
+}
+$_smarty_tpl->tpl_vars['sz_row'] = new Smarty_Variable;
+$_smarty_tpl->tpl_vars['sz_row']->_loop = false;
+foreach ($_from as $_smarty_tpl->tpl_vars['sz_row']->value) {
+$_smarty_tpl->tpl_vars['sz_row']->_loop = true;
+$foreach_sz_row_Sav = $_smarty_tpl->tpl_vars['sz_row'];
+?>
+                      <label class="checkbox-inline">
+                        <input type="checkbox" name="sz[]" value="<?php echo $_smarty_tpl->tpl_vars['sz_row']->value['id'];?>
+"> <?php echo $_smarty_tpl->tpl_vars['sz_row']->value['nazev'];?>
+
+                      </label>
+                    <?php
+$_smarty_tpl->tpl_vars['sz_row'] = $foreach_sz_row_Sav;
+}
+?>
               </div>
             </div>
               <div class="col-xs-12 col-md-6">
               <div class="form_group">
                 <h4>Dostupnost zboží</h4>
-                
+                <?php
+$_from = $_smarty_tpl->tpl_vars['dostupnost']->value;
+if (!is_array($_from) && !is_object($_from)) {
+settype($_from, 'array');
+}
+$_smarty_tpl->tpl_vars['dostupnost_row'] = new Smarty_Variable;
+$_smarty_tpl->tpl_vars['dostupnost_row']->_loop = false;
+foreach ($_from as $_smarty_tpl->tpl_vars['dostupnost_row']->value) {
+$_smarty_tpl->tpl_vars['dostupnost_row']->_loop = true;
+$foreach_dostupnost_row_Sav = $_smarty_tpl->tpl_vars['dostupnost_row'];
+?>
+                      <label class="checkbox-inline">
+                        <input type="checkbox" name="vyrobce[]" value="<?php echo $_smarty_tpl->tpl_vars['vyrobce_row']->value['id'];?>
+"> <?php echo $_smarty_tpl->tpl_vars['vyrobce_row']->value['nazev'];?>
+
+                      </label>
+                    <?php
+$_smarty_tpl->tpl_vars['dostupnost_row'] = $foreach_dostupnost_row_Sav;
+}
+?>
               </div>
             </div>
           </div>
@@ -702,7 +1053,26 @@ $_smarty_tpl->tpl_vars['vyrobce_row'] = $foreach_vyrobce_row_Sav;
               <div class="col-xs-12 col-md-12">
             <div class="form-group">
               <h4>Rozlišení displeje</h4>
-            
+            <?php
+$_from = $_smarty_tpl->tpl_vars['rozliseni']->value;
+if (!is_array($_from) && !is_object($_from)) {
+settype($_from, 'array');
+}
+$_smarty_tpl->tpl_vars['rozliseni_row'] = new Smarty_Variable;
+$_smarty_tpl->tpl_vars['rozliseni_row']->_loop = false;
+foreach ($_from as $_smarty_tpl->tpl_vars['rozliseni_row']->value) {
+$_smarty_tpl->tpl_vars['rozliseni_row']->_loop = true;
+$foreach_rozliseni_row_Sav = $_smarty_tpl->tpl_vars['rozliseni_row'];
+?>
+                      <label class="checkbox-inline">
+                        <input type="checkbox" name="rozliseni[]" value="<?php echo $_smarty_tpl->tpl_vars['rozliseni_row']->value['id'];?>
+"> <?php echo $_smarty_tpl->tpl_vars['rozliseni_row']->value['nazev'];?>
+
+                      </label>
+                    <?php
+$_smarty_tpl->tpl_vars['rozliseni_row'] = $foreach_rozliseni_row_Sav;
+}
+?>
           </div>
             </div>
             
@@ -711,7 +1081,26 @@ $_smarty_tpl->tpl_vars['vyrobce_row'] = $foreach_vyrobce_row_Sav;
               <div class="col-xs-12 col-md-12">
             <div class="form-group">
               <h4>Grafika</h4>
-            
+            <?php
+$_from = $_smarty_tpl->tpl_vars['gpu']->value;
+if (!is_array($_from) && !is_object($_from)) {
+settype($_from, 'array');
+}
+$_smarty_tpl->tpl_vars['gpu_row'] = new Smarty_Variable;
+$_smarty_tpl->tpl_vars['gpu_row']->_loop = false;
+foreach ($_from as $_smarty_tpl->tpl_vars['gpu_row']->value) {
+$_smarty_tpl->tpl_vars['gpu_row']->_loop = true;
+$foreach_gpu_row_Sav = $_smarty_tpl->tpl_vars['gpu_row'];
+?>
+                      <label class="checkbox-inline">
+                        <input type="checkbox" name="gpu[]" value="<?php echo $_smarty_tpl->tpl_vars['gpu_row']->value['id'];?>
+"> <?php echo $_smarty_tpl->tpl_vars['gpu_row']->value['nazev'];?>
+
+                      </label>
+                    <?php
+$_smarty_tpl->tpl_vars['gpu_row'] = $foreach_gpu_row_Sav;
+}
+?>
           </div>
             </div>
           </div>

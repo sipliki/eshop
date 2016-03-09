@@ -67,6 +67,9 @@
   </div>
 </nav>
   {/if}
+  {if isset($fail_database)}
+  <div class="alert alert-danger" role="alert">Pro zadané parametry neexistují žádné výrobky</div>
+  {/if}
   {if isset($notebook)}
     <nav class="navbar navbar-light bg-faded">
   <button class="navbar-toggler hidden-sm-up btn btn-primary" type="button" data-toggle="collapse" data-target="#filtr_ntb">
@@ -287,7 +290,11 @@
         <div class="col-xs-12 col-md-12">
             <div class="form-group">
               <h4>Procesor</h4>
-            
+              {foreach $procesor as $procesor_row}
+                      <label class="checkbox-inline">
+                        <input type="checkbox" name="procesor[]" value="{$procesor_row.id}"> {$procesor_row.nazev} (počet jader: {$procesor_row.pocet_jader})
+                      </label>
+                    {/foreach}
           </div>
         </div>
       </div>
@@ -295,7 +302,11 @@
         <div class="col-xs-12 col-md-12">
             <div class="form-group">
               <h4>Operační systém</h4>
-            
+              {foreach $os as $os_row}
+                      <label class="checkbox-inline">
+                        <input type="checkbox" name="os[]" value="{$os_row.id}"> {$os_row.nazev}
+                      </label>
+                    {/foreach}
           </div>
         </div>
       </div>
@@ -303,13 +314,21 @@
           <div class="col-xs-12 col-md-6">
               <div class="form_group">
                 <h4>Stav zboží</h4>
-                
+                {foreach $sz as $sz_row}
+                      <label class="checkbox-inline">
+                        <input type="checkbox" name="sz[]" value="{$sz_row.id}"> {$sz_row.nazev}
+                      </label>
+                    {/foreach}
               </div>
             </div>
               <div class="col-xs-12 col-md-6">
               <div class="form_group">
                 <h4>Dostupnost zboží</h4>
-                
+                {foreach $dostupnost as $dostupnost_row}
+                      <label class="checkbox-inline">
+                        <input type="checkbox" name="dostupnost[]" value="{$dostupnost_row.id}"> {$dostupnost_row.nazev}
+                      </label>
+                    {/foreach}
               </div>
             </div>
           </div>
@@ -317,7 +336,11 @@
               <div class="col-xs-12 col-md-12">
             <div class="form-group">
               <h4>Rozlišení displeje</h4>
-            
+              {foreach $rozliseni as $rozliseni_row}
+                      <label class="checkbox-inline">
+                        <input type="checkbox" name="rozliseni[]" value="{$rozliseni_row.id}"> {$rozliseni_row.nazev}
+                      </label>
+                    {/foreach}
           </div>
             </div>
             {*<div class="col-xs-12 col-md-6">
@@ -331,7 +354,11 @@
               <div class="col-xs-12 col-md-12">
             <div class="form-group">
               <h4>Grafika</h4>
-            
+              {foreach $gpu as $gpu_row}
+                      <label class="checkbox-inline">
+                        <input type="checkbox" name="gpu[]" value="{$gpu_row.id}"> {$gpu_row.nazev}
+                      </label>
+                    {/foreach}
           </div>
             </div>
           </div>
@@ -392,7 +419,11 @@
           <div class="col-xs-12 col-md-12">
             <div class="form-group">
               <h4>Výrobce</h4>
-            
+               {foreach $vyrobce as $vyrobce_row}
+                      <label class="checkbox-inline">
+                        <input type="checkbox" name="vyrobce[]" value="{$vyrobce_row.id}"> {$vyrobce_row.nazev}
+                      </label>
+                    {/foreach}
           </div>
         </div>
       </div>
@@ -400,7 +431,11 @@
         <div class="col-xs-12 col-md-12">
             <div class="form-group">
               <h4>Operační systém</h4>
-            
+             {foreach $os as $os_row}
+                      <label class="checkbox-inline">
+                        <input type="checkbox" name="os[]" value="{$os_row.id}"> {$os_row.nazev}
+                      </label>
+                    {/foreach}
           </div>
         </div>
       </div>
@@ -408,6 +443,11 @@
           <div class="col-xs-12 col-md-12">
               <div class="form-group">
                   <h4>Procesor</h4>
+                   {foreach $procesor as $procesor_row}
+                      <label class="checkbox-inline">
+                        <input type="checkbox" name="procesor[]" value="{$procesor_row.id}"> {$procesor_row.nazev} (počet jader: {$procesor_row.pocet_jader})
+                      </label>
+                    {/foreach}
                   
               </div>
           </div>
@@ -416,13 +456,21 @@
           <div class="col-xs-12 col-md-6">
               <div class="form_group">
                 <h4>Stav zboží</h4>
-                
+                {foreach $sz as $sz_row}
+                      <label class="checkbox-inline">
+                        <input type="checkbox" name="sz[]" value="{$sz_row.id}"> {$sz_row.nazev}
+                      </label>
+                    {/foreach}
               </div>
             </div>
               <div class="col-xs-12 col-md-6">
               <div class="form_group">
                 <h4>Dostupnost zboží</h4>
-               
+                {foreach $dostupnost as $dostupnost_row}
+                      <label class="checkbox-inline">
+                        <input type="checkbox" name="dostupnost[]" value="{$dostupnost_row.id}"> {$dostupnost_row.nazev}
+                      </label>
+                    {/foreach}
               </div>
             </div>
           </div>
@@ -430,7 +478,11 @@
               <div class="col-xs-12 col-md-12">
             <div class="form-group">
               <h4>Rozlišení displeje</h4>
-            
+            {foreach $rozliseni as $rozliseni_row}
+                      <label class="checkbox-inline">
+                        <input type="checkbox" name="rozliseni[]" value="{$sozliseni_row.id}"> {$rozliseni_row.nazev}
+                      </label>
+                    {/foreach}
           </div>
             </div>
             {*<div class="col-xs-12 col-md-6">
@@ -444,7 +496,11 @@
               <div class="col-xs-12 col-md-12">
             <div class="form-group">
               <h4>Grafika</h4>
-           
+            {foreach $gpu as $gpu_row}
+                      <label class="checkbox-inline">
+                        <input type="checkbox" name="gpu[]" value="{$gpu_row.id}"> {$gpu_row.nazev}
+                      </label>
+                    {/foreach}
           </div>
             </div>
           </div>
@@ -507,7 +563,11 @@
           <div class="col-xs-12 col-md-12">
             <div class="form-group">
               <h4>Výrobce</h4>
-            
+              {foreach $vyrobce as $vyrobce_row}
+                      <label class="checkbox-inline">
+                        <input type="checkbox" name="vyrobce[]" value="{$vyrobce_row.id}"> {$vyrobce_row.nazev}
+                      </label>
+                    {/foreach}
           </div>
         </div>
       </div>
@@ -516,7 +576,11 @@
         <div class="col-xs-12 col-md-12">
             <div class="form-group">
               <h4>Procesor</h4>
-            
+              {foreach $procesor as $procesor_row}
+                      <label class="checkbox-inline">
+                        <input type="checkbox" name="procesor[]" value="{$procesor_row.id}"> {$procesor_row.nazev} (počet jader: {$procesor_row.pocet_jader})
+                      </label>
+                    {/foreach}
           </div>
         </div>
       </div>
@@ -525,7 +589,11 @@
         <div class="col-xs-12 col-md-12">
             <div class="form-group">
               <h4>Operační systém</h4>
-              
+              {foreach $os as $os_row}
+                      <label class="checkbox-inline">
+                        <input type="checkbox" name="os[]" value="{$os_row.id}"> {$os_row.nazev}
+                      </label>
+                    {/foreach}
           </div>
         </div>
       </div>
@@ -533,13 +601,21 @@
           <div class="col-xs-12 col-md-6">
               <div class="form_group">
                 <h4>Stav zboží</h4>
-                
+                {foreach $sz as $sz_row}
+                      <label class="checkbox-inline">
+                        <input type="checkbox" name="sz[]" value="{$sz_row.id}"> {$sz_row.nazev}
+                      </label>
+                    {/foreach}
               </div>
             </div>
               <div class="col-xs-12 col-md-6">
               <div class="form_group">
                 <h4>Dostupnost zboží</h4>
-                
+                {foreach $dostupnost as $dostupnost_row}
+                      <label class="checkbox-inline">
+                        <input type="checkbox" name="vyrobce[]" value="{$vyrobce_row.id}"> {$vyrobce_row.nazev}
+                      </label>
+                    {/foreach}
               </div>
             </div>
           </div>
@@ -547,7 +623,11 @@
               <div class="col-xs-12 col-md-12">
             <div class="form-group">
               <h4>Rozlišení displeje</h4>
-            
+            {foreach $rozliseni as $rozliseni_row}
+                      <label class="checkbox-inline">
+                        <input type="checkbox" name="rozliseni[]" value="{$rozliseni_row.id}"> {$rozliseni_row.nazev}
+                      </label>
+                    {/foreach}
           </div>
             </div>
             {*<div class="col-xs-12 col-md-6">
@@ -561,7 +641,11 @@
               <div class="col-xs-12 col-md-12">
             <div class="form-group">
               <h4>Grafika</h4>
-            
+            {foreach $gpu as $gpu_row}
+                      <label class="checkbox-inline">
+                        <input type="checkbox" name="gpu[]" value="{$gpu_row.id}"> {$gpu_row.nazev}
+                      </label>
+                    {/foreach}
           </div>
             </div>
           </div>

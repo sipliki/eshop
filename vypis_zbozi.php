@@ -54,20 +54,32 @@ if(isset($_SESSION["kosik"])){
 	$result = $conn->query($sql);
 
   //Výpis položek
-function get_db_results($result){
-  $arr=0;
-    while($row = $result->fetch_assoc()) {
-      $zbozi[$arr]["id"]=$row["id_zbozi"];
-      $zbozi[$arr]["nazev"]=$row["nazev"];
-      $zbozi[$arr]["popis"]=$row["popis"];
-      $zbozi[$arr]["cena"]=$row["cena"];
-      $zbozi[$arr]["obrazek"]=$row["image"];
-      $arr++;
+if(mysqli_num_rows($result)==0){
+    $_SESSION["fail_database"]='1';
+    switch ($kategorie) {
+      case 1:header('Location: filtr.php?kategorie=notebook');break;
+      case 2:header('Location: filtr.php?kategorie=pc');break;
+      case 3:header('Location: filtr.php?kategorie=mobil');break;
+      case 4:header('Location: filtr.php?kategorie=tablet');break;
     }
+  }
+  else{
+    function get_db_results($result){
+  $arr=0;
+      while($row = $result->fetch_assoc()) {
+        $zbozi[$arr]["id"]=$row["id_zbozi"];
+        $zbozi[$arr]["nazev"]=$row["nazev"];
+        $zbozi[$arr]["popis"]=$row["popis"];
+        $zbozi[$arr]["cena"]=$row["cena"];
+        $zbozi[$arr]["obrazek"]=$row["image"];
+        $arr++;
+      }
+
     SmartyPaginate::setTotal(count($zbozi));
     return array_slice($zbozi, SmartyPaginate::getCurrentIndex(),
             SmartyPaginate::getLimit());
-              }
+    }
+  }
   // Ukončíme spojení s databází
   $conn->close();
 
