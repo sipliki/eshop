@@ -1,7 +1,7 @@
-<?php /* Smarty version 3.1.27, created on 2016-03-05 14:37:20
+<?php /* Smarty version 3.1.27, created on 2016-03-12 20:24:45
          compiled from "C:\Program Files (x86)\EasyPHP-DevServer-14.1VC11\data\localweb\my portable files\e-shop\templates\userTpl.tpl" */ ?>
 <?php
-/*%%SmartyHeaderCode:1025156dae110a78e87_14313161%%*/
+/*%%SmartyHeaderCode:1810456e46cfdcf5c58_29410095%%*/
 if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
   'file_dependency' => 
@@ -9,11 +9,11 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     '5dafe96fc492d213d28f0b955676be394a8d0db1' => 
     array (
       0 => 'C:\\Program Files (x86)\\EasyPHP-DevServer-14.1VC11\\data\\localweb\\my portable files\\e-shop\\templates\\userTpl.tpl',
-      1 => 1457185014,
+      1 => 1457792858,
       2 => 'file',
     ),
   ),
-  'nocache_hash' => '1025156dae110a78e87_14313161',
+  'nocache_hash' => '1810456e46cfdcf5c58_29410095',
   'variables' => 
   array (
     'kosik' => 0,
@@ -23,13 +23,13 @@ $_valid = $_smarty_tpl->decodeProperties(array (
   ),
   'has_nocache_code' => false,
   'version' => '3.1.27',
-  'unifunc' => 'content_56dae110b6b509_66817242',
+  'unifunc' => 'content_56e46cfdec32c4_65274168',
 ),false);
 /*/%%SmartyHeaderCode%%*/
-if ($_valid && !is_callable('content_56dae110b6b509_66817242')) {
-function content_56dae110b6b509_66817242 ($_smarty_tpl) {
+if ($_valid && !is_callable('content_56e46cfdec32c4_65274168')) {
+function content_56e46cfdec32c4_65274168 ($_smarty_tpl) {
 
-$_smarty_tpl->properties['nocache_hash'] = '1025156dae110a78e87_14313161';
+$_smarty_tpl->properties['nocache_hash'] = '1810456e46cfdcf5c58_29410095';
 ?>
 <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
 <html>
@@ -80,6 +80,7 @@ $_smarty_tpl->properties['nocache_hash'] = '1025156dae110a78e87_14313161';
        <?php if (isset($_smarty_tpl->tpl_vars['admin']->value)) {?>
             <a href="upravit_zbozi.php" class="btn btn-info" name="upravit_zbozi">Upravit/Smazat zboží</a>
             <a href="pridat_zbozi.php" class="btn btn-info" name="pridat_zbozi">Přidat zboží</a>
+            <a href="update_menu.php" class="btn btn-primary" name="upravit_menu">Upravit menu</a>
             <?php }?>
         </div><br />
         <div class="container">

@@ -44,18 +44,13 @@
   <div class="collapse navbar-toggleable-xs" id="filtr">
     <a class="navbar-brand" href="#">Kategorie</a>
     <ul class="nav navbar-nav">
+
+      {foreach $kategorie as $row_kategorie}
       <li class="nav-item">
-        <a class="nav-link" href="filtr.php?kategorie=notebook">Notebooky</a>
+        <a class="nav-link" href="{$row_kategorie.presmerovani}">{$row_kategorie.nazev}</a>
       </li>
-      <li class="nav-item">
-       <a class="nav-link" href="filtr.php?kategorie=pc">Stolní počítače</a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link" href="filtr.php?kategorie=mobil">Mobily</a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link" href="filtr.php?kategorie=tablet">Tablety</a>
-      </li>
+      {/foreach}
+      
     </ul>
     <form class="form-inline pull-right">
     <div class="input-group">

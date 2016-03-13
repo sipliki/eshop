@@ -16,16 +16,16 @@
 
     <div>
       <ul class="nav navbar-nav">
-        <li class="active"><a href="../vypis_zbozi.php">Zboží</a></li>
-        <li><a href="user.php">Můj účet</a></li> 
+        <li><a href="../vypis_zbozi.php">Zboží</a></li>
+        <li class="active"><a href="user.php">Můj účet</a></li> 
       </ul>
       <ul class="nav navbar-nav navbar-right">
         {if isset($kosik)}
               <li><a href="../kosik.php" class="btn btn-info"><span class="glyphicon glyphicon-shopping-cart"></span> Dokončit objednávku</a></li>
            {/if}
         {if isset($session_user)}
-            <li><p class="navbar-text">Přihlášen uživatel {$session_user}</p></li>
-          {else}
+            <li><p class="navbar-text">Přihlášen uživatel {$session_user} <a href="user.php?logout=1" class="btn btn-warning btn-xs"><span class="glyphicon glyphicon-log-out"></span> Odhlásit se</a></p></li>
+            {else}
         <li><a href="../prihlaseni/register.php"><span class="glyphicon glyphicon-user"></span> Zaregistrovat se</a></li>
         <li><a href="../prihlaseni/login.php"><span class="glyphicon glyphicon-log-in"></span> Přihlásit se</a></li>
          {/if}
@@ -34,41 +34,42 @@
   </div>
   </nav>
  <div class="container">
-          <div class="col-lg-12 text-center"> 
-            {if isset($update_fail)}
-          <div class="alert alert-danger" role="alert">Nebylo definováno ID zboží, které chcete upravit.</div>
-          {/if} 
-          <h2>Administrace zboží</h2>
+          <div class="col-lg-12 text-center">
+          <h2>Upravit menu</h2>
       <div class="btn-group">
         <a href="user.php" class="btn btn-success" name="user">Informace</a>
        <a href="../objednavka/objednavky.php" class="btn btn-success" name="objednávky"> Moje objednávky</a>
-            {if isset($admin)}
+       {if isset($admin)}
             <a href="upravit_zbozi.php" class="btn btn-info" name="upravit_zbozi">Upravit/Smazat zboží</a>
             <a href="pridat_zbozi.php" class="btn btn-info" name="pridat_zbozi">Přidat zboží</a>
             <a href="update_menu.php" class="btn btn-primary" name="upravit_menu">Upravit menu</a>
             <a href="upravit_menu.php" class="btn btn-primary" name="pridat_menu">Přidat menu</a>
             {/if}
-        </div><br /><br />
-        {if isset($pridano)}
-        <div class="col-md-12 text-center">
-          <div class="alert alert-success" role="alert">Zboží bylo úspěšně přidáno do databáze</div>
-        </div>
-        {/if}
+        </div><br />
         <div class="container">
+          {if isset($delete_menu)}
+            <div class="alert alert-success" role="alert">Kategorie byla úspěšné smazána</div>
+            {/if}
+            {if isset($update_menu)}
+            <div class="alert alert-success" role="alert">Kategorie byla úspěšně změněna</div>
+            {/if}
+            {if isset($add_menu)}
+            <div class="alert alert-success" role="alert">Kategorie byla úspěšně přidána</div>
+            {/if}
           <div class="col-lg-12 text-left">
-            <h3>Přihlašovací údaje</h3>
+            <h3>Upravit menu</h3>
           </div>
-          <div>
+          <div> 
             <table class="table table-bordered">
     <thead>
      <tr>
-     <th>ID</th><th>Název</th><th>Popis</th><th>Cena</th><th>Obrázek</th><th>Upravit</th><th>Smazat</th>
+     <th>ID</th><th>Název kategorie</th><th>Upravit</th><th>Smazat</th>
      </tr>
     </thead>
     <tbody>
-      {foreach $zbozi as $radek}
-        <tr>{foreach $radek as $bunka}
-        <th>{$bunka}</th>
+      {foreach $kategorie as $row_kategorie}
+        <tr>{foreach $row_kategorie as $bunka_kategorie}
+        <th>{$bunka_kategorie}</th>
         {/foreach} </tr>
       {/foreach}
     </tbody>  

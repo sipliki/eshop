@@ -1,7 +1,7 @@
-<?php /* Smarty version 3.1.27, created on 2016-03-06 17:11:15
+<?php /* Smarty version 3.1.27, created on 2016-03-12 11:37:08
          compiled from "C:\Program Files (x86)\EasyPHP-DevServer-14.1VC11\data\localweb\my portable files\e-shop\templates\zboziTpl.tpl" */ ?>
 <?php
-/*%%SmartyHeaderCode:2781556dc56a319f4b6_85913884%%*/
+/*%%SmartyHeaderCode:3263656e3f1541f7be0_25627696%%*/
 if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
   'file_dependency' => 
@@ -9,15 +9,17 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     'd46e646a40aaeff044eef36a0a19a4ad8bad30cc' => 
     array (
       0 => 'C:\\Program Files (x86)\\EasyPHP-DevServer-14.1VC11\\data\\localweb\\my portable files\\e-shop\\templates\\zboziTpl.tpl',
-      1 => 1457274776,
+      1 => 1457779025,
       2 => 'file',
     ),
   ),
-  'nocache_hash' => '2781556dc56a319f4b6_85913884',
+  'nocache_hash' => '3263656e3f1541f7be0_25627696',
   'variables' => 
   array (
     'kosik' => 0,
     'session_user' => 0,
+    'kategorie' => 0,
+    'row_kategorie' => 0,
     'prazdny_kosik' => 0,
     'fail_kategorie' => 0,
     'zbozi' => 0,
@@ -25,17 +27,17 @@ $_valid = $_smarty_tpl->decodeProperties(array (
   ),
   'has_nocache_code' => false,
   'version' => '3.1.27',
-  'unifunc' => 'content_56dc56a3335e40_42804354',
+  'unifunc' => 'content_56e3f154353908_96193390',
 ),false);
 /*/%%SmartyHeaderCode%%*/
-if ($_valid && !is_callable('content_56dc56a3335e40_42804354')) {
-function content_56dc56a3335e40_42804354 ($_smarty_tpl) {
+if ($_valid && !is_callable('content_56e3f154353908_96193390')) {
+function content_56e3f154353908_96193390 ($_smarty_tpl) {
 if (!is_callable('smarty_modifier_truncate')) require_once 'C:\\Program Files (x86)\\EasyPHP-DevServer-14.1VC11\\data\\localweb\\my portable files\\e-shop\\libs\\plugins\\modifier.truncate.php';
 if (!is_callable('smarty_function_paginate_prev')) require_once 'C:\\Program Files (x86)\\EasyPHP-DevServer-14.1VC11\\data\\localweb\\my portable files\\e-shop\\libs\\plugins\\function.paginate_prev.php';
 if (!is_callable('smarty_function_paginate_middle')) require_once 'C:\\Program Files (x86)\\EasyPHP-DevServer-14.1VC11\\data\\localweb\\my portable files\\e-shop\\libs\\plugins\\function.paginate_middle.php';
 if (!is_callable('smarty_function_paginate_next')) require_once 'C:\\Program Files (x86)\\EasyPHP-DevServer-14.1VC11\\data\\localweb\\my portable files\\e-shop\\libs\\plugins\\function.paginate_next.php';
 
-$_smarty_tpl->properties['nocache_hash'] = '2781556dc56a319f4b6_85913884';
+$_smarty_tpl->properties['nocache_hash'] = '3263656e3f1541f7be0_25627696';
 ?>
 <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
 <html>
@@ -88,18 +90,28 @@ $_smarty_tpl->properties['nocache_hash'] = '2781556dc56a319f4b6_85913884';
   <div class="collapse navbar-toggleable-xs" id="filtr">
     <a class="navbar-brand" href="#">Kategorie</a>
     <ul class="nav navbar-nav">
+
+      <?php
+$_from = $_smarty_tpl->tpl_vars['kategorie']->value;
+if (!is_array($_from) && !is_object($_from)) {
+settype($_from, 'array');
+}
+$_smarty_tpl->tpl_vars['row_kategorie'] = new Smarty_Variable;
+$_smarty_tpl->tpl_vars['row_kategorie']->_loop = false;
+foreach ($_from as $_smarty_tpl->tpl_vars['row_kategorie']->value) {
+$_smarty_tpl->tpl_vars['row_kategorie']->_loop = true;
+$foreach_row_kategorie_Sav = $_smarty_tpl->tpl_vars['row_kategorie'];
+?>
       <li class="nav-item">
-        <a class="nav-link" href="filtr.php?kategorie=notebook">Notebooky</a>
+        <a class="nav-link" href="<?php echo $_smarty_tpl->tpl_vars['row_kategorie']->value['presmerovani'];?>
+"><?php echo $_smarty_tpl->tpl_vars['row_kategorie']->value['nazev'];?>
+</a>
       </li>
-      <li class="nav-item">
-       <a class="nav-link" href="filtr.php?kategorie=pc">Stolní počítače</a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link" href="filtr.php?kategorie=mobil">Mobily</a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link" href="filtr.php?kategorie=tablet">Tablety</a>
-      </li>
+      <?php
+$_smarty_tpl->tpl_vars['row_kategorie'] = $foreach_row_kategorie_Sav;
+}
+?>
+      
     </ul>
     <form class="form-inline pull-right">
     <div class="input-group">

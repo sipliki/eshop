@@ -35,7 +35,7 @@
   </nav>
  <div class="container">
           <div class="col-lg-12 text-center">
-          <h2>Můj účet</h2>
+          <h2>Upravit menu</h2>
       <div class="btn-group">
         <a href="user.php" class="btn btn-success" name="user">Informace</a>
        <a href="../objednavka/objednavky.php" class="btn btn-success" name="objednávky"> Moje objednávky</a>
@@ -47,66 +47,40 @@
             {/if}
         </div><br />
         <div class="container">
+          {if isset($kategorie)} 
           <div class="col-lg-12 text-left">
-            <h3>Přihlašovací údaje</h3>
+            <h3>Upravit položku menu</h3>
           </div>
           <div>
             <form class="form-horizontal">
               <div class="form-group">
-              <label for="uzivatelske_jmeno" class="col-sm-2 control-label" >Uživatelské jméno</label>
+              <label for="nazev" class="col-sm-2 control-label" >Název kategorie</label>
                 <div class="col-sm-5">
-                <input type="text" class="form-control" id="uzivatelske_jmeno" value="{$user.uzivatelske_jmeno}" name="uzivatelske_jmeno">
+                <input type="text" class="form-control" id="nazev" value="{$kategorie.nazev}" name="nazev">
                 </div>
               </div>
-                <div class="form-group">
-                <label for="heslo" class="col-sm-2 control-label">Heslo</label>
-                <div class="col-sm-5">
-                <input type="password" class="form-control" id="heslo" name="heslo">
-                </div>
-              </div>
-              <div class="form-group">
-                <label for="nove_heslo" class="col-sm-2 control-label">Nové heslo</label>
-                <div class="col-sm-5">
-                <input type="password" class="form-control" id="nove_heslo"  name="nove_heslo">
-                </div>
-              </div>
-              <div class="col-lg-12 text-left">
-                <h3>Fakturační a doručovací údaje</h3>
-              </div>
-              <div class="form-group">
-                <label for="jmeno" class="col-sm-2 control-label">Jméno</label>
-                <div class="col-sm-5">
-                <input type="text" class="form-control" id="jmeno" value="{$user.jmeno}" name="jmeno">
-                </div>
-              </div>
-              <div class="form-group">
-                <label for="prijmeni" class="col-sm-2 control-label">Příjmení</label>
-                <div class="col-sm-5">
-                <input type="text" class="form-control" id="prijmeni" value="{$user.prijmeni}" name="prijmeni">
-                </div>
-              </div>
-              <div class="form-group">
-                <label for="ulice" class="col-sm-2 control-label">Ulice</label>
-                <div class="col-sm-5">
-                <input type="text" class="form-control" id="ulice" value="{$user.ulice}" name="ulice">
-                </div>
-              </div>
-              <div class="form-group">
-                <label for="mesto" class="col-sm-2 control-label">Město</label>
-                <div class="col-sm-5">
-                <input type="text" class="form-control" id="mesto" value="{$user.mesto}" name="mesto">
-                </div>
-              </div>
-              <div class="form-group">
-                <label for="psc" class="col-sm-2 control-label">PSČ</label>
-                <div class="col-sm-5">
-                <input type="text" class="form-control" id="psc" value="{$user.psc}" name="psc">
-                </div>
-              </div>
-              <input type="hidden" name="id_radku" value="{$user.ID}">
-              <input type="submit" name="update_uzivatele" class="btn btn-primary" value="Uložit změny">
+              <input type="hidden" name="id_radku" value="{$kategorie.id}">
+              <input type="submit" name="update" class="btn btn-primary" value="Uložit změny">
             </form>
+            </div>
+
+            {else}
+            <div class="col-lg-12 text-left">
+            <h3>Přidat položku menu</h3>
           </div>
+          <div>
+            <form class="form-horizontal">
+              <div class="form-group">
+              <label for="nazev" class="col-sm-2 control-label" >Název kategorie</label>
+                <div class="col-sm-5">
+                <input type="text" class="form-control" id="nazev" name="nazev">
+                </div>
+              </div>
+              <input type="submit" name="add" class="btn btn-primary" value="Přidat kategorii">
+            </form>
+            </div>
+            {/if}
+          
         </div>
   </body>
 </html>

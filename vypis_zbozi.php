@@ -43,11 +43,23 @@ if(isset($_SESSION["kosik"])){
   $sql = "SET CHARACTER SET utf8";
 	$conn->query($sql);
 
+  //vypis kategorii
+  $sql_kategorie="SELECT * FROM kategorie";
+    $result_kategorie=$conn->query($sql_kategorie);
+    $arr=0;
+      while ($row_kategorie=$result_kategorie->fetch_assoc()) {
+        $kategorie[$arr]["id"]=$row_kategorie["id_kategorie"];
+        $kategorie[$arr]["nazev"]=$row_kategorie["nazev_kategorie"];
+        $kategorie[$arr]["presmerovani"]="filtr.php?kategorie=".$row_kategorie['id_kategorie'];
+        $arr++;
+      }
+      $smarty->assign("kategorie",$kategorie);
+      //print_r($kategorie);
+      
   //vyhledavani
-  if(isset($_GET["search"])){
+ if(isset($_GET["search"])){
     $search=$_GET["search"];
-      $sql="SELECT * FROM zbozi WHERE nazev LIKE '%$search%'";
-  }
+      $sql="SELECT * FROM zbozi WHERE nazev LIKE '%$search%'";}
   else{$sql="SELECT * FROM zbozi";}
   
     // Načtení databáze do associativího pole
@@ -56,12 +68,7 @@ if(isset($_SESSION["kosik"])){
   //Výpis položek
 if(mysqli_num_rows($result)==0){
     $_SESSION["fail_database"]='1';
-    switch ($kategorie) {
-      case 1:header('Location: filtr.php?kategorie=notebook');break;
-      case 2:header('Location: filtr.php?kategorie=pc');break;
-      case 3:header('Location: filtr.php?kategorie=mobil');break;
-      case 4:header('Location: filtr.php?kategorie=tablet');break;
-    }
+   header('Location: vypis_zbozi.php');
   }
   else{
     function get_db_results($result){

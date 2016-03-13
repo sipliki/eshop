@@ -30,21 +30,27 @@
 
      //UPDATE
     if(isset($_GET['update'])){
-             $conn = new mysqli($servername, $username, $password, $dbname);
-                $sql = "SET CHARACTER SET utf8";
-              $conn->query($sql); 
-                    $id=$_GET["id_zbozi"];
-                    $nazev=$_GET["nazev"];
-                    $popis=$_GET["popis"];
-                    $cena=$_GET["cena"];
-                    $img=$_GET["obrazek"];                                                                                                                                                                                                                                     
-            $update= "UPDATE zbozi SET nazev='$nazev',popis='$popis',cena='$cena',image='$obrazek' WHERE id_zbozi='$id' ";
+         $id=$_GET["id_zbozi"];
+         $nazev=$_GET["nazev"];
+         $popis=$_GET["popis"];
+         $cena=$_GET["cena"];
+         $img=$_GET["obrazek"]; 
+         $dostupnost=$_GET["dostupnost"];
+         $procesor=$_GET["procesor"];
+         $vyrobce=$_GET["vyrobce"];
+         $stav_zbozi=$_GET["stav_zbozi"]; 
+         $uhlopricka=$_GET["uhlopricka"];
+         $rozliseni=$_GET["rozliseni"];
+         $os=$_GET["os"];
+         $operacni_pamet=$_GET["operacni_pamet"];
+         $interni_pamet=$_GET["interni_pamet"]; 
+         $gpu=$_GET["gpu"];                                                                                                                                                                                                                                          
+            $update= "UPDATE zbozi SET nazev='$nazev', popis='$popis', cena='$cena', image='$img', dostupnost='$dostupnost', vyrobce='$vyrobce', stav_zbozi='$stav_zbozi', procesor='$procesor', uhlopricka_displeje='$uhlopricka', rozliseni_displeje='$rozliseni', operacni_system='os', operacni_pamet='$operacni_pamet', interni_pamet='$interni_pamet', gpu='$gpu'  WHERE id_zbozi='$id' ";
              $conn->query($update);
-             $conn->close();
-             header('Location: upravit_zbozi.php');
+             //header('Location: upravit_zbozi.php');
              
          };
-	       
+	       //vypis polozek
          if(!isset($_GET["id"])){$_SESSION["update_fail"]='1';header('Location: upravit_zbozi.php');}
           else{
          $id=$_GET["id"];
