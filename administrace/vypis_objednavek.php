@@ -83,7 +83,7 @@
 
 				//doprava
 				$doprava=$row_objednavka["doprava"];
-				$sql_doprava="SELECT objednavky.doprava, doprava.id_doprava, doprava.nazev, doprava.cena FROM objednavky INNER JOIN doprava ON objednavky.doprava = doprava.id_doprava WHERE doprava.id_doprava='$doprava' ";
+				$sql_doprava="SELECT objednavky.doprava,doprava.nazev,doprava.cena,doprava.id_doprava FROM objednavky INNER JOIN doprava ON objednavky.doprava = doprava.id_doprava WHERE doprava.id_doprava='$doprava'";
 					$result_doprava=$conn->query($sql_doprava);
 						$row_doprava=$result_doprava->fetch_assoc();
 				$objednavka[$a]["nazev_doprava"]=$row_doprava["nazev"];
@@ -92,7 +92,7 @@
 				
 				//platba
 				$platba=$row_objednavka["platba"];
-				$sql_platba="SELECT objednavky.platba, platba.id_platba, platba.nazev, platba.cena FROM objednavky INNER JOIN platba ON objednavky.platba = platba.id_platba WHERE platba.id_platba='$platba'";
+				$sql_platba="SELECT objednavky.platba,platba.nazev,platba.cena,platba.id_platba FROM objednavky INNER JOIN platba ON objednavky.platba = platba.id_platba WHERE platba.id_platba='$platba'";
 					$result_platba=$conn->query($sql_platba);
 						$row_platba=$result_platba->fetch_assoc();
 				$objednavka[$a]["nazev_platba"]=$row_platba["nazev"];
@@ -106,5 +106,5 @@
 		$smarty->assign("objednavka",$objednavka);
 	}
 $conn->close();
-$smarty->display("../templates/objednavkyTpl.tpl");
+$smarty->display("../templates/vypis_objednavekTpl.tpl");
 ?>

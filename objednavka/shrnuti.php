@@ -30,10 +30,12 @@
 	$conn->query($sql);
 
 	//zboží, doprava, platba
-	if(isset($_SESSION["doprava"])){$doprava=$_SESSION["doprava"];}
+	/*if(isset($_SESSION["doprava"])){$doprava=$_SESSION["doprava"];}
 	   else {$doprava=$_GET["doprava"];}
 	 if(isset($_SESSION["platba"])){$platba=$_SESSION["platba"];}
-	   else {$platba=$_GET["platba"];}
+	   else {$platba=$_GET["platba"];}*/
+	   $doprava=$_GET["doprava"];
+	   $platba=$_GET["platba"];
 	   $celkova_cena=0;
 
        $sql="SELECT id_zbozi,nazev,cena FROM zbozi WHERE id_zbozi IN ('" . implode("', '", array_keys($_SESSION["kosik"])) . "')";
@@ -46,23 +48,24 @@
     	  }
 	$smarty->assign("zbozi",$zbozi);
 
-	$sql_doprava="SELECT nazev,cena FROM doprava WHERE nazev='$doprava'";
+	$sql_doprava="SELECT * FROM doprava WHERE id_doprava='$doprava'";
 		$result_doprava=$conn->query($sql_doprava);
 			$row_doprava=$result_doprava->fetch_assoc();
+				$doprava_vypis["id"]=$row_doprava["id_doprava"];
 				$doprava_vypis["nazev"]=$row_doprava["nazev"];
 				$doprava_vypis["cena"]=$row_doprava["cena"];
 				$celkova_cena+=$row_doprava["cena"];
 					$smarty->assign("doprava",$doprava_vypis);
-					$_SESSION["doprava"]=$doprava;
 
-		$sql_platba="SELECT * FROM platba WHERE nazev='$platba'";
+		$sql_platba="SELECT * FROM platba WHERE id_platba='$platba'";
 		$result_platba=$conn->query($sql_platba);
 			$row_platba=$result_platba->fetch_assoc();
+				$platba_vypis["id"]=$row_platba["id_platba"];
 				$platba_vypis["nazev"]=$row_platba["nazev"];
 				$platba_vypis["cena"]=$row_platba["cena"];
 				$celkova_cena+=$row_platba["cena"];
 					$smarty->assign("platba",$platba_vypis);
-					$_SESSION["platba"]=$platba;
+					
 		$smarty->assign("celkova_cena",$celkova_cena);
 
 	//uživatel
@@ -99,7 +102,8 @@
 			$sql_objednavka="INSERT INTO objednavky VALUES ('NULL','$jmeno','$prijmeni','$ulice','$mesto','$psc','$zbozi_zapis','$mnozstvi','$celkova_cena','$doprava','$platba','$id','$datum','1')";
 		$conn->query($sql_objednavka);
 		unset($_SESSION["kosik"]);
-		header('Location: prijato.php');
+		echo $sql_objednavka;
+		//header('Location: prijato.php');
 	}
 
 

@@ -52,6 +52,7 @@
 	  	$result_doprava=$conn->query($sql_doprava);
 	  	$arr=0;
 	  		while($row_doprava=$result_doprava->fetch_assoc()){
+	  			$doprava[$arr]["id"]=$row_doprava["id_doprava"];
 	  			$doprava[$arr]["nazev"]=$row_doprava["nazev"];
 	  				if($row_doprava["cena"]=="0"){$doprava[$arr]["cena"]="zdarma";}
 	  					else $doprava[$arr]["cena"]=$row_doprava["cena"]. " Kč";
@@ -63,6 +64,7 @@
 	  	$result_platba=$conn->query($sql_platba);
 	  	$arr=0;
 	  		while($row_platba=$result_platba->fetch_assoc()){
+	  			$platba[$arr]["id"]=$row_platba["id_platba"];
 	  			$platba[$arr]["nazev"]=$row_platba["nazev"];
 	  			if($row_platba["cena"]=="0"){$platba[$arr]["cena"]="zdarma";}
 	  					else $platba[$arr]["cena"]=$row_platba["cena"]. " Kč";

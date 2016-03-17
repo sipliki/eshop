@@ -1,7 +1,7 @@
-<?php /* Smarty version 3.1.27, created on 2016-02-15 17:36:05
+<?php /* Smarty version 3.1.27, created on 2016-03-17 17:36:55
          compiled from "C:\Program Files (x86)\EasyPHP-DevServer-14.1VC11\data\localweb\my portable files\e-shop\templates\prijatoTpl.tpl" */ ?>
 <?php
-/*%%SmartyHeaderCode:2186756c1fe758c49b5_96852970%%*/
+/*%%SmartyHeaderCode:2416456eadd274a2ae5_70496908%%*/
 if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
   'file_dependency' => 
@@ -9,11 +9,11 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     '925c92b2bccb82ae2e6c602758d8e0573abb1551' => 
     array (
       0 => 'C:\\Program Files (x86)\\EasyPHP-DevServer-14.1VC11\\data\\localweb\\my portable files\\e-shop\\templates\\prijatoTpl.tpl',
-      1 => 1455553592,
+      1 => 1457183115,
       2 => 'file',
     ),
   ),
-  'nocache_hash' => '2186756c1fe758c49b5_96852970',
+  'nocache_hash' => '2416456eadd274a2ae5_70496908',
   'variables' => 
   array (
     'kosik' => 0,
@@ -21,13 +21,13 @@ $_valid = $_smarty_tpl->decodeProperties(array (
   ),
   'has_nocache_code' => false,
   'version' => '3.1.27',
-  'unifunc' => 'content_56c1fe759defd1_17509523',
+  'unifunc' => 'content_56eadd27767370_25506453',
 ),false);
 /*/%%SmartyHeaderCode%%*/
-if ($_valid && !is_callable('content_56c1fe759defd1_17509523')) {
-function content_56c1fe759defd1_17509523 ($_smarty_tpl) {
+if ($_valid && !is_callable('content_56eadd27767370_25506453')) {
+function content_56eadd27767370_25506453 ($_smarty_tpl) {
 
-$_smarty_tpl->properties['nocache_hash'] = '2186756c1fe758c49b5_96852970';
+$_smarty_tpl->properties['nocache_hash'] = '2416456eadd274a2ae5_70496908';
 ?>
 <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
 <html>
@@ -46,7 +46,7 @@ $_smarty_tpl->properties['nocache_hash'] = '2186756c1fe758c49b5_96852970';
   <nav class="navbar navbar-default">
   <div class="container-fluid">
     <div class="navbar-header">
-      <a class="navbar-brand" href="#">E-shop</a>
+      <a class="navbar-brand" href="../vypis_zbozi.php">E-shop</a>>
     </div>
 
     <div>

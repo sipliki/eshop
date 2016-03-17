@@ -1,19 +1,19 @@
-<?php /* Smarty version 3.1.27, created on 2016-03-13 17:57:43
-         compiled from "C:\Program Files (x86)\EasyPHP-DevServer-14.1VC11\data\localweb\my portable files\e-shop\templates\objednavkyTpl.tpl" */ ?>
+<?php /* Smarty version 3.1.27, created on 2016-03-13 17:54:59
+         compiled from "C:\Program Files (x86)\EasyPHP-DevServer-14.1VC11\data\localweb\my portable files\e-shop\templates\vypis_objednavekTpl.tpl" */ ?>
 <?php
-/*%%SmartyHeaderCode:2989656e59c07ca6bb7_52661117%%*/
+/*%%SmartyHeaderCode:2084356e59b63c56738_28023812%%*/
 if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
   'file_dependency' => 
   array (
-    '2a9e8db0df7b82fcd8674d9a435cd2a1795db9d7' => 
+    'd4893a2cc96c82ee32a5b672137cd05c478727af' => 
     array (
-      0 => 'C:\\Program Files (x86)\\EasyPHP-DevServer-14.1VC11\\data\\localweb\\my portable files\\e-shop\\templates\\objednavkyTpl.tpl',
-      1 => 1457888247,
+      0 => 'C:\\Program Files (x86)\\EasyPHP-DevServer-14.1VC11\\data\\localweb\\my portable files\\e-shop\\templates\\vypis_objednavekTpl.tpl',
+      1 => 1457888097,
       2 => 'file',
     ),
   ),
-  'nocache_hash' => '2989656e59c07ca6bb7_52661117',
+  'nocache_hash' => '2084356e59b63c56738_28023812',
   'variables' => 
   array (
     'kosik' => 0,
@@ -28,13 +28,13 @@ $_valid = $_smarty_tpl->decodeProperties(array (
   ),
   'has_nocache_code' => false,
   'version' => '3.1.27',
-  'unifunc' => 'content_56e59c07e78644_51030464',
+  'unifunc' => 'content_56e59b63de2cb9_68922038',
 ),false);
 /*/%%SmartyHeaderCode%%*/
-if ($_valid && !is_callable('content_56e59c07e78644_51030464')) {
-function content_56e59c07e78644_51030464 ($_smarty_tpl) {
+if ($_valid && !is_callable('content_56e59b63de2cb9_68922038')) {
+function content_56e59b63de2cb9_68922038 ($_smarty_tpl) {
 
-$_smarty_tpl->properties['nocache_hash'] = '2989656e59c07ca6bb7_52661117';
+$_smarty_tpl->properties['nocache_hash'] = '2084356e59b63c56738_28023812';
 ?>
 <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
 <html>
@@ -81,13 +81,13 @@ $_smarty_tpl->properties['nocache_hash'] = '2989656e59c07ca6bb7_52661117';
           <h2>Moje objednávky</h2>
       <div class="btn-group">
         <a href="../administrace/user.php" class="btn btn-success" name="user">Informace</a>
-       <a href="../objednavka/objednavky.php" class="btn btn-success" name="objednávky"> Moje objednávky</a>
+       <a href="../objednavka/objednavky.php" class="btn btn-success" name="objednavky"> Moje objednávky</a>
        <?php if (isset($_smarty_tpl->tpl_vars['admin']->value)) {?>
             <a href="../administrace/upravit_zbozi.php" class="btn btn-info" name="upravit_zbozi">Upravit zboží</a>
             <a href="../administrace/pridat_zbozi.php" class="btn btn-info" name="pridat_zbozi">Přidat zboží</a>
-            <a href="../administrace/update_menu.php" class="btn btn-primary" name="upravit_menu">Upravit menu</a>
-            <a href="../administrace/upravit_menu.php" class="btn btn-primary" name="pridat_menu">Přidat menu</a>
-            <a href="../administrace/vypis_objednavek.php" class="btn btn-warning" name="vypis-objednavek">Výpis všech objednávek</a>
+            <a href="update_menu.php" class="btn btn-primary" name="upravit_menu">Upravit menu</a>
+            <a href="upravit_menu.php" class="btn btn-primary" name="pridat_menu">Přidat menu</a>
+            <a href="vypis_objednavek.php" class="btn btn-warning" name="vypis-objednavek">Výpis všech objednávek</a>
             <?php }?>
         </div><br />
         <br />
@@ -136,6 +136,8 @@ $foreach_radek_objednavka_Sav = $_smarty_tpl->tpl_vars['radek_objednavka'];
 " />
           <button type="submit" name="zrusit" class="btn btn-primary">Zrušit objednávku</button>
           </form>
+          <a href="upravit_objednavku.php?id=<?php echo $_smarty_tpl->tpl_vars['radek_objednavka']->value['id'];?>
+" class="btn btn-warning">Upravit objednávku</a>
         </div>
         <div class="text-left">
           <h4>Objednané zboží</h4>

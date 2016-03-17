@@ -1,7 +1,7 @@
-<?php /* Smarty version 3.1.27, created on 2016-03-12 21:02:23
+<?php /* Smarty version 3.1.27, created on 2016-03-13 17:49:28
          compiled from "C:\Program Files (x86)\EasyPHP-DevServer-14.1VC11\data\localweb\my portable files\e-shop\templates\update_menuTpl.tpl" */ ?>
 <?php
-/*%%SmartyHeaderCode:817656e475cfad2232_37869413%%*/
+/*%%SmartyHeaderCode:1374256e59a188c20f5_94453707%%*/
 if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
   'file_dependency' => 
@@ -9,11 +9,11 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     '44e12457e71677d8d41ca4b904ab182844c7c2f2' => 
     array (
       0 => 'C:\\Program Files (x86)\\EasyPHP-DevServer-14.1VC11\\data\\localweb\\my portable files\\e-shop\\templates\\update_menuTpl.tpl',
-      1 => 1457812940,
+      1 => 1457887662,
       2 => 'file',
     ),
   ),
-  'nocache_hash' => '817656e475cfad2232_37869413',
+  'nocache_hash' => '1374256e59a188c20f5_94453707',
   'variables' => 
   array (
     'kosik' => 0,
@@ -28,13 +28,13 @@ $_valid = $_smarty_tpl->decodeProperties(array (
   ),
   'has_nocache_code' => false,
   'version' => '3.1.27',
-  'unifunc' => 'content_56e475cfc14659_98293069',
+  'unifunc' => 'content_56e59a18972b81_21944809',
 ),false);
 /*/%%SmartyHeaderCode%%*/
-if ($_valid && !is_callable('content_56e475cfc14659_98293069')) {
-function content_56e475cfc14659_98293069 ($_smarty_tpl) {
+if ($_valid && !is_callable('content_56e59a18972b81_21944809')) {
+function content_56e59a18972b81_21944809 ($_smarty_tpl) {
 
-$_smarty_tpl->properties['nocache_hash'] = '817656e475cfad2232_37869413';
+$_smarty_tpl->properties['nocache_hash'] = '1374256e59a188c20f5_94453707';
 ?>
 <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
 <html>
@@ -87,6 +87,7 @@ $_smarty_tpl->properties['nocache_hash'] = '817656e475cfad2232_37869413';
             <a href="pridat_zbozi.php" class="btn btn-info" name="pridat_zbozi">Přidat zboží</a>
             <a href="update_menu.php" class="btn btn-primary" name="upravit_menu">Upravit menu</a>
             <a href="upravit_menu.php" class="btn btn-primary" name="pridat_menu">Přidat menu</a>
+            <a href="vypis_objednavek.php" class="btn btn-warning" name="vypis-objednavek">Výpis všech objednávek</a>
             <?php }?>
         </div><br />
         <div class="container">

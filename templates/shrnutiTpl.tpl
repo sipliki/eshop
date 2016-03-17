@@ -98,8 +98,8 @@
             </div>
             <input type="hidden" name="id" value="{$user.id}">
             <input type="hidden" name="cena" value="{$celkova_cena}">
-            <input type="hidden" name="doprava" value="{$doprava.nazev}">
-            <input type="hidden" name="platba" value="{$platba.nazev}">
+            <input type="hidden" name="doprava" value="{$doprava.id}">
+            <input type="hidden" name="platba" value="{$platba.id}">
         {else}
         Nejste přihlášeni. Pokud máte účet přihlašte se. <a href="../prihlaseni/login.php?shrnuti=1" class="btn btn-info"><span class="glyphicon glyphicon-log-in"></span> Přihlásit se</a><br />
         Nakupujete u nás často a nemáte účet. Vytvořte si ho zdarma. <a href="../prihlaseni/register.php?kosik=1" class="btn btn-info"><span class="glyphicon glyphicon-user"></span> Vytvořit účet</a><br />

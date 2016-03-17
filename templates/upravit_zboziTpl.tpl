@@ -47,6 +47,7 @@
             <a href="pridat_zbozi.php" class="btn btn-info" name="pridat_zbozi">Přidat zboží</a>
             <a href="update_menu.php" class="btn btn-primary" name="upravit_menu">Upravit menu</a>
             <a href="upravit_menu.php" class="btn btn-primary" name="pridat_menu">Přidat menu</a>
+            <a href="vypis_objednavek.php" class="btn btn-warning" name="vypis-objednavek">Výpis všech objednávek</a>
             {/if}
         </div><br /><br />
         {if isset($pridano)}

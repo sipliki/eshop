@@ -1,7 +1,7 @@
-<?php /* Smarty version 3.1.27, created on 2016-03-05 14:09:30
+<?php /* Smarty version 3.1.27, created on 2016-03-17 17:57:32
          compiled from "C:\Program Files (x86)\EasyPHP-DevServer-14.1VC11\data\localweb\my portable files\e-shop\templates\shrnutiTpl.tpl" */ ?>
 <?php
-/*%%SmartyHeaderCode:2029856dada8a975501_57303579%%*/
+/*%%SmartyHeaderCode:461456eae1fcec9ea6_87417708%%*/
 if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
   'file_dependency' => 
@@ -9,11 +9,11 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     '96b3b00d12634f30a316a14ca1a9371dfb01814a' => 
     array (
       0 => 'C:\\Program Files (x86)\\EasyPHP-DevServer-14.1VC11\\data\\localweb\\my portable files\\e-shop\\templates\\shrnutiTpl.tpl',
-      1 => 1457183128,
+      1 => 1458233790,
       2 => 'file',
     ),
   ),
-  'nocache_hash' => '2029856dada8a975501_57303579',
+  'nocache_hash' => '461456eae1fcec9ea6_87417708',
   'variables' => 
   array (
     'kosik' => 0,
@@ -28,13 +28,13 @@ $_valid = $_smarty_tpl->decodeProperties(array (
   ),
   'has_nocache_code' => false,
   'version' => '3.1.27',
-  'unifunc' => 'content_56dada8aaa2621_23278785',
+  'unifunc' => 'content_56eae1fd0bc758_36043449',
 ),false);
 /*/%%SmartyHeaderCode%%*/
-if ($_valid && !is_callable('content_56dada8aaa2621_23278785')) {
-function content_56dada8aaa2621_23278785 ($_smarty_tpl) {
+if ($_valid && !is_callable('content_56eae1fd0bc758_36043449')) {
+function content_56eae1fd0bc758_36043449 ($_smarty_tpl) {
 
-$_smarty_tpl->properties['nocache_hash'] = '2029856dada8a975501_57303579';
+$_smarty_tpl->properties['nocache_hash'] = '461456eae1fcec9ea6_87417708';
 ?>
 <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
 <html>
@@ -181,9 +181,9 @@ $_smarty_tpl->tpl_vars['radek'] = $foreach_radek_Sav;
 ">
             <input type="hidden" name="cena" value="<?php echo $_smarty_tpl->tpl_vars['celkova_cena']->value;?>
 ">
-            <input type="hidden" name="doprava" value="<?php echo $_smarty_tpl->tpl_vars['doprava']->value['nazev'];?>
+            <input type="hidden" name="doprava" value="<?php echo $_smarty_tpl->tpl_vars['doprava']->value['id'];?>
 ">
-            <input type="hidden" name="platba" value="<?php echo $_smarty_tpl->tpl_vars['platba']->value['nazev'];?>
+            <input type="hidden" name="platba" value="<?php echo $_smarty_tpl->tpl_vars['platba']->value['id'];?>
 ">
         <?php } else { ?>
         Nejste přihlášeni. Pokud máte účet přihlašte se. <a href="../prihlaseni/login.php?shrnuti=1" class="btn btn-info"><span class="glyphicon glyphicon-log-in"></span> Přihlásit se</a><br />

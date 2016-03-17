@@ -83,10 +83,8 @@
           <h3 class="text-center">Doprava</h3>
           <table class="table table-hover">
                {foreach $doprava as $radek_doprava}
-                  <tr> <th><input type="radio" name="doprava" value="{$radek_doprava.nazev}" required></th>
-                   {foreach $radek_doprava as $bunka_doprava}
-                    <th>{$bunka_doprava}</th>
-                  {/foreach} </tr>
+                  <tr> <th><input type="radio" name="doprava" value="{$radek_doprava.id}" required></th>
+                    <th>{$radek_doprava.nazev}</th><th>{$radek_doprava.cena}</th></tr>
                 {/foreach}
           </table>
         </div>
@@ -94,10 +92,8 @@
           <h3>Způsob platby</h3>
           <table class="table table-hover">
               {foreach $platba as $radek_platba}
-                  <tr> <th><input type="radio" name="platba" value="{$radek_platba.nazev}" required></th>
-                    {foreach $radek_platba as $bunka_platba}
-                    <th>{$bunka_platba}</th>
-                  {/foreach} </tr>
+                  <tr> <th><input type="radio" name="platba" value="{$radek_platba.id}" required></th>
+                    <th>{$radek_platba.nazev}</th><th>{$radek_platba.cena}</th></tr>
                 {/foreach}
           </table>
         </div>

@@ -1,7 +1,7 @@
-<?php /* Smarty version 3.1.27, created on 2016-03-05 21:58:35
+<?php /* Smarty version 3.1.27, created on 2016-03-13 17:50:07
          compiled from "C:\Program Files (x86)\EasyPHP-DevServer-14.1VC11\data\localweb\my portable files\e-shop\templates\pridat_zboziTpl.tpl" */ ?>
 <?php
-/*%%SmartyHeaderCode:380556db487ba996d3_20946360%%*/
+/*%%SmartyHeaderCode:1814056e59a3f58e995_15773228%%*/
 if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
   'file_dependency' => 
@@ -9,11 +9,11 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     '59ab5e5447b84f527f87c5e2ee8d54ecae14bf61' => 
     array (
       0 => 'C:\\Program Files (x86)\\EasyPHP-DevServer-14.1VC11\\data\\localweb\\my portable files\\e-shop\\templates\\pridat_zboziTpl.tpl',
-      1 => 1457211500,
+      1 => 1457887800,
       2 => 'file',
     ),
   ),
-  'nocache_hash' => '380556db487ba996d3_20946360',
+  'nocache_hash' => '1814056e59a3f58e995_15773228',
   'variables' => 
   array (
     'kosik' => 0,
@@ -38,13 +38,13 @@ $_valid = $_smarty_tpl->decodeProperties(array (
   ),
   'has_nocache_code' => false,
   'version' => '3.1.27',
-  'unifunc' => 'content_56db487bc46316_16115548',
+  'unifunc' => 'content_56e59a3f6fce58_99973824',
 ),false);
 /*/%%SmartyHeaderCode%%*/
-if ($_valid && !is_callable('content_56db487bc46316_16115548')) {
-function content_56db487bc46316_16115548 ($_smarty_tpl) {
+if ($_valid && !is_callable('content_56e59a3f6fce58_99973824')) {
+function content_56e59a3f6fce58_99973824 ($_smarty_tpl) {
 
-$_smarty_tpl->properties['nocache_hash'] = '380556db487ba996d3_20946360';
+$_smarty_tpl->properties['nocache_hash'] = '1814056e59a3f58e995_15773228';
 ?>
 <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
 <html>
@@ -95,6 +95,9 @@ $_smarty_tpl->properties['nocache_hash'] = '380556db487ba996d3_20946360';
             <?php if (isset($_smarty_tpl->tpl_vars['admin']->value)) {?>
             <a href="upravit_zbozi.php" class="btn btn-info" name="upravit_zbozi">Upravit/Smazat zboží</a>
             <a href="pridat_zbozi.php" class="btn btn-info" name="pridat_zbozi">Přidat zboží</a>
+            <a href="update_menu.php" class="btn btn-primary" name="upravit_menu">Upravit menu</a>
+            <a href="upravit_menu.php" class="btn btn-primary" name="pridat_menu">Přidat menu</a>
+            <a href="vypis_objednavek.php" class="btn btn-warning" name="vypis-objednavek">Výpis všech objednávek</a>
             <?php }?>
         </div><br />
         <div class="container">

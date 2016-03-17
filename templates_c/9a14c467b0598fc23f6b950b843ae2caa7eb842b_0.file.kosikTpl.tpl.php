@@ -1,7 +1,7 @@
-<?php /* Smarty version 3.1.27, created on 2016-03-05 14:09:21
+<?php /* Smarty version 3.1.27, created on 2016-03-17 17:53:55
          compiled from "C:\Program Files (x86)\EasyPHP-DevServer-14.1VC11\data\localweb\my portable files\e-shop\templates\kosikTpl.tpl" */ ?>
 <?php
-/*%%SmartyHeaderCode:2373356dada81ef8359_25043027%%*/
+/*%%SmartyHeaderCode:1763356eae123676553_20934175%%*/
 if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
   'file_dependency' => 
@@ -9,11 +9,11 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     '9a14c467b0598fc23f6b950b843ae2caa7eb842b' => 
     array (
       0 => 'C:\\Program Files (x86)\\EasyPHP-DevServer-14.1VC11\\data\\localweb\\my portable files\\e-shop\\templates\\kosikTpl.tpl',
-      1 => 1457183359,
+      1 => 1458233631,
       2 => 'file',
     ),
   ),
-  'nocache_hash' => '2373356dada81ef8359_25043027',
+  'nocache_hash' => '1763356eae123676553_20934175',
   'variables' => 
   array (
     'kosik' => 0,
@@ -26,20 +26,18 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     'id' => 0,
     'doprava' => 0,
     'radek_doprava' => 0,
-    'bunka_doprava' => 0,
     'platba' => 0,
     'radek_platba' => 0,
-    'bunka_platba' => 0,
   ),
   'has_nocache_code' => false,
   'version' => '3.1.27',
-  'unifunc' => 'content_56dada820f8927_11966121',
+  'unifunc' => 'content_56eae1237b63a9_76599481',
 ),false);
 /*/%%SmartyHeaderCode%%*/
-if ($_valid && !is_callable('content_56dada820f8927_11966121')) {
-function content_56dada820f8927_11966121 ($_smarty_tpl) {
+if ($_valid && !is_callable('content_56eae1237b63a9_76599481')) {
+function content_56eae1237b63a9_76599481 ($_smarty_tpl) {
 
-$_smarty_tpl->properties['nocache_hash'] = '2373356dada81ef8359_25043027';
+$_smarty_tpl->properties['nocache_hash'] = '1763356eae123676553_20934175';
 ?>
 <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
 <html>
@@ -195,25 +193,11 @@ foreach ($_from as $_smarty_tpl->tpl_vars['radek_doprava']->value) {
 $_smarty_tpl->tpl_vars['radek_doprava']->_loop = true;
 $foreach_radek_doprava_Sav = $_smarty_tpl->tpl_vars['radek_doprava'];
 ?>
-                  <tr> <th><input type="radio" name="doprava" value="<?php echo $_smarty_tpl->tpl_vars['radek_doprava']->value['nazev'];?>
+                  <tr> <th><input type="radio" name="doprava" value="<?php echo $_smarty_tpl->tpl_vars['radek_doprava']->value['id'];?>
 " required></th>
-                   <?php
-$_from = $_smarty_tpl->tpl_vars['radek_doprava']->value;
-if (!is_array($_from) && !is_object($_from)) {
-settype($_from, 'array');
-}
-$_smarty_tpl->tpl_vars['bunka_doprava'] = new Smarty_Variable;
-$_smarty_tpl->tpl_vars['bunka_doprava']->_loop = false;
-foreach ($_from as $_smarty_tpl->tpl_vars['bunka_doprava']->value) {
-$_smarty_tpl->tpl_vars['bunka_doprava']->_loop = true;
-$foreach_bunka_doprava_Sav = $_smarty_tpl->tpl_vars['bunka_doprava'];
-?>
-                    <th><?php echo $_smarty_tpl->tpl_vars['bunka_doprava']->value;?>
-</th>
-                  <?php
-$_smarty_tpl->tpl_vars['bunka_doprava'] = $foreach_bunka_doprava_Sav;
-}
-?> </tr>
+                    <th><?php echo $_smarty_tpl->tpl_vars['radek_doprava']->value['nazev'];?>
+</th><th><?php echo $_smarty_tpl->tpl_vars['radek_doprava']->value['cena'];?>
+</th></tr>
                 <?php
 $_smarty_tpl->tpl_vars['radek_doprava'] = $foreach_radek_doprava_Sav;
 }
@@ -234,25 +218,11 @@ foreach ($_from as $_smarty_tpl->tpl_vars['radek_platba']->value) {
 $_smarty_tpl->tpl_vars['radek_platba']->_loop = true;
 $foreach_radek_platba_Sav = $_smarty_tpl->tpl_vars['radek_platba'];
 ?>
-                  <tr> <th><input type="radio" name="platba" value="<?php echo $_smarty_tpl->tpl_vars['radek_platba']->value['nazev'];?>
+                  <tr> <th><input type="radio" name="platba" value="<?php echo $_smarty_tpl->tpl_vars['radek_platba']->value['id'];?>
 " required></th>
-                    <?php
-$_from = $_smarty_tpl->tpl_vars['radek_platba']->value;
-if (!is_array($_from) && !is_object($_from)) {
-settype($_from, 'array');
-}
-$_smarty_tpl->tpl_vars['bunka_platba'] = new Smarty_Variable;
-$_smarty_tpl->tpl_vars['bunka_platba']->_loop = false;
-foreach ($_from as $_smarty_tpl->tpl_vars['bunka_platba']->value) {
-$_smarty_tpl->tpl_vars['bunka_platba']->_loop = true;
-$foreach_bunka_platba_Sav = $_smarty_tpl->tpl_vars['bunka_platba'];
-?>
-                    <th><?php echo $_smarty_tpl->tpl_vars['bunka_platba']->value;?>
-</th>
-                  <?php
-$_smarty_tpl->tpl_vars['bunka_platba'] = $foreach_bunka_platba_Sav;
-}
-?> </tr>
+                    <th><?php echo $_smarty_tpl->tpl_vars['radek_platba']->value['nazev'];?>
+</th><th><?php echo $_smarty_tpl->tpl_vars['radek_platba']->value['cena'];?>
+</th></tr>
                 <?php
 $_smarty_tpl->tpl_vars['radek_platba'] = $foreach_radek_platba_Sav;
 }

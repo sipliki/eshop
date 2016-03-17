@@ -38,13 +38,13 @@
           <h2>Moje objednávky</h2>
       <div class="btn-group">
         <a href="../administrace/user.php" class="btn btn-success" name="user">Informace</a>
-       <a href="../objednavka/objednavky.php" class="btn btn-success" name="objednávky"> Moje objednávky</a>
+       <a href="../objednavka/objednavky.php" class="btn btn-success" name="objednavky"> Moje objednávky</a>
        {if isset($admin)}
             <a href="../administrace/upravit_zbozi.php" class="btn btn-info" name="upravit_zbozi">Upravit zboží</a>
             <a href="../administrace/pridat_zbozi.php" class="btn btn-info" name="pridat_zbozi">Přidat zboží</a>
-            <a href="../administrace/update_menu.php" class="btn btn-primary" name="upravit_menu">Upravit menu</a>
-            <a href="../administrace/upravit_menu.php" class="btn btn-primary" name="pridat_menu">Přidat menu</a>
-            <a href="../administrace/vypis_objednavek.php" class="btn btn-warning" name="vypis-objednavek">Výpis všech objednávek</a>
+            <a href="update_menu.php" class="btn btn-primary" name="upravit_menu">Upravit menu</a>
+            <a href="upravit_menu.php" class="btn btn-primary" name="pridat_menu">Přidat menu</a>
+            <a href="vypis_objednavek.php" class="btn btn-warning" name="vypis-objednavek">Výpis všech objednávek</a>
             {/if}
         </div><br />
         <br />
@@ -75,6 +75,7 @@
             <input type="hidden" name="id_objednavky" value="{$radek_objednavka.id}" />
           <button type="submit" name="zrusit" class="btn btn-primary">Zrušit objednávku</button>
           </form>
+          <a href="upravit_objednavku.php?id={$radek_objednavka.id}" class="btn btn-warning">Upravit objednávku</a>
         </div>
         <div class="text-left">
           <h4>Objednané zboží</h4>
