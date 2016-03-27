@@ -33,19 +33,20 @@
 		unset($_SESSION["kosik"][$_GET["id_zbozi"]]);
 		if($_SESSION["kosik"]==NULL){$_SESSION["prazdny_kosik"]="1";header('Location: vypis_zbozi.php');unset($_SESSION["kosik"]);}
 	}
-
       if($_SESSION["kosik"]) {
        $sql="SELECT * FROM zbozi WHERE id_zbozi IN ('" . implode("', '", array_keys($_SESSION["kosik"])) . "')";
        $result =$conn->query($sql);
     	  while($row =$result->fetch_assoc()) {
     	  	$id_zbozi[$row["id_zbozi"]]["id"]=$row["id_zbozi"];
+    	  	$zbozi[$row["id_zbozi"]]["id"]=$row["id_zbozi"];
         	$zbozi[$row["id_zbozi"]]["nazev"]=$row["nazev"];
       		$zbozi[$row["id_zbozi"]]["cena"]=$row["cena"]." Kč";
+      		$mnozstvi[$row["id_zbozi"]]["id"]=$row["id_zbozi"];
       		$mnozstvi[$row["id_zbozi"]]["mnozstvi"]=$_SESSION["kosik"][$row["id_zbozi"]];
     	  }
 	  }
-	  $smarty->assign("id_zbozi",$id_zbozi);
 	  $smarty->assign("mnozstvi",$mnozstvi);
+	  //$smarty->assign("id_zbozi",$id_zbozi);
 	  $smarty->assign("zbozi",$zbozi);
 
 	  $sql_doprava="SELECT * FROM doprava";
@@ -71,7 +72,7 @@
 	  			$arr++;
 	  		}
 	  $smarty->assign("platba",$platba);
-	
+
 	$conn->close();
 	$smarty->display("kosikTpl.tpl")
 ?>

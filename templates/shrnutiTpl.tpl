@@ -42,7 +42,7 @@
           <h3>Výpis zboží v košíku</h3>
           <table class="table">
             <thead>
-              <tr><td>Název zboží</td><td>Cena</td><td>Množství</td></tr>
+              <tr><td>Název zboží</td><td>Cena</td></tr>
             </thead>
             <tbody>
              {foreach $zbozi as $radek}

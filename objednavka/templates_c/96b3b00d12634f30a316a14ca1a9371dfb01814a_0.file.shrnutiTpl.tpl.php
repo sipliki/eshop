@@ -1,7 +1,7 @@
-<?php /* Smarty version 3.1.27, created on 2016-03-17 17:57:32
+<?php /* Smarty version 3.1.27, created on 2016-03-24 14:55:16
          compiled from "C:\Program Files (x86)\EasyPHP-DevServer-14.1VC11\data\localweb\my portable files\e-shop\templates\shrnutiTpl.tpl" */ ?>
 <?php
-/*%%SmartyHeaderCode:461456eae1fcec9ea6_87417708%%*/
+/*%%SmartyHeaderCode:2135356f3f1c409bea4_17047098%%*/
 if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
   'file_dependency' => 
@@ -9,11 +9,11 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     '96b3b00d12634f30a316a14ca1a9371dfb01814a' => 
     array (
       0 => 'C:\\Program Files (x86)\\EasyPHP-DevServer-14.1VC11\\data\\localweb\\my portable files\\e-shop\\templates\\shrnutiTpl.tpl',
-      1 => 1458233790,
+      1 => 1458827714,
       2 => 'file',
     ),
   ),
-  'nocache_hash' => '461456eae1fcec9ea6_87417708',
+  'nocache_hash' => '2135356f3f1c409bea4_17047098',
   'variables' => 
   array (
     'kosik' => 0,
@@ -28,13 +28,13 @@ $_valid = $_smarty_tpl->decodeProperties(array (
   ),
   'has_nocache_code' => false,
   'version' => '3.1.27',
-  'unifunc' => 'content_56eae1fd0bc758_36043449',
+  'unifunc' => 'content_56f3f1c41ec254_92007121',
 ),false);
 /*/%%SmartyHeaderCode%%*/
-if ($_valid && !is_callable('content_56eae1fd0bc758_36043449')) {
-function content_56eae1fd0bc758_36043449 ($_smarty_tpl) {
+if ($_valid && !is_callable('content_56f3f1c41ec254_92007121')) {
+function content_56f3f1c41ec254_92007121 ($_smarty_tpl) {
 
-$_smarty_tpl->properties['nocache_hash'] = '461456eae1fcec9ea6_87417708';
+$_smarty_tpl->properties['nocache_hash'] = '2135356f3f1c409bea4_17047098';
 ?>
 <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
 <html>
@@ -85,7 +85,7 @@ $_smarty_tpl->properties['nocache_hash'] = '461456eae1fcec9ea6_87417708';
           <h3>Výpis zboží v košíku</h3>
           <table class="table">
             <thead>
-              <tr><td>Název zboží</td><td>Cena</td><td>Množství</td></tr>
+              <tr><td>Název zboží</td><td>Cena</td></tr>
             </thead>
             <tbody>
              <?php

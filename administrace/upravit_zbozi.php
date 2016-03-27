@@ -15,6 +15,8 @@ if(isset($_SESSION["user"])){
       $smarty->assign("admin",$_SESSION["admin"]);
    }
    if(isset($_SESSION["update_fail"])){$smarty->assign("update_fail",$_SESSION["update_fail"]);unset($_SESSION["update_fail"]);}
+
+   if(isset($_SESSION["update"])){$smarty->assign("zmeneno",$_SESSION["update"]);unset($_SESSION["update"]);}
   
   $servername = "localhost";
 	$username = "root";

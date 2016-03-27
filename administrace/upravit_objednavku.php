@@ -36,6 +36,8 @@
 		$conn->query($sql_zruseni);
 		$smarty->assign("zruseni",$id);
 	}
+
+	//odebrání zboží
 	if(isset($_GET["odebrat"])){
 		unset($_SESSION["kosik"][$_GET["id_zbozi"]]);
 	}
@@ -160,14 +162,18 @@
 		$zbozi=implode(',', array_keys($_SESSION["zbozi"]));
 		$doprava=$_GET["doprava"];
 		$platba=$_GET["platba"];
+		$celkova_cena=0;
 
-		//celkova cena
+			$sql_cena="SELECT id_zbozi, cena FROM zbozi WHERE id_zbozi IN ('" . implode("', '", array_keys($_SESSION["zbozi"])) . "')";
+			$result_cena=$conn->query($sql_cena);
+						while($row_cena=$result_cena->fetch_assoc()){
+							$celkova_cena+=$row_cena["cena"];
+						}
 		
-
-		
-		$sql="UPDATE objednavky SET jmeno='$jmeno', prijmeni='$prijmeni', ulice='$ulice', mesto='$mesto', psc='$psc', id_obj_zbozi='$zbozi',  doprava='$doprava', platba='$platba' WHERE id_objednavky='$id'";
-		echo $sql;
+		$sql="UPDATE objednavky SET jmeno='$jmeno', prijmeni='$prijmeni', ulice='$ulice', mesto='$mesto', psc='$psc', id_obj_zbozi='$zbozi', celkova_cena='$celkova_cena', doprava='$doprava', platba='$platba' WHERE id_objednavky='$id'";
 		$conn->query($sql);
+		 $_SESSION["update_objednavky"]=1;
+		 header('Location: vypis_objednavek.php');
 
 	}
 $conn->close();

@@ -1,7 +1,7 @@
-<?php /* Smarty version 3.1.27, created on 2016-03-04 20:12:46
+<?php /* Smarty version 3.1.27, created on 2016-03-24 14:35:13
          compiled from "C:\Program Files (x86)\EasyPHP-DevServer-14.1VC11\data\localweb\my portable files\e-shop\templates\detailTpl.tpl" */ ?>
 <?php
-/*%%SmartyHeaderCode:443156d9de2ee34a02_45066350%%*/
+/*%%SmartyHeaderCode:2289656f3ed11761b35_02402360%%*/
 if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
   'file_dependency' => 
@@ -9,11 +9,11 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     '06bc46ac01bacf9786d0cf72443e7e6063b8d28f' => 
     array (
       0 => 'C:\\Program Files (x86)\\EasyPHP-DevServer-14.1VC11\\data\\localweb\\my portable files\\e-shop\\templates\\detailTpl.tpl',
-      1 => 1457118764,
+      1 => 1458826498,
       2 => 'file',
     ),
   ),
-  'nocache_hash' => '443156d9de2ee34a02_45066350',
+  'nocache_hash' => '2289656f3ed11761b35_02402360',
   'variables' => 
   array (
     'kosik' => 0,
@@ -30,13 +30,13 @@ $_valid = $_smarty_tpl->decodeProperties(array (
   ),
   'has_nocache_code' => false,
   'version' => '3.1.27',
-  'unifunc' => 'content_56d9de2f02d921_13429539',
+  'unifunc' => 'content_56f3ed1187b9b3_47957106',
 ),false);
 /*/%%SmartyHeaderCode%%*/
-if ($_valid && !is_callable('content_56d9de2f02d921_13429539')) {
-function content_56d9de2f02d921_13429539 ($_smarty_tpl) {
+if ($_valid && !is_callable('content_56f3ed1187b9b3_47957106')) {
+function content_56f3ed1187b9b3_47957106 ($_smarty_tpl) {
 
-$_smarty_tpl->properties['nocache_hash'] = '443156d9de2ee34a02_45066350';
+$_smarty_tpl->properties['nocache_hash'] = '2289656f3ed11761b35_02402360';
 ?>
 <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
 <html>
@@ -58,7 +58,7 @@ $_smarty_tpl->properties['nocache_hash'] = '443156d9de2ee34a02_45066350';
   		<nav class="navbar navbar-default">
   <div class="container-fluid">
     <div class="navbar-header">
-      <a class="navbar-brand" href="#">E-shop</a>
+      <a class="navbar-brand" href="vypis_zbozi.php">E-shop</a>
     </div>
 
     <div>
@@ -112,7 +112,6 @@ $_smarty_tpl->properties['nocache_hash'] = '443156d9de2ee34a02_45066350';
 " >
             <input type="hidden" name="id_kosik" value="<?php echo $_smarty_tpl->tpl_vars['zbozi']->value['id'];?>
 " >
-            Počet kusů: <input type="number" class="form-control" name="pocet_kusu" value="1" max="5" min="1" />
             <button type='submit' name='pridat_zbozi' class="btn btn-primary"><span class="glyphicon glyphicon-shopping-cart" aria-hidden="true"></span> Vložit do košíku </button>
           </form>
        </div>

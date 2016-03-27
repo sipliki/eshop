@@ -55,6 +55,12 @@
           <div class="alert alert-success" role="alert">Zboží bylo úspěšně přidáno do databáze</div>
         </div>
         {/if}
+
+        {if isset($zmeneno)}
+        <div class="col-md-12 text-center">
+          <div class="alert alert-success" role="alert">Zboží bylo úspěšně změněno</div>
+        </div>
+        {/if}
         <div class="container">
           <div class="col-lg-12 text-left">
             <h3>Přihlašovací údaje</h3>

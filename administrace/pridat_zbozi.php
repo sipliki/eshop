@@ -109,7 +109,7 @@
       }
       $smarty->assign("kategorie",$kategorie);
 	
-	 //UPDATE
+	 //Vlozit zbozi
     if(isset($_GET['pridej'])){
                     $nazev=$_GET["nazev"];
                     $popis=$_GET["popis"];

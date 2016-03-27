@@ -1,7 +1,7 @@
-<?php /* Smarty version 3.1.27, created on 2016-03-13 17:54:59
+<?php /* Smarty version 3.1.27, created on 2016-03-27 16:16:50
          compiled from "C:\Program Files (x86)\EasyPHP-DevServer-14.1VC11\data\localweb\my portable files\e-shop\templates\vypis_objednavekTpl.tpl" */ ?>
 <?php
-/*%%SmartyHeaderCode:2084356e59b63c56738_28023812%%*/
+/*%%SmartyHeaderCode:3246356f7eb52a2d978_17363951%%*/
 if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
   'file_dependency' => 
@@ -9,16 +9,17 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     'd4893a2cc96c82ee32a5b672137cd05c478727af' => 
     array (
       0 => 'C:\\Program Files (x86)\\EasyPHP-DevServer-14.1VC11\\data\\localweb\\my portable files\\e-shop\\templates\\vypis_objednavekTpl.tpl',
-      1 => 1457888097,
+      1 => 1459088208,
       2 => 'file',
     ),
   ),
-  'nocache_hash' => '2084356e59b63c56738_28023812',
+  'nocache_hash' => '3246356f7eb52a2d978_17363951',
   'variables' => 
   array (
     'kosik' => 0,
     'session_user' => 0,
     'admin' => 0,
+    'update_objednavky' => 0,
     'bez_objednavky' => 0,
     'zruseni' => 0,
     'objednavka' => 0,
@@ -28,13 +29,13 @@ $_valid = $_smarty_tpl->decodeProperties(array (
   ),
   'has_nocache_code' => false,
   'version' => '3.1.27',
-  'unifunc' => 'content_56e59b63de2cb9_68922038',
+  'unifunc' => 'content_56f7eb52bbac52_68996075',
 ),false);
 /*/%%SmartyHeaderCode%%*/
-if ($_valid && !is_callable('content_56e59b63de2cb9_68922038')) {
-function content_56e59b63de2cb9_68922038 ($_smarty_tpl) {
+if ($_valid && !is_callable('content_56f7eb52bbac52_68996075')) {
+function content_56f7eb52bbac52_68996075 ($_smarty_tpl) {
 
-$_smarty_tpl->properties['nocache_hash'] = '2084356e59b63c56738_28023812';
+$_smarty_tpl->properties['nocache_hash'] = '3246356f7eb52a2d978_17363951';
 ?>
 <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
 <html>
@@ -83,7 +84,7 @@ $_smarty_tpl->properties['nocache_hash'] = '2084356e59b63c56738_28023812';
         <a href="../administrace/user.php" class="btn btn-success" name="user">Informace</a>
        <a href="../objednavka/objednavky.php" class="btn btn-success" name="objednavky"> Moje objednávky</a>
        <?php if (isset($_smarty_tpl->tpl_vars['admin']->value)) {?>
-            <a href="../administrace/upravit_zbozi.php" class="btn btn-info" name="upravit_zbozi">Upravit zboží</a>
+            <a href="../administrace/upravit_zbozi.php" class="btn btn-info" name="upravit_zbozi">Upravit/Smazat zboží</a>
             <a href="../administrace/pridat_zbozi.php" class="btn btn-info" name="pridat_zbozi">Přidat zboží</a>
             <a href="update_menu.php" class="btn btn-primary" name="upravit_menu">Upravit menu</a>
             <a href="upravit_menu.php" class="btn btn-primary" name="pridat_menu">Přidat menu</a>
@@ -91,6 +92,10 @@ $_smarty_tpl->properties['nocache_hash'] = '2084356e59b63c56738_28023812';
             <?php }?>
         </div><br />
         <br />
+        <?php if (isset($_smarty_tpl->tpl_vars['update_objednavky']->value)) {?>
+        <div class="alert alert-info text-center" role="alert"><span class="glyphicon glyphicon-shopping-cart"></span>
+          Objednávka byla úspěšně změněna.  </div>
+        <?php }?>
         <?php if (isset($_smarty_tpl->tpl_vars['bez_objednavky']->value)) {?>
         <div class="alert alert-info" role="alert"><span class="glyphicon glyphicon-pushpin" aria-hidden="true"></span> Zatím jste si u nás nic neobjednal</div>
 

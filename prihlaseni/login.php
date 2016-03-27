@@ -20,8 +20,6 @@
   	$sql = "SET CHARACTER SET utf8";
 	$conn->query($sql);
 
-	if(isset($_GET["shrnuti"])){$_SESSION["shrnuti"]=$_GET["shrnuti"];}
-
 	if(isset($_GET["login"])){
 			$username=$_GET["nick"];
 			$pwd=md5($_GET["pwd"]);
@@ -30,20 +28,14 @@
 			$rows=mysqli_num_rows($vysledek);
 			if($rows>0){
 			  	$_SESSION["user"]=$username;
+			  	if(isset($_SESSION["doprava"]) AND isset($_SESSION["platba"])){
+					header('Location: ../objednavka/shrnuti.php');}
+				else{header('Location: ../administrace/user.php');}	
 				}
-				else{
-						$smarty->assign("error",$username);
-				};	
-				if(isset($_SESSION["kosik"])){
-		$doprava=$_SESSION["doprava"];
-		$platba=$_SESSION["platba"];
-		header('Location: ../objednavka/shrnuti.php');
-		unset($_SESSION["shrnuti"]);		
-	}
-	else{header('Location: ../administrace/user.php');}	
+			else{$smarty->assign("error",$username);}		
+	
 	};
 
-		
 $conn->close();
 $smarty->display("../templates/loginTpl.tpl");
 ?>

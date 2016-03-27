@@ -45,10 +45,10 @@
 			$uzivatel["ID"]=$row_uzivatel["ID_uzivatele"];
 			$uzivatel["admin"]=$row_uzivatel["admin"];
 			if($row_uzivatel["admin"]=='1'){$smarty->assign("admin",$uzivatel["admin"]);}
+
 	//načtení objednávek
 	$id=$uzivatel["ID"];
 	$sql_objednavka="SELECT * FROM objednavky WHERE id_zakaznika='$id'";
-	//echo $sql_objednavka;
 	$result_objednavka=$conn->query($sql_objednavka);
 	$pocet_radku=mysqli_num_rows($result_objednavka);
 		if($pocet_radku=="0"){$smarty->assign("bez_objednavky",$pocet_radku);}
@@ -70,7 +70,6 @@
 					//zboží
 					$zbozi=explode(',', $row_objednavka["id_obj_zbozi"]);
 					$sql="SELECT id_zbozi,nazev,cena FROM zbozi WHERE id_zbozi IN ('" . implode("', '", $zbozi) . "')";
-					//echo $sql;
 					$result_zbozi=$conn->query($sql);
 					$b=0;
 						while($row_zbozi=$result_zbozi->fetch_assoc()){
@@ -102,7 +101,6 @@
 	  					$a++;
 		
 		}
-		//print_r($objednavka);
 		$smarty->assign("objednavka",$objednavka);
 	}
 $conn->close();

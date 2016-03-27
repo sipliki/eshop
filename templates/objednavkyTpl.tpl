@@ -40,7 +40,7 @@
         <a href="../administrace/user.php" class="btn btn-success" name="user">Informace</a>
        <a href="../objednavka/objednavky.php" class="btn btn-success" name="objednávky"> Moje objednávky</a>
        {if isset($admin)}
-            <a href="../administrace/upravit_zbozi.php" class="btn btn-info" name="upravit_zbozi">Upravit zboží</a>
+            <a href="../administrace/upravit_zbozi.php" class="btn btn-info" name="upravit_zbozi">Upravit/Smazat zboží</a>
             <a href="../administrace/pridat_zbozi.php" class="btn btn-info" name="pridat_zbozi">Přidat zboží</a>
             <a href="../administrace/update_menu.php" class="btn btn-primary" name="upravit_menu">Upravit menu</a>
             <a href="../administrace/upravit_menu.php" class="btn btn-primary" name="pridat_menu">Přidat menu</a>

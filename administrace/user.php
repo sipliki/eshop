@@ -57,6 +57,7 @@
 		$psc=$_GET["psc"];
 		$update="UPDATE uzivatele SET uzivatelske_jmeno='$nick',heslo='$heslo',jmeno='$jmeno',prijmeni='$prijmeni',ulice='$ulice',mesto='$mesto',psc='$psc' WHERE ID_uzivatele='$id'";
 		$conn->query($update);
+		header('Location: user.php');
 
 	}
 	$conn->close();

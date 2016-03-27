@@ -41,11 +41,11 @@
 			$dotaz="INSERT INTO uzivatele VALUES ('NULL','$uzivatelske_jmeno','$heslo','$jmeno','$prijmeni','$ulice','$mesto','$psc','0')";
 			$conn->query($dotaz);
 				$_SESSION["user"]=$uzivatelske_jmeno;
-				if(isset($_SESSION["kosik"])){
-					header('Location: ../objednavka/shrnuti.php?');
-					unset($_SESSION["shrnuti"]);	
-				}
-				else{header('Location: ../administrace/user.php');}
+				
+				if(isset($_SESSION["doprava"]) AND isset($_SESSION["platba"])){
+		header('Location: ../objednavka/shrnuti.php');		
+	}
+	else{header('Location: ../administrace/user.php');}
 		}}
 
 	if($heslo1!=$heslo2) {$error="1";$smarty->assign("error",$error);}

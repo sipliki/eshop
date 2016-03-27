@@ -13,6 +13,11 @@
      header('Location: ../vypis_zbozi.php');
 	}
 
+	if(isset($_SESSION["update_objednavky"])){
+		$smarty->assign("update_objednavky",$_SESSION["update_objednavky"]);
+		unset($_SESSION["update_objednavky"]);
+	}
+
     $servername = "localhost";
 	$username = "root";
 	$password = "";
@@ -47,7 +52,7 @@
 			if($row_uzivatel["admin"]=='1'){$smarty->assign("admin",$uzivatel["admin"]);}
 	//načtení objednávek
 	$id=$uzivatel["ID"];
-	$sql_objednavka="SELECT * FROM objednavky WHERE id_zakaznika='$id'";
+	$sql_objednavka="SELECT * FROM objednavky";
 	//echo $sql_objednavka;
 	$result_objednavka=$conn->query($sql_objednavka);
 	$pocet_radku=mysqli_num_rows($result_objednavka);

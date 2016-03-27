@@ -47,7 +47,8 @@
          $gpu=$_GET["gpu"];                                                                                                                                                                                                                                          
             $update= "UPDATE zbozi SET nazev='$nazev', popis='$popis', cena='$cena', image='$img', dostupnost='$dostupnost', vyrobce='$vyrobce', stav_zbozi='$stav_zbozi', procesor='$procesor', uhlopricka_displeje='$uhlopricka', rozliseni_displeje='$rozliseni', operacni_system='os', operacni_pamet='$operacni_pamet', interni_pamet='$interni_pamet', gpu='$gpu'  WHERE id_zbozi='$id' ";
              $conn->query($update);
-             //header('Location: upravit_zbozi.php');
+             $_SESSION["update"]=1;
+             header('Location: upravit_zbozi.php');
              
          };
 	       //vypis polozek

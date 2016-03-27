@@ -30,12 +30,10 @@
 	$conn->query($sql);
 
 	//zboží, doprava, platba
-	/*if(isset($_SESSION["doprava"])){$doprava=$_SESSION["doprava"];}
+	if(isset($_SESSION["doprava"])){$doprava=$_SESSION["doprava"];unset($_SESSION["doprava"]);}
 	   else {$doprava=$_GET["doprava"];}
-	 if(isset($_SESSION["platba"])){$platba=$_SESSION["platba"];}
-	   else {$platba=$_GET["platba"];}*/
-	   $doprava=$_GET["doprava"];
-	   $platba=$_GET["platba"];
+	 if(isset($_SESSION["platba"])){$platba=$_SESSION["platba"];unset($_SESSION["platba"]);}
+	   else {$platba=$_GET["platba"];}
 	   $celkova_cena=0;
 
        $sql="SELECT id_zbozi,nazev,cena FROM zbozi WHERE id_zbozi IN ('" . implode("', '", array_keys($_SESSION["kosik"])) . "')";
@@ -43,7 +41,6 @@
     	  while($row =$result->fetch_assoc()) {
         	$zbozi[$row["id_zbozi"]]["nazev"]=$row["nazev"];
       		$zbozi[$row["id_zbozi"]]["cena"]=$row["cena"]." Kč";
-      		$mnozstvi[$row["id_zbozi"]]["mnozstvi"]=$_SESSION["kosik"][$row["id_zbozi"]];
       		$celkova_cena+=$row["cena"];
     	  }
 	$smarty->assign("zbozi",$zbozi);
@@ -55,6 +52,7 @@
 				$doprava_vypis["nazev"]=$row_doprava["nazev"];
 				$doprava_vypis["cena"]=$row_doprava["cena"];
 				$celkova_cena+=$row_doprava["cena"];
+				$_SESSION["doprava"]=$row_doprava["id_doprava"];
 					$smarty->assign("doprava",$doprava_vypis);
 
 		$sql_platba="SELECT * FROM platba WHERE id_platba='$platba'";
@@ -64,6 +62,7 @@
 				$platba_vypis["nazev"]=$row_platba["nazev"];
 				$platba_vypis["cena"]=$row_platba["cena"];
 				$celkova_cena+=$row_platba["cena"];
+				$_SESSION["platba"]=$row_platba["id_platba"];
 					$smarty->assign("platba",$platba_vypis);
 					
 		$smarty->assign("celkova_cena",$celkova_cena);
@@ -98,12 +97,11 @@
 		$celkova_cena=$_GET["cena"];
 		$datum=strtotime("now");
 		$zbozi_zapis=implode(',', array_keys($_SESSION["kosik"]));
-		$mnozstvi=implode(',', $_SESSION["kosik"]);
-			$sql_objednavka="INSERT INTO objednavky VALUES ('NULL','$jmeno','$prijmeni','$ulice','$mesto','$psc','$zbozi_zapis','$mnozstvi','$celkova_cena','$doprava','$platba','$id','$datum','1')";
+			$sql_objednavka="INSERT INTO objednavky VALUES ('NULL','$jmeno','$prijmeni','$ulice','$mesto','$psc','$zbozi_zapis','$celkova_cena','$doprava','$platba','$id','$datum','1')";
 		$conn->query($sql_objednavka);
 		unset($_SESSION["kosik"]);
-		echo $sql_objednavka;
-		//header('Location: prijato.php');
+		//echo $sql_objednavka;
+		header('Location: prijato.php');
 	}
 
 

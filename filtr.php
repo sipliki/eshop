@@ -204,7 +204,7 @@ if(isset($_SESSION["user"])){
       if(isset($_GET["gpu"])){$a=implode("',",$_GET["gpu"]);$sql.=" AND gpu IN ('$a')";unset($a);}
 
   }
-  echo $sql;
+  //echo $sql;
 
     // Načtení databáze do associativího pole
 	$result = $conn->query($sql);
@@ -213,7 +213,6 @@ if(isset($_SESSION["user"])){
   //Výpis položek
   if(mysqli_num_rows($result)==0){
     $_SESSION["fail_database"]='1';
-      header('Location: vypis_zbozi.php');
   }
   else{
     function get_db_results($result){

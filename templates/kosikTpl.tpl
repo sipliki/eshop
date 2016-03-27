@@ -41,42 +41,22 @@
           <div class="col-md-10">
           <table class="table table-hover">
             <thead>
-              <tr><td>Název zboží</td><td>Cena</td><td>Množství</td></tr>
+              <tr><td>Název zboží</td><td>Cena</td><td>Odebrat</td></tr>
             </thead>
             <tbody>
              {foreach $zbozi as $radek}
-              <tr>{foreach $radek as $bunka}
-                <th>{$bunka}</th>{/foreach}
-                <th>
-                  <form>
-                   <div class="col-md-8">
-                      <input type="number" class="form-control" name="mnozstvi" value="1" max="5" min="1" disabled />
-                      <input type="hidden" name="id_zbozi" value="{}">
-                   </div>
-                  </form>
-                </th>
+              <tr>
+                <th>{$radek.nazev}</th><th>{$radek.cena}</th>
+                 <th>
+                    <form>
+                      <input type="hidden" name="id_zbozi" class="form-control" value="{$radek.id}">
+                      <button type="submit" class="btn btn-info" name="odebrat"><span class="glyphicon glyphicon-remove" aria-hidden="true"></span></button>
+                      </form>  
+                    </th>
               </tr>{/foreach}
             </tbody>
             </table>
-          </div>
-          <div class="col-md-2">
-            <table class="table table-hover">
-              <thead>
-                <tr><td>Odebrat položku</td></tr>
-              </thead>
-              <tbody>
-                {foreach $id_zbozi as $id_radek}
-                  <tr>{foreach $id_radek as $id}
-                    <th>
-                      <form>
-                      <input type="hidden" name="id_zbozi" value="{$id}">
-                      <button type="submit" class="btn btn-info" name="odebrat"><span class="glyphicon glyphicon-remove" aria-hidden="true"></span></button>
-                    </form>
-                    </th>{/foreach}
-              </tr>{/foreach}
-            </tbody>
-          </table>
-        </div>
+          </div>          
         </div>
         <form>
         <div class="col-md-6 text-left">

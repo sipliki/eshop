@@ -203,7 +203,6 @@
                 <form class="form-inline">
             <input type="hidden" name="id" value="{$radek.id}" >
             <input type="hidden" name="id_kosik" value="{$radek.id}" >
-            Počet kusů: <input type="number" class="form-control" name="pocet_kusu" value="1" max="5" min="1" />
             <button type='submit' name='pridat_zbozi' class="btn btn-primary"><span class="glyphicon glyphicon-shopping-cart" aria-hidden="true"></span> Vložit do košíku </button>
           </form>
               </blockquote>

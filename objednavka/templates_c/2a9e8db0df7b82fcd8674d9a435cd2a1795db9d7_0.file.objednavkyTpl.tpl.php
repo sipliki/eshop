@@ -1,7 +1,7 @@
-<?php /* Smarty version 3.1.27, created on 2016-03-13 17:57:43
+<?php /* Smarty version 3.1.27, created on 2016-03-27 16:17:10
          compiled from "C:\Program Files (x86)\EasyPHP-DevServer-14.1VC11\data\localweb\my portable files\e-shop\templates\objednavkyTpl.tpl" */ ?>
 <?php
-/*%%SmartyHeaderCode:2989656e59c07ca6bb7_52661117%%*/
+/*%%SmartyHeaderCode:1647656f7eb666e01f4_73720161%%*/
 if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
   'file_dependency' => 
@@ -9,11 +9,11 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     '2a9e8db0df7b82fcd8674d9a435cd2a1795db9d7' => 
     array (
       0 => 'C:\\Program Files (x86)\\EasyPHP-DevServer-14.1VC11\\data\\localweb\\my portable files\\e-shop\\templates\\objednavkyTpl.tpl',
-      1 => 1457888247,
+      1 => 1459088227,
       2 => 'file',
     ),
   ),
-  'nocache_hash' => '2989656e59c07ca6bb7_52661117',
+  'nocache_hash' => '1647656f7eb666e01f4_73720161',
   'variables' => 
   array (
     'kosik' => 0,
@@ -28,13 +28,13 @@ $_valid = $_smarty_tpl->decodeProperties(array (
   ),
   'has_nocache_code' => false,
   'version' => '3.1.27',
-  'unifunc' => 'content_56e59c07e78644_51030464',
+  'unifunc' => 'content_56f7eb6684c298_36477965',
 ),false);
 /*/%%SmartyHeaderCode%%*/
-if ($_valid && !is_callable('content_56e59c07e78644_51030464')) {
-function content_56e59c07e78644_51030464 ($_smarty_tpl) {
+if ($_valid && !is_callable('content_56f7eb6684c298_36477965')) {
+function content_56f7eb6684c298_36477965 ($_smarty_tpl) {
 
-$_smarty_tpl->properties['nocache_hash'] = '2989656e59c07ca6bb7_52661117';
+$_smarty_tpl->properties['nocache_hash'] = '1647656f7eb666e01f4_73720161';
 ?>
 <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
 <html>
@@ -83,7 +83,7 @@ $_smarty_tpl->properties['nocache_hash'] = '2989656e59c07ca6bb7_52661117';
         <a href="../administrace/user.php" class="btn btn-success" name="user">Informace</a>
        <a href="../objednavka/objednavky.php" class="btn btn-success" name="objednávky"> Moje objednávky</a>
        <?php if (isset($_smarty_tpl->tpl_vars['admin']->value)) {?>
-            <a href="../administrace/upravit_zbozi.php" class="btn btn-info" name="upravit_zbozi">Upravit zboží</a>
+            <a href="../administrace/upravit_zbozi.php" class="btn btn-info" name="upravit_zbozi">Upravit/Smazat zboží</a>
             <a href="../administrace/pridat_zbozi.php" class="btn btn-info" name="pridat_zbozi">Přidat zboží</a>
             <a href="../administrace/update_menu.php" class="btn btn-primary" name="upravit_menu">Upravit menu</a>
             <a href="../administrace/upravit_menu.php" class="btn btn-primary" name="pridat_menu">Přidat menu</a>

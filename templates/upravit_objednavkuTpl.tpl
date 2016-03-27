@@ -40,7 +40,7 @@
         <a href="../administrace/user.php" class="btn btn-success" name="user">Informace</a>
        <a href="../objednavka/objednavky.php" class="btn btn-success" name="objednavky"> Moje objednávky</a>
        {if isset($admin)}
-            <a href="../administrace/upravit_zbozi.php" class="btn btn-info" name="upravit_zbozi">Upravit zboží</a>
+            <a href="../administrace/upravit_zbozi.php" class="btn btn-info" name="upravit_zbozi">Upravit/Smazat zboží</a>
             <a href="../administrace/pridat_zbozi.php" class="btn btn-info" name="pridat_zbozi">Přidat zboží</a>
             <a href="update_menu.php" class="btn btn-primary" name="upravit_menu">Upravit menu</a>
             <a href="upravit_menu.php" class="btn btn-primary" name="pridat_menu">Přidat menu</a>
@@ -67,43 +67,28 @@
        
         <div class="text-left">
           <h4>Objednané zboží</h4>
-          <div class="col-md-10">
+          <div class="col-md-12">
             <table class="table table-hover">
               <thead>
-                <tr><th>Název</th><th>Cena</th></tr>
+                <tr><th>Název</th><th>Cena</th><th>Odebrat</th></tr>
               </thead>
               <tbody>
                 {foreach $objednavka.zbozi as $radek_zbozi}
                   <tr>
-                    {foreach $radek_zbozi as $bunka_zbozi}
-                    <th>{$bunka_zbozi}</th>
-                    {/foreach}
-                  </tr>
-                 {/foreach}
-                 <tr><th>Celková cena:</th><th>{$objednavka.celkova_cena}</th></tr>
-              </tbody>
-            </table>
-          </div>
-
-            <div class="col-md-2">
-            <table class="table table-hover">
-              <thead>
-                <tr><td>Odebrat položku</td></tr>
-              </thead>
-              <tbody>
-                {foreach $objednavka.id_zbozi as $id_radek}
-                  <tr>{foreach $id_radek as $id}
+                    <th>{$radek_zbozi.nazev_zbozi}</th><th>{$radek_zbozi.cena_zbozi}</th>
                     <th>
                       <form>
                         <input type="hidden" name="id" value="{$objednavka.id}">
                       <input type="hidden" name="id_zbozi" value="{$id}">
                       <button type="submit" class="btn btn-info" name="odebrat"><span class="glyphicon glyphicon-remove" aria-hidden="true"></span></button>
                     </form>
-                    </th>{/foreach}
-              </tr>{/foreach}
-            </tbody>
-          </table>
-        </div>
+                    </th>
+                  </tr>
+                 {/foreach}
+                 <tr><th>Celková cena:</th><th>{$objednavka.celkova_cena}</th></tr>
+              </tbody>
+            </table>
+          </div>
         <br />
         <form>
           <h4>Doprava a platba</h4>

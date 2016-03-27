@@ -40,7 +40,7 @@
         <a href="../administrace/user.php" class="btn btn-success" name="user">Informace</a>
        <a href="../objednavka/objednavky.php" class="btn btn-success" name="objednavky"> Moje objednávky</a>
        {if isset($admin)}
-            <a href="../administrace/upravit_zbozi.php" class="btn btn-info" name="upravit_zbozi">Upravit zboží</a>
+            <a href="../administrace/upravit_zbozi.php" class="btn btn-info" name="upravit_zbozi">Upravit/Smazat zboží</a>
             <a href="../administrace/pridat_zbozi.php" class="btn btn-info" name="pridat_zbozi">Přidat zboží</a>
             <a href="update_menu.php" class="btn btn-primary" name="upravit_menu">Upravit menu</a>
             <a href="upravit_menu.php" class="btn btn-primary" name="pridat_menu">Přidat menu</a>
@@ -48,6 +48,10 @@
             {/if}
         </div><br />
         <br />
+        {if isset($update_objednavky)}
+        <div class="alert alert-info text-center" role="alert"><span class="glyphicon glyphicon-shopping-cart"></span>
+          Objednávka byla úspěšně změněna.  </div>
+        {/if}
         {if isset ($bez_objednavky)}
         <div class="alert alert-info" role="alert"><span class="glyphicon glyphicon-pushpin" aria-hidden="true"></span> Zatím jste si u nás nic neobjednal</div>
 

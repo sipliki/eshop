@@ -1,7 +1,7 @@
-<?php /* Smarty version 3.1.27, created on 2016-03-12 11:37:08
+<?php /* Smarty version 3.1.27, created on 2016-03-24 14:31:46
          compiled from "C:\Program Files (x86)\EasyPHP-DevServer-14.1VC11\data\localweb\my portable files\e-shop\templates\zboziTpl.tpl" */ ?>
 <?php
-/*%%SmartyHeaderCode:3263656e3f1541f7be0_25627696%%*/
+/*%%SmartyHeaderCode:3178256f3ec42267a62_67940219%%*/
 if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
   'file_dependency' => 
@@ -9,11 +9,11 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     'd46e646a40aaeff044eef36a0a19a4ad8bad30cc' => 
     array (
       0 => 'C:\\Program Files (x86)\\EasyPHP-DevServer-14.1VC11\\data\\localweb\\my portable files\\e-shop\\templates\\zboziTpl.tpl',
-      1 => 1457779025,
+      1 => 1458826303,
       2 => 'file',
     ),
   ),
-  'nocache_hash' => '3263656e3f1541f7be0_25627696',
+  'nocache_hash' => '3178256f3ec42267a62_67940219',
   'variables' => 
   array (
     'kosik' => 0,
@@ -27,17 +27,17 @@ $_valid = $_smarty_tpl->decodeProperties(array (
   ),
   'has_nocache_code' => false,
   'version' => '3.1.27',
-  'unifunc' => 'content_56e3f154353908_96193390',
+  'unifunc' => 'content_56f3ec4239dac8_42441294',
 ),false);
 /*/%%SmartyHeaderCode%%*/
-if ($_valid && !is_callable('content_56e3f154353908_96193390')) {
-function content_56e3f154353908_96193390 ($_smarty_tpl) {
+if ($_valid && !is_callable('content_56f3ec4239dac8_42441294')) {
+function content_56f3ec4239dac8_42441294 ($_smarty_tpl) {
 if (!is_callable('smarty_modifier_truncate')) require_once 'C:\\Program Files (x86)\\EasyPHP-DevServer-14.1VC11\\data\\localweb\\my portable files\\e-shop\\libs\\plugins\\modifier.truncate.php';
 if (!is_callable('smarty_function_paginate_prev')) require_once 'C:\\Program Files (x86)\\EasyPHP-DevServer-14.1VC11\\data\\localweb\\my portable files\\e-shop\\libs\\plugins\\function.paginate_prev.php';
 if (!is_callable('smarty_function_paginate_middle')) require_once 'C:\\Program Files (x86)\\EasyPHP-DevServer-14.1VC11\\data\\localweb\\my portable files\\e-shop\\libs\\plugins\\function.paginate_middle.php';
 if (!is_callable('smarty_function_paginate_next')) require_once 'C:\\Program Files (x86)\\EasyPHP-DevServer-14.1VC11\\data\\localweb\\my portable files\\e-shop\\libs\\plugins\\function.paginate_next.php';
 
-$_smarty_tpl->properties['nocache_hash'] = '3263656e3f1541f7be0_25627696';
+$_smarty_tpl->properties['nocache_hash'] = '3178256f3ec42267a62_67940219';
 ?>
 <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
 <html>
@@ -159,11 +159,8 @@ $foreach_radek_Sav = $_smarty_tpl->tpl_vars['radek'];
           Cena: <?php echo $_smarty_tpl->tpl_vars['radek']->value['cena'];?>
  Kč
           <form class="form-inline">
-            <input type="hidden" name="id" value="<?php echo $_smarty_tpl->tpl_vars['radek']->value['id'];?>
-" >
             <input type="hidden" name="id_kosik" value="<?php echo $_smarty_tpl->tpl_vars['radek']->value['id'];?>
 " >
-            Počet kusů: <input type="number" class="form-control" name="pocet_kusu" value="1" max="5" min="1" />
             <button type='submit' name='pridat_zbozi' class="btn btn-primary"><span class="glyphicon glyphicon-shopping-cart" aria-hidden="true"></span> Vložit do košíku </button>
           </form>
         </blockquote>

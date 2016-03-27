@@ -32,7 +32,7 @@
   //přidání zboží
 
     if(isset($_GET["pridat_zbozi"])){
-       $_SESSION["kosik"][$_GET["id_kosik"]]=$_GET["pocet_kusu"];
+       $_SESSION["kosik"][$_GET["id_kosik"]]=1;
     }
 
   if(isset($_SESSION["kosik"])){$smarty->assign("kosik",$_SESSION["kosik"]);

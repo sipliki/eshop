@@ -1,7 +1,7 @@
-<?php /* Smarty version 3.1.27, created on 2016-03-15 20:49:48
+<?php /* Smarty version 3.1.27, created on 2016-03-24 17:46:46
          compiled from "C:\Program Files (x86)\EasyPHP-DevServer-14.1VC11\data\localweb\my portable files\e-shop\templates\upravit_objednavkuTpl.tpl" */ ?>
 <?php
-/*%%SmartyHeaderCode:3248256e8675c46f471_51448798%%*/
+/*%%SmartyHeaderCode:585956f419f655ea81_17314427%%*/
 if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
   'file_dependency' => 
@@ -9,11 +9,11 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     '352b684e2d271c7bdf29e3e04dc0fa46631bb44d' => 
     array (
       0 => 'C:\\Program Files (x86)\\EasyPHP-DevServer-14.1VC11\\data\\localweb\\my portable files\\e-shop\\templates\\upravit_objednavkuTpl.tpl',
-      1 => 1458070985,
+      1 => 1458671590,
       2 => 'file',
     ),
   ),
-  'nocache_hash' => '3248256e8675c46f471_51448798',
+  'nocache_hash' => '585956f419f655ea81_17314427',
   'variables' => 
   array (
     'kosik' => 0,
@@ -21,8 +21,6 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     'admin' => 0,
     'objednavka' => 0,
     'radek_zbozi' => 0,
-    'bunka_zbozi' => 0,
-    'id_radek' => 0,
     'id' => 0,
     'doprava_vypis' => 0,
     'radek_doprava' => 0,
@@ -30,13 +28,13 @@ $_valid = $_smarty_tpl->decodeProperties(array (
   ),
   'has_nocache_code' => false,
   'version' => '3.1.27',
-  'unifunc' => 'content_56e8675c5bc1b1_69387867',
+  'unifunc' => 'content_56f419f68cfbd8_19503095',
 ),false);
 /*/%%SmartyHeaderCode%%*/
-if ($_valid && !is_callable('content_56e8675c5bc1b1_69387867')) {
-function content_56e8675c5bc1b1_69387867 ($_smarty_tpl) {
+if ($_valid && !is_callable('content_56f419f68cfbd8_19503095')) {
+function content_56f419f68cfbd8_19503095 ($_smarty_tpl) {
 
-$_smarty_tpl->properties['nocache_hash'] = '3248256e8675c46f471_51448798';
+$_smarty_tpl->properties['nocache_hash'] = '585956f419f655ea81_17314427';
 ?>
 <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
 <html>
@@ -115,10 +113,10 @@ $_smarty_tpl->properties['nocache_hash'] = '3248256e8675c46f471_51448798';
        
         <div class="text-left">
           <h4>Objednané zboží</h4>
-          <div class="col-md-10">
+          <div class="col-md-12">
             <table class="table table-hover">
               <thead>
-                <tr><th>Název</th><th>Cena</th></tr>
+                <tr><th>Název</th><th>Cena</th><th>Odebrat</th></tr>
               </thead>
               <tbody>
                 <?php
@@ -133,23 +131,18 @@ $_smarty_tpl->tpl_vars['radek_zbozi']->_loop = true;
 $foreach_radek_zbozi_Sav = $_smarty_tpl->tpl_vars['radek_zbozi'];
 ?>
                   <tr>
-                    <?php
-$_from = $_smarty_tpl->tpl_vars['radek_zbozi']->value;
-if (!is_array($_from) && !is_object($_from)) {
-settype($_from, 'array');
-}
-$_smarty_tpl->tpl_vars['bunka_zbozi'] = new Smarty_Variable;
-$_smarty_tpl->tpl_vars['bunka_zbozi']->_loop = false;
-foreach ($_from as $_smarty_tpl->tpl_vars['bunka_zbozi']->value) {
-$_smarty_tpl->tpl_vars['bunka_zbozi']->_loop = true;
-$foreach_bunka_zbozi_Sav = $_smarty_tpl->tpl_vars['bunka_zbozi'];
-?>
-                    <th><?php echo $_smarty_tpl->tpl_vars['bunka_zbozi']->value;?>
+                    <th><?php echo $_smarty_tpl->tpl_vars['radek_zbozi']->value['nazev_zbozi'];?>
+</th><th><?php echo $_smarty_tpl->tpl_vars['radek_zbozi']->value['cena_zbozi'];?>
 </th>
-                    <?php
-$_smarty_tpl->tpl_vars['bunka_zbozi'] = $foreach_bunka_zbozi_Sav;
-}
-?>
+                    <th>
+                      <form>
+                        <input type="hidden" name="id" value="<?php echo $_smarty_tpl->tpl_vars['objednavka']->value['id'];?>
+">
+                      <input type="hidden" name="id_zbozi" value="<?php echo $_smarty_tpl->tpl_vars['id']->value;?>
+">
+                      <button type="submit" class="btn btn-info" name="odebrat"><span class="glyphicon glyphicon-remove" aria-hidden="true"></span></button>
+                    </form>
+                    </th>
                   </tr>
                  <?php
 $_smarty_tpl->tpl_vars['radek_zbozi'] = $foreach_radek_zbozi_Sav;
@@ -160,54 +153,6 @@ $_smarty_tpl->tpl_vars['radek_zbozi'] = $foreach_radek_zbozi_Sav;
               </tbody>
             </table>
           </div>
-
-            <div class="col-md-2">
-            <table class="table table-hover">
-              <thead>
-                <tr><td>Odebrat položku</td></tr>
-              </thead>
-              <tbody>
-                <?php
-$_from = $_smarty_tpl->tpl_vars['objednavka']->value['id_zbozi'];
-if (!is_array($_from) && !is_object($_from)) {
-settype($_from, 'array');
-}
-$_smarty_tpl->tpl_vars['id_radek'] = new Smarty_Variable;
-$_smarty_tpl->tpl_vars['id_radek']->_loop = false;
-foreach ($_from as $_smarty_tpl->tpl_vars['id_radek']->value) {
-$_smarty_tpl->tpl_vars['id_radek']->_loop = true;
-$foreach_id_radek_Sav = $_smarty_tpl->tpl_vars['id_radek'];
-?>
-                  <tr><?php
-$_from = $_smarty_tpl->tpl_vars['id_radek']->value;
-if (!is_array($_from) && !is_object($_from)) {
-settype($_from, 'array');
-}
-$_smarty_tpl->tpl_vars['id'] = new Smarty_Variable;
-$_smarty_tpl->tpl_vars['id']->_loop = false;
-foreach ($_from as $_smarty_tpl->tpl_vars['id']->value) {
-$_smarty_tpl->tpl_vars['id']->_loop = true;
-$foreach_id_Sav = $_smarty_tpl->tpl_vars['id'];
-?>
-                    <th>
-                      <form>
-                        <input type="hidden" name="id" value="<?php echo $_smarty_tpl->tpl_vars['objednavka']->value['id'];?>
-">
-                      <input type="hidden" name="id_zbozi" value="<?php echo $_smarty_tpl->tpl_vars['id']->value;?>
-">
-                      <button type="submit" class="btn btn-info" name="odebrat"><span class="glyphicon glyphicon-remove" aria-hidden="true"></span></button>
-                    </form>
-                    </th><?php
-$_smarty_tpl->tpl_vars['id'] = $foreach_id_Sav;
-}
-?>
-              </tr><?php
-$_smarty_tpl->tpl_vars['id_radek'] = $foreach_id_radek_Sav;
-}
-?>
-            </tbody>
-          </table>
-        </div>
         <br />
         <form>
           <h4>Doprava a platba</h4>

@@ -8,7 +8,7 @@
    SmartyPaginate::setLimit(9);
 
 if(isset($_GET["pridat_zbozi"])){
-       $_SESSION["kosik"][$_GET["id_kosik"]]=$_GET["pocet_kusu"];
+       $_SESSION["kosik"][$_GET["id_kosik"]]=1;
     }
 
 if(isset($_SESSION["user"])){
@@ -92,8 +92,5 @@ if(mysqli_num_rows($result)==0){
 
   $smarty->assign("zbozi",get_db_results($result));
 SmartyPaginate::assign($smarty);
-if(isset($_GET['vypis']))$_SESSION['vypis']=$_GET['vypis'];
-@$a=$_SESSION['vypis'];
-if($a=="table") $smarty->display("zbozi2Tpl.tpl");
-  else $smarty->display("zboziTpl.tpl");
+ $smarty->display("zboziTpl.tpl");
 ?>

@@ -1,7 +1,7 @@
-<?php /* Smarty version 3.1.27, created on 2016-03-13 17:50:41
+<?php /* Smarty version 3.1.27, created on 2016-03-27 16:16:05
          compiled from "C:\Program Files (x86)\EasyPHP-DevServer-14.1VC11\data\localweb\my portable files\e-shop\templates\upravit_zboziTpl.tpl" */ ?>
 <?php
-/*%%SmartyHeaderCode:2557356e59a6188ac99_18641752%%*/
+/*%%SmartyHeaderCode:1310256f7eb253c67e5_42594742%%*/
 if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
   'file_dependency' => 
@@ -9,11 +9,11 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     'e0d7d443ff99b03c761b3c8c92f5624b6739a2cb' => 
     array (
       0 => 'C:\\Program Files (x86)\\EasyPHP-DevServer-14.1VC11\\data\\localweb\\my portable files\\e-shop\\templates\\upravit_zboziTpl.tpl',
-      1 => 1457887838,
+      1 => 1458925239,
       2 => 'file',
     ),
   ),
-  'nocache_hash' => '2557356e59a6188ac99_18641752',
+  'nocache_hash' => '1310256f7eb253c67e5_42594742',
   'variables' => 
   array (
     'kosik' => 0,
@@ -21,19 +21,20 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     'update_fail' => 0,
     'admin' => 0,
     'pridano' => 0,
+    'zmeneno' => 0,
     'zbozi' => 0,
     'radek' => 0,
     'bunka' => 0,
   ),
   'has_nocache_code' => false,
   'version' => '3.1.27',
-  'unifunc' => 'content_56e59a61923336_89199621',
+  'unifunc' => 'content_56f7eb254a93b8_76115148',
 ),false);
 /*/%%SmartyHeaderCode%%*/
-if ($_valid && !is_callable('content_56e59a61923336_89199621')) {
-function content_56e59a61923336_89199621 ($_smarty_tpl) {
+if ($_valid && !is_callable('content_56f7eb254a93b8_76115148')) {
+function content_56f7eb254a93b8_76115148 ($_smarty_tpl) {
 
-$_smarty_tpl->properties['nocache_hash'] = '2557356e59a6188ac99_18641752';
+$_smarty_tpl->properties['nocache_hash'] = '1310256f7eb253c67e5_42594742';
 ?>
 <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
 <html>
@@ -95,6 +96,12 @@ $_smarty_tpl->properties['nocache_hash'] = '2557356e59a6188ac99_18641752';
         <?php if (isset($_smarty_tpl->tpl_vars['pridano']->value)) {?>
         <div class="col-md-12 text-center">
           <div class="alert alert-success" role="alert">Zboží bylo úspěšně přidáno do databáze</div>
+        </div>
+        <?php }?>
+
+        <?php if (isset($_smarty_tpl->tpl_vars['zmeneno']->value)) {?>
+        <div class="col-md-12 text-center">
+          <div class="alert alert-success" role="alert">Zboží bylo úspěšně změněno</div>
         </div>
         <?php }?>
         <div class="container">
