@@ -52,7 +52,7 @@
             <h3>Přihlašovací údaje</h3>
           </div>
           <div>
-            <form class="form-horizontal">
+            <form class="form-horizontal" method="post">
               <div class="form-group">
               <label for="uzivatelske_jmeno" class="col-sm-2 control-label" >Uživatelské jméno</label>
                 <div class="col-sm-5">

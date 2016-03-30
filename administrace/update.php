@@ -29,22 +29,22 @@
 	$conn->query($sql);
 
      //UPDATE
-    if(isset($_GET['update'])){
-         $id=$_GET["id_zbozi"];
-         $nazev=$_GET["nazev"];
-         $popis=$_GET["popis"];
-         $cena=$_GET["cena"];
-         $img=$_GET["obrazek"]; 
-         $dostupnost=$_GET["dostupnost"];
-         $procesor=$_GET["procesor"];
-         $vyrobce=$_GET["vyrobce"];
-         $stav_zbozi=$_GET["stav_zbozi"]; 
-         $uhlopricka=$_GET["uhlopricka"];
-         $rozliseni=$_GET["rozliseni"];
-         $os=$_GET["os"];
-         $operacni_pamet=$_GET["operacni_pamet"];
-         $interni_pamet=$_GET["interni_pamet"]; 
-         $gpu=$_GET["gpu"];                                                                                                                                                                                                                                          
+    if(isset($_POST['update'])){
+         $id=$_POST["id_zbozi"];
+         $nazev=$_POST["nazev"];
+         $popis=$_POST["popis"];
+         $cena=$_POST["cena"];
+         $img=$_POST["obrazek"]; 
+         $dostupnost=$_POST["dostupnost"];
+         $procesor=$_POST["procesor"];
+         $vyrobce=$_POST["vyrobce"];
+         $stav_zbozi=$_POST["stav_zbozi"]; 
+         $uhlopricka=$_POST["uhlopricka"];
+         $rozliseni=$_POST["rozliseni"];
+         $os=$_POST["os"];
+         $operacni_pamet=$_POST["operacni_pamet"];
+         $interni_pamet=$_POST["interni_pamet"]; 
+         $gpu=$_POST["gpu"];                                                                                                                                                                                                                                          
             $update= "UPDATE zbozi SET nazev='$nazev', popis='$popis', cena='$cena', image='$img', dostupnost='$dostupnost', vyrobce='$vyrobce', stav_zbozi='$stav_zbozi', procesor='$procesor', uhlopricka_displeje='$uhlopricka', rozliseni_displeje='$rozliseni', operacni_system='os', operacni_pamet='$operacni_pamet', interni_pamet='$interni_pamet', gpu='$gpu'  WHERE id_zbozi='$id' ";
              $conn->query($update);
              $_SESSION["update"]=1;

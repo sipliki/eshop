@@ -84,17 +84,17 @@
 			}
 
 //vytvoření objednavky
-	if(isset($_GET["objednat"])){
-		$jmeno= $_GET["jmeno"];
-		$prijmeni=$_GET["prijmeni"];
-		$ulice=$_GET["ulice"];
-		$mesto=$_GET["mesto"];
-		$psc=$_GET["psc"];
-		if(isset($_GET["id"])){$id=$_GET["id"];}
+	if(isset($_POST["objednat"])){
+		$jmeno= $_POST["jmeno"];
+		$prijmeni=$_POST["prijmeni"];
+		$ulice=$_POST["ulice"];
+		$mesto=$_POST["mesto"];
+		$psc=$_POST["psc"];
+		if(isset($_POST["id"])){$id=$_POST["id"];}
 			else{$id="neregistrovaný uživatel";}
-		$doprava=$_GET["doprava"];
-		$platba=$_GET["platba"];
-		$celkova_cena=$_GET["cena"];
+		$doprava=$_POST["doprava"];
+		$platba=$_POST["platba"];
+		$celkova_cena=$_POST["cena"];
 		$datum=strtotime("now");
 		$zbozi_zapis=implode(',', array_keys($_SESSION["kosik"]));
 			$sql_objednavka="INSERT INTO objednavky VALUES ('NULL','$jmeno','$prijmeni','$ulice','$mesto','$psc','$zbozi_zapis','$celkova_cena','$doprava','$platba','$id','$datum','1')";

@@ -53,7 +53,7 @@
             <h3>Upravit položku menu</h3>
           </div>
           <div>
-            <form class="form-horizontal">
+            <form class="form-horizontal" method="post">
               <div class="form-group">
               <label for="nazev" class="col-sm-2 control-label" >Název kategorie</label>
                 <div class="col-sm-5">
@@ -70,7 +70,7 @@
             <h3>Přidat položku menu</h3>
           </div>
           <div>
-            <form class="form-horizontal">
+            <form class="form-horizontal" method="post">
               <div class="form-group">
               <label for="nazev" class="col-sm-2 control-label" >Název kategorie</label>
                 <div class="col-sm-5">

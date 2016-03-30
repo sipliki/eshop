@@ -1,7 +1,7 @@
-<?php /* Smarty version 3.1.27, created on 2016-03-22 16:54:10
+<?php /* Smarty version 3.1.27, created on 2016-03-29 07:44:03
          compiled from "C:\Program Files (x86)\EasyPHP-DevServer-14.1VC11\data\localweb\my portable files\e-shop\templates\loginTpl.tpl" */ ?>
 <?php
-/*%%SmartyHeaderCode:958556f16aa2bde576_19274873%%*/
+/*%%SmartyHeaderCode:2548156fa16234677b0_28137735%%*/
 if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
   'file_dependency' => 
@@ -9,11 +9,11 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     'defd5220905cced46b01f71d45fdc8f9ea6bac2f' => 
     array (
       0 => 'C:\\Program Files (x86)\\EasyPHP-DevServer-14.1VC11\\data\\localweb\\my portable files\\e-shop\\templates\\loginTpl.tpl',
-      1 => 1457183100,
+      1 => 1459230176,
       2 => 'file',
     ),
   ),
-  'nocache_hash' => '958556f16aa2bde576_19274873',
+  'nocache_hash' => '2548156fa16234677b0_28137735',
   'variables' => 
   array (
     'kosik' => 0,
@@ -22,13 +22,13 @@ $_valid = $_smarty_tpl->decodeProperties(array (
   ),
   'has_nocache_code' => false,
   'version' => '3.1.27',
-  'unifunc' => 'content_56f16aa2eb1008_97207094',
+  'unifunc' => 'content_56fa1623e222f7_52082394',
 ),false);
 /*/%%SmartyHeaderCode%%*/
-if ($_valid && !is_callable('content_56f16aa2eb1008_97207094')) {
-function content_56f16aa2eb1008_97207094 ($_smarty_tpl) {
+if ($_valid && !is_callable('content_56fa1623e222f7_52082394')) {
+function content_56fa1623e222f7_52082394 ($_smarty_tpl) {
 
-$_smarty_tpl->properties['nocache_hash'] = '958556f16aa2bde576_19274873';
+$_smarty_tpl->properties['nocache_hash'] = '2548156fa16234677b0_28137735';
 ?>
 <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
 <html>
@@ -74,7 +74,7 @@ $_smarty_tpl->properties['nocache_hash'] = '958556f16aa2bde576_19274873';
     <div class="col-lg-12 text-center"> 
           <h2>Přihlášení</h2>
       </div><br />
-      <form class="form-inline" role="form">
+      <form class="form-inline" role="form" method="post">
         <div class="form-group">
     <label for="nick">Uživatelské jméno</label>
     <input type="text" class="form-control" id="nick" name="nick" placeholder="Zadejte uživatelské jméno">

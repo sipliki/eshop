@@ -20,9 +20,9 @@
   	$sql = "SET CHARACTER SET utf8";
 	$conn->query($sql);
 
-	if(isset($_GET["login"])){
-			$username=$_GET["nick"];
-			$pwd=md5($_GET["pwd"]);
+	if(isset($_POST["login"])){
+			$username=$_POST["nick"];
+			$pwd=md5($_POST["pwd"]);
 			$dotaz="SELECT * FROM uzivatele WHERE uzivatelske_jmeno='$username' AND heslo='$pwd'";
 			$vysledek=$conn->query($dotaz);
 			$rows=mysqli_num_rows($vysledek);

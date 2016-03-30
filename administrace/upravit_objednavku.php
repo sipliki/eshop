@@ -30,16 +30,16 @@
 	$conn->query($sql);
 
 	//zruseni objednavky
-	if(isset($_GET["zrusit"])){
-		$id=$_GET["id_objednavky"];
+	if(isset($_POST["zrusit"])){
+		$id=$_POST["id_objednavky"];
 		$sql_zruseni="DELETE FROM objednavky WHERE id_objednavky='$id'";
 		$conn->query($sql_zruseni);
 		$smarty->assign("zruseni",$id);
 	}
 
 	//odebrání zboží
-	if(isset($_GET["odebrat"])){
-		unset($_SESSION["kosik"][$_GET["id_zbozi"]]);
+	if(isset($_POST["odebrat"])){
+		unset($_SESSION["kosik"][$_POST["id_zbozi"]]);
 	}
 
 	//načtení uživatele
@@ -144,24 +144,24 @@
 	$smarty->assign("platba_vypis",$platba_vypis);
 
 	//odebrání zboží
-	if(isset($_GET["odebrat"])){
-		unset($objednavka["zbozi"][$_GET["id_zbozi"]]);
-		unset($objednavka["id_zbozi"][$_GET["id_zbozi"]]);
-		unset($_SESSION["zbozi"][$_GET["id_zbozi"]]);
+	if(isset($_POST["odebrat"])){
+		unset($objednavka["zbozi"][$_POST["id_zbozi"]]);
+		unset($objednavka["id_zbozi"][$_POST["id_zbozi"]]);
+		unset($_SESSION["zbozi"][$_POST["id_zbozi"]]);
 	}
 	$smarty->assign("objednavka",$objednavka);
 
 	//update objednavky
-	if(isset($_GET["update"])){
-		$id=$_GET["id"];
-		$jmeno=$_GET["jmeno"];
-		$prijmeni=$_GET["prijmeni"];
-		$ulice=$_GET["ulice"];
-		$mesto=$_GET["mesto"];
-		$psc=$_GET["psc"];
+	if(isset($_POST["update"])){
+		$id=$_POST["id"];
+		$jmeno=$_POST["jmeno"];
+		$prijmeni=$_POST["prijmeni"];
+		$ulice=$_POST["ulice"];
+		$mesto=$_POST["mesto"];
+		$psc=$_POST["psc"];
 		$zbozi=implode(',', array_keys($_SESSION["zbozi"]));
-		$doprava=$_GET["doprava"];
-		$platba=$_GET["platba"];
+		$doprava=$_POST["doprava"];
+		$platba=$_POST["platba"];
 		$celkova_cena=0;
 
 			$sql_cena="SELECT id_zbozi, cena FROM zbozi WHERE id_zbozi IN ('" . implode("', '", array_keys($_SESSION["zbozi"])) . "')";

@@ -22,15 +22,15 @@
 
 	if(isset($_GET["shrnuti"])){$_SESSION["shrnuti"]=$_GET["kosik"];}
 
-	if(isset($_GET["registrace"])){
-			$uzivatelske_jmeno=$_GET["uzivatelske_jmeno"];
-			$heslo1=md5($_GET["heslo1"]);
-			$heslo2=md5($_GET["heslo2"]);
-			$jmeno=$_GET["jmeno"];
-			$prijmeni=$_GET["prijmeni"];
-			$ulice=$_GET["ulice"];
-			$mesto=$_GET["mesto"];
-			$psc=$_GET["psc"];
+	if(isset($_POST["registrace"])){
+			$uzivatelske_jmeno=$_POST["uzivatelske_jmeno"];
+			$heslo1=md5($_POST["heslo1"]);
+			$heslo2=md5($_POST["heslo2"]);
+			$jmeno=$_POST["jmeno"];
+			$prijmeni=$_POST["prijmeni"];
+			$ulice=$_POST["ulice"];
+			$mesto=$_POST["mesto"];
+			$psc=$_POST["psc"];
 
 		if($heslo1==$heslo2){
 			$dotaz_user="SELECT * FROM uzivatele WHERE uzivatelske_jmeno='$uzivatelske_jmeno'";

@@ -61,7 +61,7 @@
         </div>
     </div>
     <div class="col-md-12 text-left">
-      <form class="form-horizontal">
+      <form class="form-horizontal" method="post">
         {if isset($user)}
         Přihlášen jako uživatel <b>{$user.nick}</b>.
         Nejste to vy? <a href="shrnuti.php?logout=1" class="btn btn-warning"><span class="glyphicon glyphicon-log-out"></span> Odhlásit se</a><br />

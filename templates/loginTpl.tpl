@@ -37,7 +37,7 @@
     <div class="col-lg-12 text-center"> 
           <h2>Přihlášení</h2>
       </div><br />
-      <form class="form-inline" role="form">
+      <form class="form-inline" role="form" method="post">
         <div class="form-group">
     <label for="nick">Uživatelské jméno</label>
     <input type="text" class="form-control" id="nick" name="nick" placeholder="Zadejte uživatelské jméno">

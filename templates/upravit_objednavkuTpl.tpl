@@ -53,7 +53,7 @@
             <h3>Objednávka  #{$objednavka.id} </h3>
           </div>
           <div class="col-md-2 text-right">
-          <form>
+          <form method="post">
             <input type="hidden" name="id_objednavky" value="{$objednavka.id}" />
           <button type="submit" name="zrusit" class="btn btn-danger">Zrušit objednávku</button>
           </form>
@@ -77,7 +77,7 @@
                   <tr>
                     <th>{$radek_zbozi.nazev_zbozi}</th><th>{$radek_zbozi.cena_zbozi}</th>
                     <th>
-                      <form>
+                      <form method="post">
                         <input type="hidden" name="id" value="{$objednavka.id}">
                       <input type="hidden" name="id_zbozi" value="{$id}">
                       <button type="submit" class="btn btn-info" name="odebrat"><span class="glyphicon glyphicon-remove" aria-hidden="true"></span></button>

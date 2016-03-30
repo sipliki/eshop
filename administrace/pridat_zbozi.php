@@ -110,22 +110,22 @@
       $smarty->assign("kategorie",$kategorie);
 	
 	 //Vlozit zbozi
-    if(isset($_GET['pridej'])){
-                    $nazev=$_GET["nazev"];
-                    $popis=$_GET["popis"];
-                    $cena=$_GET["cena"];
-                    $obrazek=$_GET["obrazek"];
-                    $dostupnost=$_GET["dostupnost"];
-                    $vyrobce=$_GET["vyrobce"];
-                    $stav_zbozi=$_GET["stav_zbozi"];
-                    $procesor=$_GET["procesor"];
-                    $uhlopricka=$_GET["uhlopricka"];
-                    $rozliseni=$_GET["rozliseni"];
-                    $os=$_GET["os"];
-                    $operacni_pamet=$_GET["operacni_pamet"];
-                    $interni_pamet=$_GET["interni_pamet"];
-                    $gpu=$_GET["gpu"];
-                    $kategorie=$_GET["kategorie"];					                                                                                                                                                                                                                           
+    if(isset($_POST['pridej'])){
+                    $nazev=$_POST["nazev"];
+                    $popis=$_POST["popis"];
+                    $cena=$_POST["cena"];
+                    $obrazek=$_POST["obrazek"];
+                    $dostupnost=$_POST["dostupnost"];
+                    $vyrobce=$_POST["vyrobce"];
+                    $stav_zbozi=$_POST["stav_zbozi"];
+                    $procesor=$_POST["procesor"];
+                    $uhlopricka=$_POST["uhlopricka"];
+                    $rozliseni=$_POST["rozliseni"];
+                    $os=$_POST["os"];
+                    $operacni_pamet=$_POST["operacni_pamet"];
+                    $interni_pamet=$_POST["interni_pamet"];
+                    $gpu=$_POST["gpu"];
+                    $kategorie=$_POST["kategorie"];					                                                                                                                                                                                                                           
 				    $sql_pridej="INSERT INTO zbozi VALUES('NULL','$nazev','$popis','$cena','$obrazek','$dostupnost','$vyrobce','$stav_zbozi','$procesor','$uhlopricka','$rozliseni','$os','$operacni_pamet','$interni_pamet','$gpu','$kategorie')";
 						 $conn->query($sql_pridej);
 						 $conn->close();

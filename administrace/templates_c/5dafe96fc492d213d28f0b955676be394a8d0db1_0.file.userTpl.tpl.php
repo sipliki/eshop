@@ -1,7 +1,7 @@
-<?php /* Smarty version 3.1.27, created on 2016-03-13 17:48:51
+<?php /* Smarty version 3.1.27, created on 2016-03-30 16:25:07
          compiled from "C:\Program Files (x86)\EasyPHP-DevServer-14.1VC11\data\localweb\my portable files\e-shop\templates\userTpl.tpl" */ ?>
 <?php
-/*%%SmartyHeaderCode:2449656e599f312bd10_13056987%%*/
+/*%%SmartyHeaderCode:3083256fbe1c3648181_64407476%%*/
 if(!defined('SMARTY_DIR')) exit('no direct access allowed');
 $_valid = $_smarty_tpl->decodeProperties(array (
   'file_dependency' => 
@@ -9,11 +9,11 @@ $_valid = $_smarty_tpl->decodeProperties(array (
     '5dafe96fc492d213d28f0b955676be394a8d0db1' => 
     array (
       0 => 'C:\\Program Files (x86)\\EasyPHP-DevServer-14.1VC11\\data\\localweb\\my portable files\\e-shop\\templates\\userTpl.tpl',
-      1 => 1457887671,
+      1 => 1459234253,
       2 => 'file',
     ),
   ),
-  'nocache_hash' => '2449656e599f312bd10_13056987',
+  'nocache_hash' => '3083256fbe1c3648181_64407476',
   'variables' => 
   array (
     'kosik' => 0,
@@ -23,13 +23,13 @@ $_valid = $_smarty_tpl->decodeProperties(array (
   ),
   'has_nocache_code' => false,
   'version' => '3.1.27',
-  'unifunc' => 'content_56e599f3202637_48364716',
+  'unifunc' => 'content_56fbe1c3a60833_52881637',
 ),false);
 /*/%%SmartyHeaderCode%%*/
-if ($_valid && !is_callable('content_56e599f3202637_48364716')) {
-function content_56e599f3202637_48364716 ($_smarty_tpl) {
+if ($_valid && !is_callable('content_56fbe1c3a60833_52881637')) {
+function content_56fbe1c3a60833_52881637 ($_smarty_tpl) {
 
-$_smarty_tpl->properties['nocache_hash'] = '2449656e599f312bd10_13056987';
+$_smarty_tpl->properties['nocache_hash'] = '3083256fbe1c3648181_64407476';
 ?>
 <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
 <html>
@@ -90,7 +90,7 @@ $_smarty_tpl->properties['nocache_hash'] = '2449656e599f312bd10_13056987';
             <h3>Přihlašovací údaje</h3>
           </div>
           <div>
-            <form class="form-horizontal">
+            <form class="form-horizontal" method="post">
               <div class="form-group">
               <label for="uzivatelske_jmeno" class="col-sm-2 control-label" >Uživatelské jméno</label>
                 <div class="col-sm-5">

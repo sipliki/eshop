@@ -75,7 +75,7 @@
           <b>Datum vytvoření objednávky:</b> {$radek_objednavka.datum} 
         </div>
         <div class="text-right">
-          <form>
+          <form method="post">
             <input type="hidden" name="id_objednavky" value="{$radek_objednavka.id}" />
           <button type="submit" name="zrusit" class="btn btn-primary">Zrušit objednávku</button>
           </form>

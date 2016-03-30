@@ -56,10 +56,10 @@ $username=$_SESSION["user"];
 	if($row["admin"]=='1'){$smarty->assign("admin",$user["admin"]);$_SESSION["admin"]='1';}
 
 	//update položky
-		if(isset($_GET['update'])){
+		if(isset($_POST['update'])){
 
-             $id=$_GET["id_radku"];
-             $nazev=$_GET["nazev"];                                                                                                                                                                                                                                  
+             $id=$_POST["id_radku"];
+             $nazev=$_POST["nazev"];                                                                                                                                                                                                                                  
             $update= "UPDATE kategorie SET nazev_kategorie='$nazev' WHERE id_kategorie='$id'";
              $conn->query($update);
              $_SESSION["update_menu"]=1;
@@ -68,9 +68,9 @@ $username=$_SESSION["user"];
          };
 
     //přidání položky
-        if(isset($_GET['add'])){
+        if(isset($_POST['add'])){
 
-            $nazev=$_GET["nazev"];                                                                                                                                                                                                                                  
+            $nazev=$_POST["nazev"];                                                                                                                                                                                                                                  
             $add= "INSERT INTO kategorie VALUES ('NULL','$nazev')";
              $conn->query($add);
              $_SESSION["add_menu"]=1;

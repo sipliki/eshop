@@ -45,16 +45,16 @@
 	$smarty->assign("user",$user);
 	if($row["admin"]=='1'){$smarty->assign("admin",$user["admin"]);$_SESSION["admin"]='1';}
 
-	if(isset($_GET["update_uzivatele"])){
-		$id=$_GET["id_radku"];
-		$nick=$_GET["uzivatelske_jmeno"];
-		if(isset($_GET["nove_heslo"])){$heslo=md5($_GET["nove_heslo"]);}
-			else $heslo=md5($_GET["heslo"]);
-		$jmeno=$_GET["jmeno"];
-		$prijmeni=$_GET["prijmeni"];
-		$ulice=$_GET["ulice"];
-		$mesto=$_GET["mesto"];
-		$psc=$_GET["psc"];
+	if(isset($_POST["update_uzivatele"])){
+		$id=$_POST["id_radku"];
+		$nick=$_POST["uzivatelske_jmeno"];
+		if(isset($_POST["nove_heslo"])){$heslo=md5($_POST["nove_heslo"]);}
+			else $heslo=md5($_POST["heslo"]);
+		$jmeno=$_POST["jmeno"];
+		$prijmeni=$_POST["prijmeni"];
+		$ulice=$_POST["ulice"];
+		$mesto=$_POST["mesto"];
+		$psc=$_POST["psc"];
 		$update="UPDATE uzivatele SET uzivatelske_jmeno='$nick',heslo='$heslo',jmeno='$jmeno',prijmeni='$prijmeni',ulice='$ulice',mesto='$mesto',psc='$psc' WHERE ID_uzivatele='$id'";
 		$conn->query($update);
 		header('Location: user.php');

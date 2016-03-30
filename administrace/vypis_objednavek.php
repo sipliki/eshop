@@ -35,8 +35,8 @@
 	$conn->query($sql);
 
 	//zruseni objednavky
-	if(isset($_GET["zrusit"])){
-		$id=$_GET["id_objednavky"];
+	if(isset($_POST["zrusit"])){
+		$id=$_POST["id_objednavky"];
 		$sql_zruseni="DELETE FROM objednavky WHERE id_objednavky='$id'";
 		$conn->query($sql_zruseni);
 		$smarty->assign("zruseni",$id);
